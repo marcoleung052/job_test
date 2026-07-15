@@ -187,23 +187,58 @@ function computeIdfWeights(queryWords) {
   return weights;
 }
 
-function escapeRegExp(str) {
-  return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+// 兩個字串之間的編輯距離 (Levenshtein distance)，字愈短計算量愈小，
+// 用在單一詞彙比對上 (十幾個字元內) 幾乎不花時間。
+function levenshteinDistance(a, b) {
+  const m = a.length;
+  const n = b.length;
+  if (m === 0) return n;
+  if (n === 0) return m;
+  const dp = new Array(n + 1);
+  for (let j = 0; j <= n; j++) dp[j] = j;
+  for (let i = 1; i <= m; i++) {
+    let prevDiag = dp[0];
+    dp[0] = i;
+    for (let j = 1; j <= n; j++) {
+      const temp = dp[j];
+      dp[j] = a[i - 1] === b[j - 1]
+        ? prevDiag
+        : 1 + Math.min(prevDiag, dp[j], dp[j - 1]);
+      prevDiag = temp;
+    }
+  }
+  return dp[n];
 }
 
-// 把片段裡符合查詢字詞的地方用 <mark> 包起來，讓使用者一眼就能看到
-// 「為什麼是這個結果」，不用整段慢慢讀。只標查詢字詞本身，不特別標數字，
-// 避免跟查詢無關的數字也被醒目提示，反而分散注意力。
+// 0~1 的相似度，1 代表完全一樣
+function wordSimilarity(a, b) {
+  if (!a.length || !b.length) return 0;
+  return 1 - levenshteinDistance(a, b) / Math.max(a.length, b.length);
+}
+
+const HIGHLIGHT_SIMILARITY = 0.85;
+
+// 把片段裡「跟查詢字詞相近」的字都用 <mark> 包起來，讓使用者一眼就能看到
+// 「為什麼是這個結果」。不是要求整個字完全等於查詢字詞才醒目提示 —
+// 那樣查 "channel" 會因為文件裡寫的是 "channels" (多了一個 s) 就完全比對不到，
+// 一個都標不出來。改成逐字比對：只要文件裡的字包含查詢字詞 (或反過來)，
+// 或是兩者的編輯距離相似度達到 85% 以上 (能抓到單複數、動詞變化、小拼字差異
+// 這類「很像但不完全一樣」的情況)，就當作命中。不特別標數字，避免跟查詢
+// 無關的數字也被醒目提示，反而分散注意力。
 // 一定要先 escapeHtml 再插入 <mark>，避免片段內容裡本來就有的 < > & 被誤判成標籤。
 function highlightSnippet(text, queryWords) {
   const escaped = escapeHtml(text);
-  const wordPatterns = queryWords
-    .filter(Boolean)
-    .map(escapeRegExp)
-    .sort((a, b) => b.length - a.length);
-  if (!wordPatterns.length) return escaped;
-  const re = new RegExp(`\\b(?:${wordPatterns.join("|")})\\b`, "gi");
-  return escaped.replace(re, (m) => `<mark>${m}</mark>`);
+  const words = queryWords.filter(Boolean);
+  if (!words.length) return escaped;
+
+  return escaped.replace(/[A-Za-z0-9']+/g, (token) => {
+    const tokenLower = token.toLowerCase();
+    const isMatch = words.some((w) => {
+      if (tokenLower.includes(w) || w.includes(tokenLower)) return true;
+      return wordSimilarity(tokenLower, w) >= HIGHLIGHT_SIMILARITY;
+    });
+    return isMatch ? `<mark>${token}</mark>` : token;
+  });
 }
 
 function renderResults(results, queryWords) {
