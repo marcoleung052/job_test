@@ -168,7 +168,7 @@ function wordSimilarity(a, b) {
   return 1 - levenshteinDistance(a, b) / Math.max(a.length, b.length);
 }
 
-const HIGHLIGHT_SIMILARITY = 0.90;
+const HIGHLIGHT_SIMILARITY = 0.87;
 
 // 判斷兩個「字」算不算同一個詞。故意不用單純的子字串比對 (a.includes(b))，
 // 因為那樣查 "on" 會連 "only"、"recording" 裡面都算比對到 — "on" 剛好是
