@@ -2,6 +2,16 @@
 .md-sidebar, .md-nav {
   z-index: 1200 !important;
 }
+
+/* 搜尋下拉結果 (.md-search__output) 是 .md-header 的子元素，而 .md-header
+   本身的 z-index (1100) 比上面的 .md-sidebar (1200) 低，子元素的 z-index
+   不管設多高都跳不出父層的疊層結構 (stacking context)，所以搜尋結果一直
+   被側邊導覽列蓋住。只在搜尋框被打開時 (#__search:checked) 才把整個
+   header 的疊層提到側邊欄之上，避免影響手機版側邊抽屜選單原本需要蓋過
+   header 的行為。 */
+#__search:checked ~ .md-header {
+  z-index: 1300 !important;
+}
 :root>* {
   --md-primary-fg-color: hsl(38, 21%, 47%);
   
