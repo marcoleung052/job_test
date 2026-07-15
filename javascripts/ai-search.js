@@ -27,7 +27,7 @@ const SIM_THRESHOLD = 0.3;
 // 有時候同一個章節底下有 8、9 個子項目都跟查詢同樣相關，硬砍成 5 筆
 // 又會漏掉本來該顯示的結果。改成看分數：只要分數達到最高分的這個比例
 // 以上，就一起顯示，讓筆數自然跟著「這次查詢到底有多少相關結果」走。
-const RESULT_RELATIVE_CUTOFF = 0.7;
+const RESULT_RELATIVE_CUTOFF = 0.8;
 // 極端情況 (例如查詢字詞多、命中太多片段) 的保底上限，避免整頁被灌爆。
 const RESULT_MAX_COUNT = 15;
 
@@ -139,63 +139,6 @@ function cosineSimilarityAll(queryVec) {
   return scores;
 }
 
-// 跟 app.py 的 keyword_boost 邏輯類似，但這裡的判斷比重更高：
-// all-MiniLM-L6-v2 是小模型，對「一個產品型號單字」這種很短的查詢，
-// 語意分數常常跟完全不相關的雜訊字串重疊在同一個區間 (實測 0.15~0.3 都有可能)，
-// 沒辦法只靠一個語意分數門檻可靠篩選。所以只要片段裡真的完整出現查詢字串
-// (或每個查詢字詞)，就視為「命中關鍵字」，不管語意分數多低都不該被濾掉，
-// 語意分數在這種情況下只用來排序，不用來把關。
-//
-// idfWeights: 像「core2 led on」這種「產品型號 + 通用字詞」的查詢，若每個
-// 命中字詞都給同樣的加分，"led"/"on" 這種幾乎每一頁都有的字會稀釋掉
-// "core2" 這種真正能鎖定產品的關鍵字，導致排名前面全是別的產品、但同樣
-// 提到 LED 的片段。所以命中字詞的加分要依照它在整個資料庫裡多罕見來加權
-// (類似 IDF)：越少片段出現的字詞，加分越高；title 命中的加分也比 text 命中高，
-// 因為產品型號通常只會出現在標題。
-function keywordBoost(title, text, queryLower, queryWords, idfWeights) {
-  const titleLower = title.toLowerCase();
-  const textLower = text.toLowerCase();
-  let boost = 0;
-  let matched = false;
-  if (queryLower && (titleLower + " " + textLower).includes(queryLower)) {
-    boost += 0.15;
-    matched = true;
-  }
-  if (queryWords.length > 1) {
-    let hitCount = 0;
-    for (const w of queryWords) {
-      const idf = idfWeights[w] || 1;
-      if (titleLower.includes(w)) {
-        boost += 0.06 * idf;
-        hitCount++;
-      } else if (textLower.includes(w)) {
-        boost += 0.015 * idf;
-        hitCount++;
-      }
-    }
-    if (hitCount === queryWords.length) matched = true;
-  }
-  return { boost, matched };
-}
-
-// 用查詢字詞在整個文件庫裡出現的片段數估計「這個字詞有多罕見」，愈少片段
-// 提到就給愈高權重 (類似 IDF)。是在目前已經下載到瀏覽器記憶體裡的
-// state.documents 上即時算，不用額外下載資料，1700 多筆片段掃幾個字詞
-// 花不到幾毫秒。
-function computeIdfWeights(queryWords) {
-  const docs = state.documents;
-  const n = docs.length;
-  const weights = {};
-  for (const w of queryWords) {
-    let df = 0;
-    for (const doc of docs) {
-      if ((doc.title + " " + doc.text).toLowerCase().includes(w)) df++;
-    }
-    weights[w] = Math.log((n + 1) / (df + 1)) + 0.5;
-  }
-  return weights;
-}
-
 // 兩個字串之間的編輯距離 (Levenshtein distance)，字愈短計算量愈小，
 // 用在單一詞彙比對上 (十幾個字元內) 幾乎不花時間。
 function levenshteinDistance(a, b) {
@@ -225,14 +168,129 @@ function wordSimilarity(a, b) {
   return 1 - levenshteinDistance(a, b) / Math.max(a.length, b.length);
 }
 
-const HIGHLIGHT_SIMILARITY = 0.85;
+const HIGHLIGHT_SIMILARITY = 0.90;
 
-// 把片段裡「跟查詢字詞相近」的字都用 <mark> 包起來，讓使用者一眼就能看到
-// 「為什麼是這個結果」。不是要求整個字完全等於查詢字詞才醒目提示 —
-// 那樣查 "channel" 會因為文件裡寫的是 "channels" (多了一個 s) 就完全比對不到，
-// 一個都標不出來。改成逐字比對：只要文件裡的字包含查詢字詞 (或反過來)，
-// 或是兩者的編輯距離相似度達到 85% 以上 (能抓到單複數、動詞變化、小拼字差異
-// 這類「很像但不完全一樣」的情況)，就當作命中。不特別標數字，避免跟查詢
+// 判斷兩個「字」算不算同一個詞。故意不用單純的子字串比對 (a.includes(b))，
+// 因為那樣查 "on" 會連 "only"、"recording" 裡面都算比對到 — "on" 剛好是
+// "only" 的前綴，子字串／前綴比對兩種寫法都擋不掉這個誤判。改成只認：
+// 完全相等、去掉字尾 s/es 的單複數變化 (channel/channels)、或編輯距離
+// 相似度達到 85% 以上 (抓拼字差異、動詞變化)，這樣才不會把 "on" 誤判成
+// 命中 "only"，但仍然抓得到 "channel" 對 "channels" 這種常見變化。
+function wordsMatch(a, b) {
+  if (!a || !b) return false;
+  if (a === b) return true;
+  const stripPlural = (w) => w.replace(/(es|s)$/, "");
+  const stemA = stripPlural(a);
+  const stemB = stripPlural(b);
+  if (stemA === stemB && stemA.length >= 3) return true;
+  return wordSimilarity(a, b) >= HIGHLIGHT_SIMILARITY;
+}
+
+// text 裡有沒有任何一個完整的字跟 word 算同一個詞 (見 wordsMatch)。
+function hasWholeWordMatch(text, word) {
+  const tokens = text.match(/[A-Za-z0-9']+/g);
+  if (!tokens) return false;
+  const wordLower = word.toLowerCase();
+  return tokens.some((t) => wordsMatch(t.toLowerCase(), wordLower));
+}
+
+// 標題裡逗號前的部分固定是商品/頁面名稱 (build_client_embeddings.py 用
+// "頁面標題, 章節標題" 的格式)，逗號後面是章節，不算進商品名稱。
+function productNameOf(title) {
+  return title.split(",")[0].trim();
+}
+
+function productTokens(product) {
+  return (product.match(/[A-Za-z0-9']+/g) || []).map((t) => t.toLowerCase());
+}
+
+// 如果查詢字詞裡有某個字剛好只對應到「部分」商品的名稱 (不是每個商品的
+// 名稱都有這個字)，就代表使用者在指定特定商品 (例如 "CORE2"、"ONE+")，
+// 這種情況下其他商品的結果不該混進來，直接把候選片段篩到只剩符合的
+// 那幾個商品。如果這個字每個商品都有 (像 "XDAQ" 是全部產品的共同字首)，
+// 就不算有指定到特定商品，不篩選。
+function detectProductFilter(queryWords) {
+  const docs = state.documents;
+  const allProducts = new Set(docs.map((d) => productNameOf(d.title)));
+  for (const w of queryWords) {
+    const matching = new Set();
+    for (const p of allProducts) {
+      if (productTokens(p).some((t) => wordsMatch(t, w))) matching.add(p);
+    }
+    if (matching.size > 0 && matching.size < allProducts.size) {
+      return matching;
+    }
+  }
+  return null;
+}
+
+// 跟 app.py 的 keyword_boost 邏輯類似，但這裡的判斷比重更高：
+// all-MiniLM-L6-v2 是小模型，對「一個產品型號單字」這種很短的查詢，
+// 語意分數常常跟完全不相關的雜訊字串重疊在同一個區間 (實測 0.15~0.3 都有可能)，
+// 沒辦法只靠一個語意分數門檻可靠篩選。所以只要片段裡真的完整出現查詢字串
+// (或每個查詢字詞)，就視為「命中關鍵字」，不管語意分數多低都不該被濾掉，
+// 語意分數在這種情況下只用來排序，不用來把關。
+//
+// idfWeights: 像「core2 led on」這種「產品型號 + 通用字詞」的查詢，若每個
+// 命中字詞都給同樣的加分，"led"/"on" 這種幾乎每一頁都有的字會稀釋掉
+// "core2" 這種真正能鎖定產品的關鍵字，導致排名前面全是別的產品、但同樣
+// 提到 LED 的片段。所以命中字詞的加分要依照它在整個資料庫裡多罕見來加權
+// (類似 IDF)：越少片段出現的字詞，加分越高。
+//
+// 標題/內文都用完整詞比對 (hasWholeWordMatch)，不是子字串比對，同一個字詞
+// 「同時」在標題跟內文裡都以完整詞出現時，比只出現在其中一邊更可信，
+// 額外加更高的權重。
+function keywordBoost(title, text, queryLower, queryWords, idfWeights) {
+  const titleLower = title.toLowerCase();
+  const textLower = text.toLowerCase();
+  let boost = 0;
+  let matched = false;
+  if (queryLower && (titleLower + " " + textLower).includes(queryLower)) {
+    boost += 0.15;
+    matched = true;
+  }
+  if (queryWords.length > 1) {
+    let hitCount = 0;
+    for (const w of queryWords) {
+      const idf = idfWeights[w] || 1;
+      const inTitle = hasWholeWordMatch(title, w);
+      const inText = hasWholeWordMatch(text, w);
+      if (inTitle && inText) {
+        boost += 0.09 * idf;
+        hitCount++;
+      } else if (inTitle) {
+        boost += 0.06 * idf;
+        hitCount++;
+      } else if (inText) {
+        boost += 0.015 * idf;
+        hitCount++;
+      }
+    }
+    if (hitCount === queryWords.length) matched = true;
+  }
+  return { boost, matched };
+}
+
+// 用查詢字詞在整個文件庫裡出現的片段數估計「這個字詞有多罕見」，愈少片段
+// 提到就給愈高權重 (類似 IDF)。是在目前已經下載到瀏覽器記憶體裡的
+// state.documents 上即時算，不用額外下載資料，1700 多筆片段掃幾個字詞
+// 花不到幾毫秒。用完整詞比對，不是子字串比對，理由跟 keywordBoost 一樣。
+function computeIdfWeights(queryWords) {
+  const docs = state.documents;
+  const n = docs.length;
+  const weights = {};
+  for (const w of queryWords) {
+    let df = 0;
+    for (const doc of docs) {
+      if (hasWholeWordMatch(doc.title, w) || hasWholeWordMatch(doc.text, w)) df++;
+    }
+    weights[w] = Math.log((n + 1) / (df + 1)) + 0.5;
+  }
+  return weights;
+}
+
+// 把片段裡「跟查詢字詞算同一個詞」的字都用 <mark> 包起來 (見 wordsMatch)，
+// 讓使用者一眼就能看到「為什麼是這個結果」。不特別標數字，避免跟查詢
 // 無關的數字也被醒目提示，反而分散注意力。
 // 一定要先 escapeHtml 再插入 <mark>，避免片段內容裡本來就有的 < > & 被誤判成標籤。
 function highlightSnippet(text, queryWords) {
@@ -242,10 +300,7 @@ function highlightSnippet(text, queryWords) {
 
   return escaped.replace(/[A-Za-z0-9']+/g, (token) => {
     const tokenLower = token.toLowerCase();
-    const isMatch = words.some((w) => {
-      if (tokenLower.includes(w) || w.includes(tokenLower)) return true;
-      return wordSimilarity(tokenLower, w) >= HIGHLIGHT_SIMILARITY;
-    });
+    const isMatch = words.some((w) => wordsMatch(tokenLower, w));
     return isMatch ? `<mark>${token}</mark>` : token;
   });
 }
@@ -292,11 +347,16 @@ async function runSearch(query) {
   const queryLower = query.trim().toLowerCase();
   const queryWords = queryLower.split(/\s+/).filter(Boolean);
   const idfWeights = queryWords.length > 1 ? computeIdfWeights(queryWords) : {};
+  // 查詢字詞裡如果有指定到特定商品 (見 detectProductFilter)，其他商品的
+  // 片段直接不列入候選，而不是只是排名比較後面而已。
+  const productFilter = queryWords.length ? detectProductFilter(queryWords) : null;
 
-  const scored = state.documents.map((doc, i) => {
-    const { boost, matched } = keywordBoost(doc.title, doc.text, queryLower, queryWords, idfWeights);
-    return { doc, baseScore: scores[i], adjustedScore: scores[i] + boost, matched };
-  });
+  const scored = state.documents
+    .map((doc, i) => {
+      const { boost, matched } = keywordBoost(doc.title, doc.text, queryLower, queryWords, idfWeights);
+      return { doc, baseScore: scores[i], adjustedScore: scores[i] + boost, matched };
+    })
+    .filter((s) => !productFilter || productFilter.has(productNameOf(s.doc.title)));
 
   scored.sort((a, b) => b.adjustedScore - a.adjustedScore);
 
