@@ -174,29 +174,35 @@ const HIGHLIGHT_SIMILARITY = 0.87;
 // 因為那樣查 "on" 會連 "only"、"recording" 裡面都算比對到 — "on" 剛好是
 // "only" 的前綴，子字串／前綴比對兩種寫法都擋不掉這個誤判。原則是：
 // 會改變意思的差異一律不算同一個詞，不會改變意思的差異 (單複數這種
-// 文法上的「數」) 才可以算同一個詞。所以：
-// 1. 任何一邊有數字時，數字一定要完全一樣才可能是同一個詞 —
-//    "core2" 跟 "core3"、"headstage1" 跟 "headstage2" 這種數字不同就是
-//    不同型號/不同項目，意思不一樣，不能因為字面像就當作同一個詞
-//    (單靠編輯距離相似度並不可靠："recording1" 對 "recording2" 相似度
-//    剛好等於門檻值，會被誤判成同一個詞，所以數字必須另外強制比對)。
-// 2. 完全相等、或去掉字尾 s/es 的單複數變化 (channel/channels，這種文法上
+// 文法上的「數」、或型號名稱缺了具體數字) 才可以算同一個詞。所以：
+// 1. 短的字剛好是長的字的前綴，而且多出來的部分「整個都是數字」
+//    (例如 "core" 對 "core2"、"v" 對 "v1")，這種「講產品系列/通稱，
+//    沒講到具體型號數字」通常還是同一個意思，算同一個詞。
+// 2. 除了上面這種情況，只要兩邊都有數字，數字就一定要完全一樣才可能是
+//    同一個詞 — "core2" 跟 "core3"、"headstage1" 跟 "headstage2" 這種
+//    數字不同就是不同型號/不同項目，意思不一樣，不能因為字面像就當作
+//    同一個詞 (單靠編輯距離相似度並不可靠："recording1" 對 "recording2"
+//    相似度剛好等於門檻值，會被誤判成同一個詞，所以數字要另外強制比對)。
+// 3. 完全相等、或去掉字尾 s/es 的單複數變化 (channel/channels，這種文法上
 //    的差異不影響意思)、或編輯距離相似度達到門檻以上 (抓拼字差異)，才算
 //    同一個詞。
 function wordsMatch(a, b) {
   if (!a || !b) return false;
   if (a === b) return true;
+  const short = a.length <= b.length ? a : b;
+  const long = a.length <= b.length ? b : a;
+  if (long.startsWith(short) && /^\d+$/.test(long.slice(short.length))) {
+    return true;
+  }
   const digitsA = a.match(/\d+/g);
   const digitsB = b.match(/\d+/g);
-  if (digitsA || digitsB) {
-    if ((digitsA || []).join(",") !== (digitsB || []).join(",")) return false;
+  if (digitsA && digitsB) {
+    if (digitsA.join(",") !== digitsB.join(",")) return false;
   }
   // 直接檢查「其中一個字加上 s/es 是不是等於另一個字」，而不是兩邊各自
   // 去掉字尾再比對 stem 是否相等：像 "mode" 對 "modes"，去尾法會把
   // "modes" 誤砍成 "mod" (被 es 規則貪心吃掉單數本來就有的字尾 e)，
   // 跟 "mode" 對不起來；直接比對字尾就不會有這個問題。
-  const short = a.length <= b.length ? a : b;
-  const long = a.length <= b.length ? b : a;
   if (short.length >= 3 && (long === short + "s" || long === short + "es")) {
     return true;
   }
