@@ -22,6 +22,14 @@ const DEBOUNCE_MS = 300;
 // 這個門檻只用來擋「沒有命中任何關鍵字」的片段，命中關鍵字的片段一律保留
 // (見 keywordBoost / matched)，所以就算門檻抓得寬鬆一點，也不會被雜訊灌爆。
 const SIM_THRESHOLD = 0.3;
+// 不要固定只顯示前 5 筆：片段現在切得很細 (一個項目/一段話就是一筆)，
+// 有時候真正相關的結果只有 1、2 筆，硬湊滿 5 筆會塞進不太相關的內容；
+// 有時候同一個章節底下有 8、9 個子項目都跟查詢同樣相關，硬砍成 5 筆
+// 又會漏掉本來該顯示的結果。改成看分數：只要分數達到最高分的這個比例
+// 以上，就一起顯示，讓筆數自然跟著「這次查詢到底有多少相關結果」走。
+const RESULT_RELATIVE_CUTOFF = 0.7;
+// 極端情況 (例如查詢字詞多、命中太多片段) 的保底上限，避免整頁被灌爆。
+const RESULT_MAX_COUNT = 15;
 
 const state = {
   extractor: null, // transformers.js 的 feature-extraction pipeline
@@ -292,11 +300,17 @@ async function runSearch(query) {
 
   scored.sort((a, b) => b.adjustedScore - a.adjustedScore);
 
-  const results = scored
+  const passing = scored
     // 關鍵字完全命中的片段一定保留；沒命中關鍵字的片段才用語意分數把關，
     // 避免完全不相關的內容單靠語意分數的雜訊擠進結果
-    .filter((s) => s.matched || s.baseScore >= SIM_THRESHOLD)
-    .slice(0, 5)
+    .filter((s) => s.matched || s.baseScore >= SIM_THRESHOLD);
+
+  const topScore = passing.length ? passing[0].adjustedScore : 0;
+  const scoreFloor = topScore * RESULT_RELATIVE_CUTOFF;
+
+  const results = passing
+    .filter((s) => s.adjustedScore >= scoreFloor)
+    .slice(0, RESULT_MAX_COUNT)
     .map((s) => ({
       title: s.doc.title,
       url: s.doc.url,
