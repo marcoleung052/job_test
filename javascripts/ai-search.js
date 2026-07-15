@@ -27,7 +27,7 @@ const SIM_THRESHOLD = 0.3;
 // 有時候同一個章節底下有 8、9 個子項目都跟查詢同樣相關，硬砍成 5 筆
 // 又會漏掉本來該顯示的結果。改成看分數：只要分數達到最高分的這個比例
 // 以上，就一起顯示，讓筆數自然跟著「這次查詢到底有多少相關結果」走。
-const RESULT_RELATIVE_CUTOFF = 0.7;
+const RESULT_RELATIVE_CUTOFF = 0.8;
 // 極端情況 (例如查詢字詞多、命中太多片段) 的保底上限，避免整頁被灌爆。
 const RESULT_MAX_COUNT = 15;
 
@@ -225,7 +225,7 @@ function wordSimilarity(a, b) {
   return 1 - levenshteinDistance(a, b) / Math.max(a.length, b.length);
 }
 
-const HIGHLIGHT_SIMILARITY = 0.85;
+const HIGHLIGHT_SIMILARITY = 0.90;
 
 // 把片段裡「跟查詢字詞相近」的字都用 <mark> 包起來，讓使用者一眼就能看到
 // 「為什麼是這個結果」。不是要求整個字完全等於查詢字詞才醒目提示 —
