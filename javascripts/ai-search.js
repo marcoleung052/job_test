@@ -386,7 +386,13 @@ async function runSearch(query) {
   const scoreFloor = topScore * RESULT_RELATIVE_CUTOFF;
 
   const results = passing
-    .filter((s) => s.adjustedScore >= scoreFloor)
+    // 關鍵字完全命中的片段不受這個百分比門檻限制：一個字面上真的有搜尋字詞
+    // 的片段，語意分數不管高低都是有效結果，不該因為語意分數比最高分低
+    // 太多就被濾掉 (例如搜 "animal" 有 25 個片段字面上真的有這個字，
+    // 只因為語意分數分佈得比較開，硬套百分比門檻會只剩 3 筆)。
+    // 百分比門檻只用來收斂「沒有命中關鍵字、純粹靠語意分數擠進來」的那些
+    // 邊緣結果，避免它們把清單灌得太長太雜。
+    .filter((s) => s.matched || s.adjustedScore >= scoreFloor)
     .slice(0, RESULT_MAX_COUNT)
     .map((s) => ({
       title: s.doc.title,
