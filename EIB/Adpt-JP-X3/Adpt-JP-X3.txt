@@ -1,28 +1,28 @@
-Adpt-JP-X3
+§H1§ Adpt-JP-X3
 2025-12-09
-Overview
+§H3§ Overview
 The EIB SR Right 32ch is a 32-channel Electrode Interface Board (EIB) specifically designed for use with the KonteX X3SR stim-record headstage. This model is configured with the extension on the right side of the headstage, providing flexible layout options in constrained or custom implant environments.
-X3R64_HDMI Overview
-Dimension and Weight
+§H4§ X3R64_HDMI Overview
+§H3§ Dimension and Weight
 Weight 0.3g
 unit: mm
-Compatible Acquisition System
-Headstage Compatibility
+§H3§ Compatible Acquisition System
+§H4§ Headstage Compatibility
 Designed for use with the X3SR32 headstage.
-Electrode Compatibility
+§H4§ Electrode Compatibility
 Supports 32-channel electrode arrays equipped with Omnetics connectors.
-Key Features
-Channel Capacity
+§H3§ Key Features
+§H4§ Channel Capacity
 Supports 32 recording or stimulation channels.
-Channel Count
+§H4§ Channel Count
 32 independent channels.
-Connector Type
+§H4§ Connector Type
 Compatible with X3SR headstage micro-connectors.
-Right-Side Extension
+§H4§ Right-Side Extension
 Tailored layout for right-oriented cable management.
-Compact and Lightweight
+§H4§ Compact and Lightweight
 Minimizes implant footprint.
-High Signal Integrity
+§H4§ High Signal Integrity
 Optimized for low-noise stimulation and recording applications.
-Pin Map
+§H3§ Pin Map
 Adpt_JP_X3

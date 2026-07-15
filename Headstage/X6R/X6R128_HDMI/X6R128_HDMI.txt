@@ -1,37 +1,37 @@
-X6R128-HDMI
+§H1§ X6R128-HDMI
 2026-04-13
-Overview
+§H3§ Overview
 The X6R line is KonteX’s high-channel-count X-Headstage™, engineered for advanced neural recording applications requiring 128 channels or more. Despite its high channel density, the X6R maintains a compact form factor, approximately 10 mm x 10 mm and only a few millimeters thick, making it ideal for space-constrained experimental setups.
-X6R128_HDMI Overview
-Dimension and weight
+§H4§ X6R128_HDMI Overview
+§H3§ Dimension and weight
 Weight ~0.9g
 unit: mm
-Armor
+§H3§ Armor
 Optional protective covers are available for each headstage, offering extra protection and anchoring. These covers, crafted from Polyoxymethylene (POM), are lightweight and resistant to chemicals. There are three standard armor types, with options for customization in shape and material to suit diverse experimental requirements. It's important to note that the size, weight, and shape of these armors will differ across various X-Headstage™ models.
-S Armor
+§H4§ S Armor
 The S armors with ear loops around the side used to anchor headstage to the accessories such as electrode adapters.
-M Armor
+§H4§ M Armor
 The M armors are designed to provide protection while maintaining minimal size.
-IP Armor
+§H4§ IP Armor
 The IP armors are designed to provide the most protection and fully encase the X-Headstage. The X-Headstage™ with the optional parylene coating has been tested to the IP68 standard.
-Compatible Acquisition System
+§H3§ Compatible Acquisition System
 The X6R X-Headstage™ delivers optimal performance when paired with the XDAQ™ system. It is also adaptable for use with a range of open-source hardware and proprietary systems, although signal remap adapters may sometimes be required. Below is a list of known compatible systems;
 dditional unlisted platforms may also be capable of supporting the X6R:
 Intan Recording Controller (512ch or 1024ch)
 Intan Stim-Record Controller
 Open-Ephys acquisition box
 NeuroNexus Smartbox
-Key Features
-High Channel Count
+§H3§ Key Features
+§H4§ High Channel Count
 Supports 128 channels using two RHD2164 chips, enabling the acquisition of large-scale neural data.
-Compact Design
+§H4§ Compact Design
 Approximately 1 cm square, with minimal thickness to reduce implant burden.
-Micro-HDMI or Omnetics Connector
+§H4§ Micro-HDMI or Omnetics Connector
 Available in both micro-HDMI and optional Omnetics connector configurations to suit various interfacing requirements.
-3-Axis Accelerometer
+§H4§ 3-Axis Accelerometer
 Integrated for real-time activity and motion monitoring.
-Optional Protective Cover
+§H4§ Optional Protective Cover
 Can be configured with a protective casing to enhance physical durability and provide additional anchoring points during implantation.
-Pin Map
-X6R128 HDMI Probe side
-X6R128 HDMI System side
+§H3§ Pin Map
+§H4§ X6R128 HDMI Probe side
+§H4§ X6R128 HDMI System side

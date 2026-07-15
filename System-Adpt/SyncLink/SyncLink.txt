@@ -1,13 +1,13 @@
-SyncLink
+§H1§ SyncLink
 2026-04-17
-Overview
+§H3§ Overview
 The primary purpose of the SyncLink is to enable precise time-step synchronization between multiple XDAQ systems. This is especially critical when performing simultaneous XR and XSR experiments on the same subject, which require the use of separate XDAQ units.
 By synchronizing multiple XDAQs, the SyncLink ensures that data acquired from different headstage types are time-aligned, enabling accurate integration and analysis across systems.
-Components
-Dimension and Weight
+§H3§ Components
+§H3§ Dimension and Weight
 Weight 230g
 unit: mm
-Device Overview
+§H3§ Device Overview
 ① Sync Ports (IN / OUT) :
 Each SyncLink is equipped with Sync IN and Sync OUT ports.
 SyncLinks are interconnected using standard Ethernet cables.
@@ -24,7 +24,7 @@ These ports enable synchronization signal exchange between the SyncLink and conn
 SYS GND (4 mm) — The digital ground shared by the internal electronic circuitry.
 Chassis GND (4 mm) — Connected to the metal enclosure, the outer shield of the HDMI cable, and earth ground via the power supply.
 As a starting point, we recommend bonding SYS GND and Chassis GND together and using this common node to ground the Faraday cage shielding. Since environmental conditions can vary significantly, users should evaluate and adjust the grounding configuration to determine the most effective setup for their specific environment.
-LED Indicators
+§H3§ LED Indicators
 The SyncLink is equipped with multiple LEDs to indicate power and synchronization status:
 ① Power LED :
 Indicates that the SyncLink is powered on.
@@ -34,7 +34,7 @@ Indicates the status of Synchronization Channel 1.
 Indicates the status of Synchronization Channel 2.
 ④ Harp Port LED :
 Indicates the connection and activity status of the Harp port.
-Getting Started
+§H3§ Getting Started
 1. XDAQ and PC Setup
 Connect one SyncLink to one XDAQ, and connect each XDAQ to its corresponding PC. Each SyncLink operates as the synchronization interface for its associated XDAQ–PC pair.
 2. Interconnecting Sync SyncLinks

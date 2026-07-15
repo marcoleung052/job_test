@@ -1,33 +1,33 @@
-XDAQ AIO
+§H1§ XDAQ AIO
 2025-12-11
-Overview
+§H3§ Overview
 The XDAQ™ product line offers a suite of acquisition solutions designed to address the evolving needs of modern neuroscience research. These systems combine flexibility and performance, enabling integrated, multimodal approaches to a wide range of experimental techniques.
 As the top-tier model in the XDAQ series, the AIO sets a new standard for versatility and capability in neuroscience instrumentation, offering robust native support for large-scale neural recording, optogenetic stimulation, and synchronized video acquisition. It supports up to 1024 channels of high-resolution spike recordings and, in XSR mode, provides up to 128 channels that can be dynamically configured for recording or stimulation. It also delivers seamless compatibility with advanced electrode technologies—including Neuropixels probes—with the ability to operate up to four probes simultaneously for high-density, multi-region neural interrogation.
 With its high-bandwidth architecture, extensive I/O options, and precision timing synchronization, the AIO is purpose-built for real-time, closed-loop experiments, multimodal fusion, and large-scale parallel data acquisition across complex behavioral paradigms.
-Components
-Dimension And Weights
+§H3§ Components
+§H3§ Dimension And Weights
 Weight 3050g
 unit: mm
-Device Overview
-The AIO Front Panel
-The AIO Back Panel
-System LED Indicators
+§H3§ Device Overview
+§H4§ The AIO Front Panel
+§H4§ The AIO Back Panel
+§H4§ System LED Indicators
 ① STB LED:
 Indicates that adequate power is being supplied to the XDAQ™ from the power supply
 ② ON LED:
 Indicates that power has been supplied to the system and the system is turned ON.
-XDAQ Mode Indicator
-XSR Mode VStim Indicator
-System Status Indicator
-Headstage LED Indicators
+§H4§ XDAQ Mode Indicator
+§H4§ XSR Mode VStim Indicator
+§H4§ System Status Indicator
+§H3§ Headstage LED Indicators
 ① X-Headstage™ Port LED P1 - P4:
 Indicates that the headstage is properly detected; it will only illuminate after the software initialization is complete.
 ② Neuropixels Port LED 1 - 4:
-Setting Up The XDAQ™
+§H3§ Setting Up The XDAQ™
 Connect the DC plug of the supplied power supply, into the power input port.
-Turning on the XDAQ™
-Turning off the XDAQ™
-Setting Up The IO Ports
+§H4§ Turning on the XDAQ™
+§H4§ Turning off the XDAQ™
+§H3§ Setting Up The IO Ports
 ① Analog BNC Ports
 AIO features two pairs of wide range (±10V), general purpose 16-bit ADC (AI-01, AI-02) and DAC (AO-01, AO-02) channels, each equipped with a BNC connector for easy access. These ports operate on the same sample rate as the X-Headstage™ (XR, XSR Mode). In NP mode, the sample rate is fixed at 30kHz.
 ② Digital BNC Ports
@@ -56,40 +56,40 @@ This 3.5mm stereo jack enables audio monitoring of two selected headstage amplif
 ⚠
 IMPORTANT:
 Do not connect ports to unintended signal type. Permanet damage may occour.
-Setting Up The Headstage And Probe
-For Record-Only (XR) or Stim-Record (XSR) Experiments
+§H3§ Setting Up The Headstage And Probe
+§H4§ For Record-Only (XR) or Stim-Record (XSR) Experiments
 1. Connect the Type-D micro-HDMI connector of the stock KonteX HDMI cable to the X-Headstage™.
 2. Connect the Type-A HDMI connector to one of the XDAQ™ Headstage Ports. Always use Port 1, as other ports may be unavailable depending on the license purchased with the XDAQ™.
 3. Optionally, a commutator can be used between the headstage and the XDAQ™ Headstage Ports.
 4. Plug the electrode into the headstage.
-For Neuropixels Experiments (NP Mode)
+§H4§ For Neuropixels Experiments (NP Mode)
 1. Connect the Omnetics connector of the Neuropixels cable to the headstage.
 2. Connect the USB-C connector of the cable to one of the Neuropixels Ports (Port 1–4).
 3. Optionally, a commutator can be used between the Neuropixels headstage and the XDAQ™. Refer to the Commutator User Manual for more information.
 4. Insert the Neuropixels probe into the headstage by connecting the flex cable of the Neuropixels probe to the headstage. Note: The metal pads on the flex cable should face downward when inserting it into the headstage. Flip the flex cable connector down to lock the probe in place.
-Installing Driver & Software
-1. Connecting to a PC
+§H3§ Installing Driver & Software
+§H4§ 1. Connecting to a PC
 Use the supplied Thunderbolt cable to connect the Computer Port on the XDAQ™ to a Thunderbolt port on the PC. The cable is identifiable by the lightning bolt symbol on its connector.
 The XDAQ™ can also supply power to the connected computer: CORE2 can deliver up to 15 W, sufficient to power most laptops. The Peripheral Port supplies up to 15 W of power.
 The Peripheral Port can also be used to connect a Thunderbolt accessory, such as a storage device, which will be accessible from the host PC.
-2. Download the driver
+§H4§ 2. Download the driver
 Windows:
 https://developer.kontex.io
 macOS: Search for XDAQ™ from the App Store
 Linux: Contact us
-3. Install the driver
+§H4§ 3. Install the driver
 Windows
 1. Before installation, ensure that a "PCI Simple Communications Controller" is listed in the Device Manager.
 2. Download and unzip the latest XDAQ™ driver from the KonteX website.
 3. Locate "XDAQ.inf", right-click on it, and select “Install.”
 4. Once the driver is successfully installed, this entry will update to "KonteX XDAQ".
-MacOS
+§H4§ MacOS
 1. Go to App Store, search for "XDAQ" and install "KONTEX XDAQ" app.
 ２. Open the XDAQ™ Application ("XDAQ Dext Loading Utils")
 ３. Click on "Load driver" button, A system message box will appear, click "Open System Settings". If you clicked OK instead, go to: System Settings / General / Login Items & Extensions
 ４. Enable XDAQ Dext Loading Utils
 ５. The App should display "Loading Status: Load successful"
-4. Download the software
+§H4§ 4. Download the software
 XDAQ can run on popular open source applications.
 Download the latest from our
 website
@@ -100,14 +100,14 @@ XSR Headstages (XSR Mode):
 XDAQ-RHX
 Neuropixels (NP Mode):
 Open-Ephys ("Install XDAQ Neuropixels Plugin")
-Verify Device Connection
+§H4§ Verify Device Connection
 Once the PC is connected and the XDAQ™ is powered on, it should be automatically recognized by the operating system. For additional details, refer to the Install the Driver section.
 ⚠
 IMPORTANT :
 A USB-C data cable cannot substitute for the supplied Thunderbolt cable when connecting to the PC.
 PRO TIP :
 The XDAQ™ is compatible with Thunderbolt cables up to 3 meters in length. If stock Thunderbolt cable will not be used, be sure to select an Intel/Apple-certified cable (identified by a lightning bolt symbol) that complies with Thunderbolt 3 or higher specification.
-Updating The Firmware
+§H3§ Updating The Firmware
 KonteX may occationally release new firmwares for bug fixes and new functionalities. Additional capabilities may be enabled if they were not selected in the initial purchase (e.g. adding the SR128 capability or Neuropixels support).
 Check KonteX website (
 https://developer.kontex.io
@@ -115,18 +115,18 @@ https://developer.kontex.io
 When XDAQ™ is up to date
 Upgrading XDAQ™
 When XDAQ™ is not connected
-Starting The Application
-Check your firmware version before launching the application
+§H3§ Starting The Application
+§H4§ Check your firmware version before launching the application
 Before launching the application, please update the system firmware to the latest version.
 Systems with the default “0-0-0” configuration will not be recognized properly by the software until the firmware update is completed.
 Please refer to the Firmware Update section in this manual for detailed instructions before proceeding with any recording or stimulation experiments.
-Run the record-only experiment (XR Mode)
+§H4§ Run the record-only experiment (XR Mode)
 1. Connect the XR headstage (X3R, X6R, or XeR) to the system using the KonteX HDMI cable.
 2. Launch a compatible application, such as Open-Ephys or XDAQ-RHX, downloaded from the KonteX website.
 3. If the XR Mode LED is not illuminated (indicating that the XR firmware is not loaded), the system will automatically boot into XR Mode when prompted by the software. This process may take a few minutes, after which the XR Mode LED should turn on.
 4. Once the application launches, it should detect the headstage and display the number of available channels.
 5. If the software does not detect the headstage, ensure that an XR-type headstage is correctly connected and securely attached. Restart the application or rescan the ports.
-Run the stimulation-recording experiment (XSR Mode)
+§H4§ Run the stimulation-recording experiment (XSR Mode)
 1. Connect the XSR headstage (X3SR or XeSR) to the system using the KonteX HDMI cable.
 2. Launch a compatible application, such as Open-Ephys or XDAQ-RHX, downloaded from the KonteX website.
 3. If the XR Mode LED is not illuminated (indicating that the XR firmware is not loaded), the system will automatically boot into XR Mode when prompted by the software. This process may take a few minutes, after which the XR Mode LED should turn on.
@@ -135,7 +135,7 @@ Run the stimulation-recording experiment (XSR Mode)
 ⚠
 IMPORTANT :
 Using non-KonteX HDMI cables is possible but not recommended. Many commercial cables contain active electronics that can interfere with XDAQ™ communication and potentially damage the XDAQ™ system or the X-Headstage™.
-Run the Neuropixels experiment (NP Mode)
+§H4§ Run the Neuropixels experiment (NP Mode)
 1. Connect the Neuropixels probe and headstage to the XDAQ™.
 2. Copy the Neuropixels calibration data provided by IMEC into "OpenEphys/Calibrationinfo" folder.
 3. Launch the compatible application (OpenEphys XDAQ™ Neuropixels plugin, currently the only compatible open-source application) downloaded from the KonteX website.
@@ -146,37 +146,37 @@ Run the Neuropixels experiment (NP Mode)
 ⚠
 IMPORTANT :
 Currently, it is not possible to use Probes/Headstages from different modes simultaneously (e.g. X3SR32 and X6R128 headstages simultaneously or X3SR32 headstage/probe with the Neuropixels).
-PC Requirement
+§H3§ PC Requirement
 The XDAQ™ AIO requires a modern PC with a minimum of a 6-core CPU, 16 GB of RAM, and at least one Thunderbolt 3 (or higher) port, identifiable by the lightning bolt symbol.
-Reference PC configuration
+§H4§ Reference PC configuration
 Apple Mac Mini M4 PRO 16GB
 MSI Cubi Series with i7 or above
 ⚠
 IMPORTANT:
 While Thunderbolt and USB-C share the same physical connector, they are not interchangeable. Thunderbolt offers significantly higher data transfer rates and requires specific compatible cables. Retrofitting a PC with a Thunderbolt add-on card is generally impractical, as these cards are model-specific and often incompatible with other systems. To prevent compatibility issues, users should verify that their PC includes native Thunderbolt support.
-XDAQ™ DB25 IO Connector Pinout
+§H3§ XDAQ™ DB25 IO Connector Pinout
 The DB25 connector on the XDAQ™ offers access to additional I/O ports and system signals. A breakout board is available to facilitate easy access to these signals via BNC connectors.
 DAQ ON: Logic high at onset of a recording session
 Sample CLK: is the sampling clock used to drive the X-Headstage™
 All digital inputs (DI-01 to DI-08) are compatible with both 3.3V and 5V digital signals. The BNC digital output ports (DO-01, DO-02) can be configured via software to output either a 3.3V or 5V logic high signal. The digital output channels on the DB25 connector (DO-03 to DO-08) are designed for 3.3V logic high output.
-Video Capture
-Comprehensive video capture of the test subject
+§H3§ Video Capture
+§H4§ Comprehensive video capture of the test subject
 Simultaneous multi-camera (4ch) with guaranteed recording alignment with neural signal
 High frame rate (>100FPS) capture
 Synchronized DAQ time stamps and IO events directly encoded in the video meta data
 Supports wide variety of cameras from webcam to industrial
-Software resources & downloads
+§H4§ Software resources & downloads
 For camera setup instructions, recording configuration, and real-time viewing via Thor Vision, please visit our official software page
 Thor Vision Software Portal
 ⚠
 IMPORTANT :
 To ensure optimal performance distribution, users are advised to connect cameras or USB hubs evenly across the four USB ports on both sides of the system.
-Accessory
-Technical Specifications - AIO
+§H3§ Accessory
+§H3§ Technical Specifications - AIO
 1. XR mode acquisition specifications are based on Intan Technologies’ RHD2000 series IC. In case of any discrepancies, the manufacturer's specifications shall take precedence.
 2. The acquisition and stimulation specifications for XSR Mode are based on Intan Technologies' RHS2000 series IC. In case of any discrepancies, the manufacturer's specifications shall take precedence.
 3. NP mode acquisition specifications are derived from IMEC’s Neuropixels 1.0 and 2.0 electrode. In case of any discrepancies, the manufacturer's specifications shall take precedence.
-Model Comparison
+§H3§ Model Comparison
 1. Neuropixel support (NP Mode) can be configured without the XR Mode or XSR Mode for passive probes.
 2. Number of animals monitored can be increased using Port Expander, which provide each animal monitored with independent and isolated ground circuit.
 3. Adpt-SR64 adapter is required to drive 64ch X3SR64 headstage.

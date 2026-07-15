@@ -1,28 +1,28 @@
-Index
+§H1§ Index
 2026-03-23
-Overview
+§H3§ Overview
 The NeuroNexus X3 Dual 16ch Probe Adapter is designed to remap a single 32-channel X3 input connector into two independent 16-channel interfaces, enabling the use of two NeuroNexus X-series 16-channel probes with X3 headstages.
 This adapter expands probe compatibility while preserving signal integrity, allowing researchers to flexibly integrate multiple low-channel-count probes within an X3-based acquisition system.
-Adpt- NNx_X3_16ch Overview
-Dimension
+§H4§ Adpt- NNx_X3_16ch Overview
+§H3§ Dimension
 unit: mm
-Connector
-Headstage
+§H3§ Connector
+§H4§ Headstage
 Molex PN: 505070-3422
-Probe
+§H4§ Probe
 16-channel NeuroNexus X-series connectors
-Compatibility
+§H4§ Compatibility
 X3 Headstage
 NeuroNexus X-series 16-channel probes
-Key Features
-Probe Compatibility Expansion
+§H3§ Key Features
+§H4§ Probe Compatibility Expansion
 Allows a single 32-channel X3 input to support two 16-channel NeuroNexus X-series probes.
-Channel Remapping
+§H4§ Channel Remapping
 Internally remaps channels to ensure correct and deterministic signal routing from each probe to the acquisition system.
-Compact and Modular Design
+§H4§ Compact and Modular Design
 Maintains a small footprint suitable for space-constrained experimental setups.
-Signal Integrity Preservation
+§H4§ Signal Integrity Preservation
 Designed with matched routing to minimize crosstalk and maintain low-noise performance.
-Pin Map
+§H3§ Pin Map
 Headstage side
 Probe side

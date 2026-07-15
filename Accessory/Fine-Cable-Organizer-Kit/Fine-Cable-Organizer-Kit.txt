@@ -1,14 +1,14 @@
-Fine-Cable Organizer Kit
+§H1§ Fine-Cable Organizer Kit
 2026-02-06
-Overview
+§H3§ Overview
 The Fine-Cable Organizer Kit is designed for use with the Commutator Pro to manage fine cables with lengths of 1 m, 2.5 m, or 5 m.
 This accessory allows excess cable length to be neatly stored without wrapping cables around the Commutator’s rotating arm. It helps prevent tangling when multiple fine cables are used simultaneously, improving reliability and ease of setup during experiments.
-Dimension
+§H3§ Dimension
 unit: mm
-Compatibility
+§H3§ Compatibility
 Fine cables with lengths of 1 m / 2.5 m / 5 m.
 Designed specifically for use with Commutator Pro.
-Operation
+§H3§ Operation
 1. Determine Cable Length
 Determine the required cable length based on the experimental setup to allow unrestricted movement.
 2. Manage Excess Cable

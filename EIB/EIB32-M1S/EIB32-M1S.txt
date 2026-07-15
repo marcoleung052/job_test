@@ -1,18 +1,18 @@
-EIB32-M1S
+§H1§ EIB32-M1S
 2025-12-09
-Overview
+§H3§ Overview
 EIB32-M1S is designed for customers making in-house microdrive hardware and provides electrical connection between the electrode wires and the X-Headstage.
-EIB32-M1S Overview
-Components
-Dimension
+§H3§ EIB32-M1S Overview
+§H3§ Components
+§H3§ Dimension
 Weight:0.4 g
 unit: mm
-Connection Orientation
+§H3§ Connection Orientation
 When plugging the adapter into the EIB, ensure that the side with the X-Headstage is aligned with the silkscreen print mark “G.”
 The triangle on the adapter and the EIB should be on the same side, even if the triangle on the EIB is partially covered.
-Compatible Headstages
+§H3§ Compatible Headstages
 This EIB can be connected to X3R32 or X3R64 X-Headstages with the Adpt-X3R32-M1P32. To use with X3SR32 X-Headstage, SR Remapper Adapter must be used in combination.
-Pin Map
+§H3§ Pin Map
 EIB16-M1S
 NOTE:
 Pads are routed to the immediate

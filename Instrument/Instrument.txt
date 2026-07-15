@@ -1,5 +1,5 @@
-Instrument
+§H1§ Instrument
 KONTEX Instruments are designed to support the development, validation, and troubleshooting of neural interface systems. These tools provide researchers and engineers with reliable platforms for signal simulation, connectivity verification, and system diagnostics, helping ensure stable performance in neural recording experiments.
 Our instrument lineup focuses on improving system reliability, simplifying testing procedures, and accelerating the development of neuroscience hardware setups.
-Inst-BrainSim
-Short Circuit Analyzer
+§H3§ Inst-BrainSim
+§H3§ Short Circuit Analyzer

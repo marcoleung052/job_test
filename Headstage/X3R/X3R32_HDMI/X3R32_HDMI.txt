@@ -1,41 +1,41 @@
-X3R32-HDMI
+§H1§ X3R32-HDMI
 2026-04-13
-Overview
+§H3§ Overview
 The X3R32 is a compact and high-performance 32-channel recording headstage designed for precise neural signal acquisition. Built on one RHD2132 amplifier, it delivers a single 32-channel data stream, ensuring high-fidelity recording and seamless integration with compatible acquisition software.
-X3R32_HDMI Overview
-Dimension and weight
+§H4§ X3R32_HDMI Overview
+§H3§ Dimension and weight
 Weight ~1.1g
 unit: mm
-Armor
+§H3§ Armor
 Optional protective covers are available for each headstage, offering extra protection and anchoring. These covers, crafted from Polyoxymethylene (POM), are lightweight and resistant to chemicals. There are three standard armor types, with options for customization in shape and material to suit diverse experimental requirements. It's important to note that the size, weight, and shape of these armors will differ across various X-Headstage™ models.
-S Armor
+§H4§ S Armor
 The S armors with ear loops around the side used to anchor headstage to the accessories such as electrode adapters.
-M Armor
+§H4§ M Armor
 The M armors are designed to provide protection while maintaining minimal size.
-IP Armor
+§H4§ IP Armor
 The IP armors are designed to provide the most protection and fully encase the X-Headstage. The X-Headstage™ with the optional parylene coating has been tested to the IP68 standard.
-Compatible Acquisition System
+§H3§ Compatible Acquisition System
 The X-Headstage™ delivers optimal performance when paired with the XDAQ™ system. It is also adaptable for use with a range of open-source hardwares and proprietary systems, though signal remap adapters may sometimes be necessary. Below is a list of known compatible systems, and it's important to note that other unlisted solutions may also be capable of driving the X-Headstage:
 Intan Recording Controller (512ch or 1024ch)
 Intan Stim-Record Controller
 Open-Ephys acquisition box
 NeuroNexus Smartbox
-Motion Tracking
+§H3§ Motion Tracking
 Each XR headstages is by default configured with an analog 3-axis accelerometer that will be sampled at the same rate as the headstage inputs and the data will be available in the AUX1, AUX2, AUX3 signal in the data package. It is NOT possible to purchase XR headstages without the accelerometer.
 XSR Headstages does not support 3-axis accelerometer.
-Key Features
-Compact & Lightweight
+§H3§ Key Features
+§H4§ Compact & Lightweight
 Measuring approximately14.58 × 11.3 × 6.7 mm, the X3R32 minimizes weight and strain on subjects.
-High-Quality Signal Acquisition
+§H4§ High-Quality Signal Acquisition
 Utilizes an RHD2132 amplifier for low-noise, high-resolution neural recording.
-Data Output
+§H4§ Data Output
 Generates one 32-channel data stream, fully compatible with supported software.
-Connectivity Options
+§H4§ Connectivity Options
 Available with either a micro-HDMI connector or an optional Omnetics connector for flexible system integration.
-Integrated 3-Axis Accelerometer
+§H4§ Integrated 3-Axis Accelerometer
 Enables real-time motion tracking and activity monitoring.
-Optional Protective Cover
+§H4§ Optional Protective Cover
 Provides additional protection and anchoring for enhanced durability in experimental setups.
-Pin Map
-X3R32 HDMI Probe side
-X3R32 HDMI System side
+§H3§ Pin Map
+§H4§ X3R32 HDMI Probe side
+§H4§ X3R32 HDMI System side

@@ -1,9 +1,9 @@
-SAdpt-XDAQ-Smartlink
+§H1§ SAdpt-XDAQ-Smartlink
 2026-04-11
-Overview
+§H3§ Overview
 The XDAQ to Smartlink Adapter enables seamless integration of NeuroNexus Smartlink headstages directly with the XDAQ system. This adapter allows researchers to bypass intermediary commutators and connect Smartlink-compatible headstages via HDMI interface.
-XDAQ to Smartlink Adapter Overview
+§H3§ XDAQ to Smartlink Adapter Overview
 SAdpt-XDAQ-Smartlink
-Dimension
+§H3§ Dimension
 unit: mm
-Pin Map
+§H3§ Pin Map

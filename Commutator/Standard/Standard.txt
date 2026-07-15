@@ -1,15 +1,15 @@
-Standard Commutator HDMI
+§H1§ Standard Commutator HDMI
 2026-01-30
-Overview
+§H3§ Overview
 The Standard Commutator HDMI is a passive, low-torque commutator designed for KonteX X-Headstage™ systems. It enables continuous mechanical rotation while maintaining stable electrical connections, minimizing cable twisting and mechanical stress during freely moving animal experiments. The commutator is compatible with XR headstages (up to 256 channels) and XSR headstages (up to 32 channels) using an HDMI-based interface.
 This commutator is intended for use in freely moving or rotating experimental setups, where continuous rotation is required without compromising signal continuity or introducing additional electrical noise.
-Commutator STD Overview
+§H3§ Commutator STD Overview
 The commutator operates as a fully passive device, containing no active electronics or signal conditioning components.
 Signal transmission is maintained through internal rotating contacts, allowing unrestricted rotational motion while preserving channel integrity.
 The passive design ensures zero power consumption and eliminates potential noise sources associated with active circuitry.
-Dimension
+§H3§ Dimension
 unit: mm
-Key Features
+§H3§ Key Features
 Passive Signal Routing
 Fully passive design with no active electronics, ensuring transparent signal transmission without added noise or power requirements.
 Low-Torque Continuous Rotation
@@ -22,7 +22,7 @@ Optimized Mechanical Design
 Designed for overhead mounting with durable construction to support repeated rotation and long-term experimental use.
 Reduced Cable and Connector Wear
 Proper cable routing around the rotating shaft reduces strain, extending cable and connector lifespan.
-Assembly Process
+§H3§ Assembly Process
 ① Mounting the Commutator
 Securely mount the Standard Commutator HDMI (Commutator STD) above the behavior box or experimental arena. Ensure the commutator is firmly fixed and aligned vertically to allow smooth, unrestricted rotation during operation.
 ② Headstage-to-Commutator Connection
@@ -37,17 +37,13 @@ NOTE:
 1. Mount the commutator in a vertical orientation to ensure optimal rotational performance.
 2. Avoid excessive axial or lateral forces on the HDMI connectors.
 3. Ensure sufficient cable slack to allow free rotation without tension.
-Using the Commutator STD with Intan or Open Ephys Acquisition Systems
-Front side
-uHDMI to RHD adapter
-SKU: SAdpt-uHDMI-OM12
-uHDMI to RHS Adapter
-SKU: SAdpt-uHDMI-OM16
-Bottom view
-XDAQ to RHD headstage adapter
-SKU: SAdpt-XDAQ-OM12
-XDAQ to RHS headstage adapter
-SKU: SAdpt-XDAQ-OM16
-Undermount Cutout Installation Sepcification
-Cutout Dimensions Diagram
+§H3§ Using the Commutator STD with Intan or Open Ephys Acquisition Systems
+§H4§ Front side
+§H4§ uHDMI to RHD adapter SKU: SAdpt-uHDMI-OM12
+§H4§ uHDMI to RHS Adapter SKU: SAdpt-uHDMI-OM16
+§H4§ Bottom view
+§H4§ XDAQ to RHD headstage adapter SKU: SAdpt-XDAQ-OM12
+§H4§ XDAQ to RHS headstage adapter SKU: SAdpt-XDAQ-OM16
+§H3§ Undermount Cutout Installation Sepcification
+§H4§ Cutout Dimensions Diagram
 unit: mm

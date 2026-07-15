@@ -1,29 +1,29 @@
-Adpt-OM32
+§H1§ Adpt-OM32
 2026-04-23
-Overview
+§H3§ Overview
 The Adpt-Omnetics series is designed to interface KonteX X3R headstages with probes using a support 16-, 32-, and 64-channel Omnetics connector's probe. Available in three configurations— standard with screw-locking for secure attachment, no-lock for a reduced footprint, and vertical to provide additional clearance near the craniotomy—these adapters enable flexible integration into diverse experimental setups while maintaining a compact and reliable connection.
-Adpt-OM32 Overview
-Adpt-OM32
-Connector
-Headstage
+§H4§ Adpt-OM32 Overview
+§H4§ Adpt-OM32
+§H3§ Connector
+§H4§ Headstage
 Molex PN: 505070-3422
-Probe
+§H4§ Probe
 Omnetics PN: A79017-001
-Dimension
-OM32 V1 & V1.1
+§H3§ Dimension
+§H4§ OM32 V1 & V1.1
 unit: mm
-OM32 V2
-Versions
-V1: Identified by PCB marking '100016' or by the blue board color when the marking is absent.
+§H4§ OM32 V2
+§H3§ Versions
+§H4§ V1: Identified by PCB marking '100016' or by the blue board color when the marking is absent.
 original design
-V1.1: Identified by 100016A on PCB
-V2: Identified by 100016B on PCB
-Ground & Reference Configuration
-OM32 V1 & V1.1 Adapter (SKU: Adpt-OM32v1 & V1.1)
+§H4§ V1.1: Identified by 100016A on PCB
+§H4§ V2: Identified by 100016B on PCB
+§H3§ Ground & Reference Configuration
+§H4§ OM32 V1 & V1.1 Adapter (SKU: Adpt-OM32v1 & V1.1)
 Ground (G) and reference (R) signals are independent by default.
 To short them together at the adapter, solder a short wire between the G and R pads.
-Adpt-OM32
-OM32 V2 Adapter (SKU: Adpt-OM32v2)
+§H4§ Adpt-OM32
+§H4§ OM32 V2 Adapter (SKU: Adpt-OM32v2)
 Proper grounding and referencing are essential for high-quality signal acquisition. Always ensure that both ground and reference signals are securely connected. If either is left floating, significant noise may be introduced into the recordings.
 ER: Solder pad for external reference (wire), this solder pad is connected fo signal R.
 EG: Solder pad for external ground (wire), this solder pad is connected fo signal G.
@@ -33,13 +33,13 @@ By default, the headstage ground (G) and reference (R) are independent.
 - Ground (G) is sourced from the probe ground (PG). To use an external ground (EG) via the adapter, cut JP2 and solder a wire to the EG pad.
 - Reference (R) is sourced from the probe reference (PR). To use an external reference (ER) via the adapter, cut JP3 and solder a wire to the ER pad.
 - Shielding (S) is connected by default to ground (G). To use an external shielding signal (ES) via the adapter, cut JP4 and solder a wire to the ES pad.
-Configuring the Jumper Pad
+§H4§ Configuring the Jumper Pad
 ① To connect the jumper, apply solder around JP1 until a solid solder bead forms.
 ② To disconnect, use a soldering iron and desoldering mesh to remove the solder bridging the jumper pad.
 If the jumper pas has a default short configuration, use a scalpel or precision blade to cleanly sever the trace.
 ③ After modification, clean the area thoroughly using isopropyl alcohol or flux remover to eliminate any residual material.
 ④ Always verify connectivity using a multimeter to ensure proper configuration.
-Pin Map
-V1: Identified by PCB marking '100016' or by the blue board color when the marking is absent.
-V1.1: Identified by 100016A on PCB
-V2: Identified by 100016B on PCB
+§H3§ Pin Map
+§H4§ V1: Identified by PCB marking '100016' or by the blue board color when the marking is absent.
+§H4§ V1.1: Identified by 100016A on PCB
+§H4§ V2: Identified by 100016B on PCB

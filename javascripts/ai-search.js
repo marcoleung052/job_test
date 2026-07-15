@@ -136,23 +136,79 @@ function cosineSimilarityAll(queryVec) {
 // 沒辦法只靠一個語意分數門檻可靠篩選。所以只要片段裡真的完整出現查詢字串
 // (或每個查詢字詞)，就視為「命中關鍵字」，不管語意分數多低都不該被濾掉，
 // 語意分數在這種情況下只用來排序，不用來把關。
-function keywordBoost(text, queryLower, queryWords) {
+//
+// idfWeights: 像「core2 led on」這種「產品型號 + 通用字詞」的查詢，若每個
+// 命中字詞都給同樣的加分，"led"/"on" 這種幾乎每一頁都有的字會稀釋掉
+// "core2" 這種真正能鎖定產品的關鍵字，導致排名前面全是別的產品、但同樣
+// 提到 LED 的片段。所以命中字詞的加分要依照它在整個資料庫裡多罕見來加權
+// (類似 IDF)：越少片段出現的字詞，加分越高；title 命中的加分也比 text 命中高，
+// 因為產品型號通常只會出現在標題。
+function keywordBoost(title, text, queryLower, queryWords, idfWeights) {
+  const titleLower = title.toLowerCase();
   const textLower = text.toLowerCase();
   let boost = 0;
   let matched = false;
-  if (queryLower && textLower.includes(queryLower)) {
+  if (queryLower && (titleLower + " " + textLower).includes(queryLower)) {
     boost += 0.15;
     matched = true;
   }
   if (queryWords.length > 1) {
-    const hitCount = queryWords.filter((w) => textLower.includes(w)).length;
-    boost += 0.05 * hitCount;
+    let hitCount = 0;
+    for (const w of queryWords) {
+      const idf = idfWeights[w] || 1;
+      if (titleLower.includes(w)) {
+        boost += 0.06 * idf;
+        hitCount++;
+      } else if (textLower.includes(w)) {
+        boost += 0.015 * idf;
+        hitCount++;
+      }
+    }
     if (hitCount === queryWords.length) matched = true;
   }
   return { boost, matched };
 }
 
-function renderResults(results) {
+// 用查詢字詞在整個文件庫裡出現的片段數估計「這個字詞有多罕見」，愈少片段
+// 提到就給愈高權重 (類似 IDF)。是在目前已經下載到瀏覽器記憶體裡的
+// state.documents 上即時算，不用額外下載資料，1700 多筆片段掃幾個字詞
+// 花不到幾毫秒。
+function computeIdfWeights(queryWords) {
+  const docs = state.documents;
+  const n = docs.length;
+  const weights = {};
+  for (const w of queryWords) {
+    let df = 0;
+    for (const doc of docs) {
+      if ((doc.title + " " + doc.text).toLowerCase().includes(w)) df++;
+    }
+    weights[w] = Math.log((n + 1) / (df + 1)) + 0.5;
+  }
+  return weights;
+}
+
+function escapeRegExp(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+// 把片段裡符合查詢字詞的地方、以及看起來像規格數字的地方 (像 "512"、"32"、
+// "10V" 這種，使用者搜規格時通常最想直接看到的就是數字) 用 <mark> 包起來，
+// 讓使用者一眼就能看到「為什麼是這個結果」，不用整段慢慢讀。
+// 一定要先 escapeHtml 再插入 <mark>，避免片段內容裡本來就有的 < > & 被誤判成標籤。
+function highlightSnippet(text, queryWords) {
+  const escaped = escapeHtml(text);
+  const wordPatterns = queryWords
+    .filter(Boolean)
+    .map(escapeRegExp)
+    .sort((a, b) => b.length - a.length);
+  const alternatives = wordPatterns.length
+    ? [...wordPatterns, "\\d[\\d.,]*"]
+    : ["\\d[\\d.,]*"];
+  const re = new RegExp(`\\b(?:${alternatives.join("|")})\\b`, "gi");
+  return escaped.replace(re, (m) => `<mark>${m}</mark>`);
+}
+
+function renderResults(results, queryWords) {
   if (!results.length) {
     setMeta("沒有找到符合的文件");
     setList("");
@@ -165,8 +221,8 @@ function renderResults(results) {
         '<li class="md-search-result__item">' +
         '<a href="' + escapeHtml(r.url) + '" class="md-search-result__link">' +
         '<article class="md-search-result__article md-search-result__article--document">' +
-        "<h1>" + escapeHtml(r.title) + "</h1>" +
-        "<p>" + escapeHtml(r.text) + "</p>" +
+        "<h1>" + highlightSnippet(r.title, queryWords) + "</h1>" +
+        "<p>" + highlightSnippet(r.text, queryWords) + "</p>" +
         "</article>" +
         "</a>" +
         "</li>"
@@ -193,9 +249,10 @@ async function runSearch(query) {
 
   const queryLower = query.trim().toLowerCase();
   const queryWords = queryLower.split(/\s+/).filter(Boolean);
+  const idfWeights = queryWords.length > 1 ? computeIdfWeights(queryWords) : {};
 
   const scored = state.documents.map((doc, i) => {
-    const { boost, matched } = keywordBoost(doc.title + " " + doc.text, queryLower, queryWords);
+    const { boost, matched } = keywordBoost(doc.title, doc.text, queryLower, queryWords, idfWeights);
     return { doc, baseScore: scores[i], adjustedScore: scores[i] + boost, matched };
   });
 
@@ -213,7 +270,7 @@ async function runSearch(query) {
       score: s.adjustedScore,
     }));
 
-  renderResults(results);
+  renderResults(results, queryWords);
 }
 
 function onQueryChanged(event) {

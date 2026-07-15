@@ -1,4 +1,4 @@
-Home
+§H1§ Home
 XDAQ
 Headstage
 Commutator
@@ -7,7 +7,7 @@ Probe Adapter
 System Adapter
 Accessory
 Instrument
-Guide Updates
+§H3§ Guide Updates
 2026-06-29
 X3SR64-HDMI
 2026-06-26

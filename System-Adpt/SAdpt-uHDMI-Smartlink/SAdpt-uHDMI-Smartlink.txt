@@ -1,11 +1,11 @@
-SAdpt-uHDMI-Smartlink
+§H1§ SAdpt-uHDMI-Smartlink
 2026-04-14
-Overview
+§H3§ Overview
 The X-Headstage™ to Smartlink Adapter is a precision-engineered probe-side interface specifically designed to bridge KonteX RHD-based X-Headstage™ systems with the NeuroNexus hardware ecosystem.
 By converting the native RHD signal output into the standardized Smartlink interface, this adapter enables the seamless integration of KonteX headstages into NeuroNexus Smartbox acquisition workflows.
 Engineered to maintain strict compatibility with the RHD architecture, this adapter preserves precise channel mapping and high signal integrity, ensuring reliable data transmission when interfacing between the two platforms.
-Smartbox systems to KonteX RHD X-Headstage™ Overview
+§H3§ Smartbox systems to KonteX RHD X-Headstage™ Overview
 SAdpt-uHDMI-Smartlink
-Dimension
+§H3§ Dimension
 unit: mm
-Pin Map
+§H3§ Pin Map

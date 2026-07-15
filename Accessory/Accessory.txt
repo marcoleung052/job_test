@@ -1,10 +1,10 @@
-Accessory
+§H1§ Accessory
 KonteX accessories are designed to extend the functionality, flexibility, and usability of the XDAQ™ acquisition system and X-Headstage™ platforms.
 This ecosystem of modular components enables seamless integration between probes, headstages, and external systems, supporting a wide range of experimental configurations in neuroscience research.
 From signal interfacing and system integration to mechanical support and cable management, KonteX accessories provide reliable and scalable solutions for both standard and customized applications.
-Fine-Cable Organizer Kit
-Tester Stim X3
-Tester Z X3
-XHS Screw
-XHS Tool
-Cable
+§H3§ Fine-Cable Organizer Kit
+§H3§ Tester Stim X3
+§H3§ Tester Z X3
+§H3§ XHS Screw
+§H3§ XHS Tool
+§H3§ Cable

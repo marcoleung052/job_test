@@ -1,28 +1,28 @@
-SAdpt-XDAQ-BNC
+§H1§ SAdpt-XDAQ-BNC
 2026-04-17
-Overview
+§H3§ Overview
 This breakout board is designed to make the I/O pins and signals from XDAQ's DB25 connector more easily accessible through BNC connectors.
-SAdpt-XDAQ-BNC Overview
-Dimension
+§H4§ SAdpt-XDAQ-BNC Overview
+§H3§ Dimension
 unit: mm
-Usage Instructions
-Connection Setup
+§H3§ Usage Instructions
+§H4§ Connection Setup
 1. Ensure the XDAQ system is powered off before connecting the breakout board.
 2. Connect the DB25 connector on the breakout board to the XDAQ DB25 port.
 3. Secure the connection to prevent accidental disconnection during operation.
-Connecting External Equipment
+§H4§ Connecting External Equipment
 1. Use standard BNC cables to connect the desired signals to external instruments.
 2. Confirm signal direction and function based on the XDAQ I/O configuration.
 3. Verify that connected devices use compatible voltage levels.
-Operation
+§H4§ Operation
 Configure the I/O behavior in the XDAQ software as required.
 Signals present on the DB25 connector will be directly available on the corresponding BNC connectors.
-Connector
-XDAQ Systems
+§H3§ Connector
+§H4§ XDAQ Systems
 Compatible with XDAQ DB25 I/O ports
-External Equipment
+§H4§ External Equipment
 Oscilloscopes
 Logic analyzers
 Trigger and synchronization devices
 External control and monitoring equipment
-Pin Map
+§H3§ Pin Map

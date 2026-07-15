@@ -1,17 +1,17 @@
-Inst-BrainSim
+§H1§ Inst-BrainSim
 2026-04-17
-Overview
+§H3§ Overview
 The BrainWave Simulator is a precision signal-generation platform designed to emulate neural activity for end-to-end validation and calibration of neural acquisition systems—from electrodes and headstages to acquisition platforms (e.g., XDAQ and others) and integrated experimental I/O setups. Its compact form factor, battery-powered operation, and dual-channel programmable outputs provide researchers with a reliable solution for bench-top testing and in-lab system verification—without the need for live tissue samples or biological inputs.
 As part of our continuous product enhancement strategy, the BrainWave Simulator has been refined to incorporate expanded signal source options, improved electrical integration, and streamlined control features. These improvements are evolutionary rather than disruptive, ensuring that all devices retain full compatibility with existing workflows while extending their applicability to more advanced experimental paradigms.
-Components
-Dimension And Weight
+§H3§ Components
+§H3§ Dimension And Weight
 Weight ~260g
 unit: mm
-Key Features
-Purpose-Built for Validating Neural Acquisition Pipelines
+§H3§ Key Features
+§H4§ Purpose-Built for Validating Neural Acquisition Pipelines
 Compatible with KonteX X-Headstages and other headstage systems
 Enables full pipeline testing using electrodes in PBS
-Dual-Channel, Fully Programmable Signal Output
+§H4§ Dual-Channel, Fully Programmable Signal Output
 Two independent output channels, each configurable with discrete amplitude and frequency settings
 Enhanced signal source architecture: selectable onboard signal generator or external source
 Amplitude options:
@@ -27,7 +27,7 @@ Integrate filter circuit for common neural signal frequency range from 75Hz to 5
 Independent channel configuration ensures
 channel-isolated testing and headstage characterization.
 While signals outside this bandwidth can still be processed, they may show reduced amplitude or increased distortion.
-Multiple Waveform Profiles for Comprehensive Testing
+§H4§ Multiple Waveform Profiles for Comprehensive Testing
 Sine wave:
 For baseline gain and frequency response measurements.
 Square wave:
@@ -36,59 +36,59 @@ Triangle wave:
 For linearity and symmetry verification.
 Simulation (Sim) mode:
 Synthetic waveform featuring a parameter-adjustable carrier with randomized spike patterns designed to approximate biological neural signals for realistic validation.
-Integrated TTL Synchronization Output
+§H4§ Integrated TTL Synchronization Output
 3.3 V logic-level pulse output operates in a push (High) and release (Low) manner.
 Standard 3.5 mm to BNC cable interface for straightforward connection to downstream acquisition or stimulation devices.
 Ideal for time-locking signal generation to data collection or closed-loop feedback systems.
-Battery-Powered Low-Noise Operation
+§H4§ Battery-Powered Low-Noise Operation
 Internal rechargeable Li-ion battery delivers approximately 12 hours of continuous use on a full charge.
 Charging via USB-C takes 2.5 hours and does not require additional configuration.
-Device Overview
-Side view          Front view
-LED Indicators
-Power Indicator LED
+§H3§ Device Overview
+§H4§ Side view          Front view
+§H3§ LED Indicators
+§H4§ Power Indicator LED
 Confirms that the BrainWave Simulator is powered on and operating.
 Provides immediate visual feedback that the device is active.
-Battery Status LED
+§H4§ Battery Status LED
 While charging: The indicator light flashes red, indicating that the internal battery is recharging.
 Low battery: The indicator light is solid red, alerting the user to recharge the device to maintain uninterrupted operation.
 See below for a full explanation of the LED status.
-Testing the Headstage
-Attach the X-Headstage™
+§H3§ Testing the Headstage
+§H4§ Attach the X-Headstage™
 These steps apply to all KonteX X-Headstage™ compatible accessories.
-1. Align the Connectors
+§H4§ 1. Align the Connectors
 Carefully align the connectors. When the interface board features an alignment arrow, orient the X-Headstage™ so the micro-HDMI connector matches the arrow's direction.
-2. Press Down Firmly
+§H4§ 2. Press Down Firmly
 Carefully align the connectors. When the interface board features an alignment arrow, orient the X-Headstage™ so the micro-HDMI connector matches the arrow's direction.
-3. Connect the Micro-HDMI Cable
+§H4§ 3. Connect the Micro-HDMI Cable
 3A. If the X-Headstage™ is attached to a probe adapter designed with a locking mechanism. Secure the connection by locking the screws before plugging in the Micro-HDMI cable.
 3B. Insert the cable while applying even pressure to both the X-Headstage™ and the accessory.
 This minimizes torque to the miniature board-to-board connectors.
-4. Install the Headstage Stabilization Adapter
+§H4§ 4. Install the Headstage Stabilization Adapter
 4A: Attach and secure the Headstage Stabilization Adapter by tightening the thumb screws.
 4B: With the assembly secured, push the headstage assembly into the headstage port on the Brainwave Simulator.
-Detach the X-Headstage™
-1. Unscrew the thumbscrews to remove the Headstage Stabilization Adapter
-2. Disconnect the Micro-HDMI Cable
+§H4§ Detach the X-Headstage™
+§H4§ 1. Unscrew the thumbscrews to remove the Headstage Stabilization Adapter
+§H4§ 2. Disconnect the Micro-HDMI Cable
 While holding the X-Headstage™ and adapter firmly, gently pull the cable straight back — avoid twisting or lateral force.
-3. Use the designated XHS tool (removal tool) for detachment
+§H4§ 3. Use the designated XHS tool (removal tool) for detachment
 Aim the tool tip from the top or bottom, if accessible.
 The XHS tool is purpose-built for X-Headstage™, featuring a single tip for X3-series and a dual tip for X6-series models. Each tip is precision-polished to minimize the risk of damage to PCB surfaces.
 # If the XHS tool is unavailable, a flat-head screwdriver with a tip thickness of less than 0.5 mm may be used as an alternative.
-4. Release and Catch the X-Headstage™
+§H4§ 4. Release and Catch the X-Headstage™
 Insert the tool tip at a slight angle into the gap between the X-Headstage™ and its accessory.
 The headstage should release easily with minimal applied force.
-5. Optional Accessory: Cycle Extender or Remapper
+§H4§ 5. Optional Accessory: Cycle Extender or Remapper
 Users may consider using this sacrificial interface adapter to reduce wear on the X-Headstage connector from repeated connection cycles and extend its operational lifespan.
-Configuring Test Waveforms
-1. Power On
+§H3§ Configuring Test Waveforms
+§H4§ 1. Power On
 Turn on the BrainWave Simulator by sliding the System Mode Switch to ON.
 In Onboard waveform mode, the device outputs a 3 mV, 1 kHz sine wave to all channels by default.
 In External signal mode, the device configure on divide 1,000 by default.
 ⚠
 IMPORTANT :
 Do not using the device while charging, as this may cause ground coupling and increase measurement noise.
-2. Output Waveform Adjustment
+§H4§ 2. Output Waveform Adjustment
 The onboard signal generator is capable of producing two independent waveforms—CH1 and CH2—which are alternately assigned across all headstage input channels.
 Use the CH button to toggle between CH1 and CH2 for configuration.
 Adjust the parameters as required using the corresponding control knobs or software interface.
@@ -100,7 +100,7 @@ Simulated (Sim):
 In Simulated Mode, the generator produces a composite waveform consisting of a carrier sine wave combined with randomly generated spikes.
 Amplitude (Amp mV): 3 mV, 500 μV, 100 μV, 0 (off)
 Frequency (Freq Hz): 1000, 500, 30, 10
-3. Testing with External Signal Source
+§H4§ 3. Testing with External Signal Source
 The BrainWave Simulator accepts external test signal (maximum voltage 2Vrms) via the 3.5 mm stereo jack (e.g. from a PC) and attenuates the signal to appropriate level for headstage or neural probe testing.
 Sliding the ON/OFF switch to the right.
 External signal can be attenuated by:
@@ -116,7 +116,7 @@ IMPORTANT :
 The peak to peak limited range of the external input should remain below 2Vrms.
 Exceeding this level may cause distortion or permanent damage to the input circuitry.
 For optimal performance, it is recommended to use the headphone output jack of a standard computer as the signal source.
-Testing with Electrode and Headstage
+§H3§ Testing with Electrode and Headstage
 Evaluates electrode or probe performance and system functionality in saline using the BrainWave Simulator before actual recordings.
 1. Immerse the in-house electrode or Neuropixels probe in the saline bath and connect its headstage to XDAQ.
 2. Short the GND/REF of the electrode or Neuropixels and connect them to the GND terminal of the BrainWave Simulator using the saline test adapter with the connector left floating in the air.
@@ -126,26 +126,26 @@ Evaluates electrode or probe performance and system functionality in saline usin
 IMPORTANT :
 Confirm all connections are correct while applying the signal.
 Ensure a proper grounding and shielding environment to reduce noise and maintain signal stability.
-Generating a Digital Pulse
+§H3§ Generating a Digital Pulse
 1. Connect a 3.5 mm jack–to–BNC patch cord between the TTL Out port of the BrainWave Simulator and the device receiving the digital pulse (e.g., XDAQ).
 2. Press the Pulse Trigger button to output a 3.3 V TTL pulse. The signal remains high while the button is pressed and returns low upon release. The pulse frequency depends on the speed of button activation.
 3. All four frequency indicator LEDs illuminate when the TTL Out signal is at a high logic level.
-Connector Specification & Pinout
+§H3§ Connector Specification & Pinout
 The Brainwave Simulator has undergone several optimizations to provide a reliable connection. The latest design, Version 2, uses a board-to-board connector and enables the use of headstage stabilization adapter.
-Version 2
+§H4§ Version 2
 Main Connector: 40P 0.8mm Board to Board Mezzanine Connector.
-Compatible Accessory
-X-Headstage Stabilization Adapter for X3 Headstage (SKU: Adpt-BWS-X3):
+§H3§ Compatible Accessory
+§H4§ X-Headstage Stabilization Adapter for X3 Headstage (SKU: Adpt-BWS-X3):
 This is the default adapter shipped with the Brainwave Simulator.
-X-Headstage Stabilization Adapter for X6 Headstage (SKU: Adpt-BWS-X6):
+§H4§ X-Headstage Stabilization Adapter for X6 Headstage (SKU: Adpt-BWS-X6):
 Use this adapter to use with the X6 headstages.
-3.5mm plug to BNC patch cord (SKU: ACC-0007):
+§H4§ 3.5mm plug to BNC patch cord (SKU: ACC-0007):
 Use this patch cord to send a test digital pulse to an instrument.
-X-Headstage Remove Tool (SKU: XHS-Tool):
+§H4§ X-Headstage Remove Tool (SKU: XHS-Tool):
 Headstage removal tool.
-DDS V1.0 to V2 Adapter (SKU: ACC-0009):
+§H4§ DDS V1.0 to V2 Adapter (SKU: ACC-0009):
 Use this adapter with the v1.0 Brainwave Simulator to use the X3 or X6 Stabilization Adapter.
-DDS V1.1 to V2 Adapter (SKU: ACC-0010):
+§H4§ DDS V1.1 to V2 Adapter (SKU: ACC-0010):
 Use this adapter with the v1.1 Brainwave Simulator to use the X3 or X6 Stabilization Adapter.
-Adapters to other headstages:
+§H4§ Adapters to other headstages:
 Contact us for customization or use reference Eagle design to modify for your own.

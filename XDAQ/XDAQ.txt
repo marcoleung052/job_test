@@ -1,10 +1,10 @@
-XDAQ
+§H1§ XDAQ
 XDAQ delivers seamless, native integration with Neuropixels 1.0 and 2.0, supporting high-density recordings of up to 4 probes and 3,072 channels per system. Its high-speed Thunderbolt interface ensures powerful, low-latency performance for real-time analysis and closed-loop neuroscience applications.
 Fully compatible with standard imec headstages and cables, XDAQ eliminates the need for QBSC cards and PXI enclosures—simplifying setup and reducing system complexity. The XDAQ AIO offers all the functionality of OneBox, while delivering expanded performance and enhanced flexibility for advanced research needs.
 As the top-tier model in the XDAQ series, the AIO sets a new standard for versatility and capability in neuroscience instrumentation, offering robust native support for large-scale neural recording, optogenetic stimulation, and synchronized video acquisition. It supports up to 1024 channels of high-resolution spike recordings and, in XSR mode, provides up to 128 channels that can be dynamically configured for recording or stimulation. It also delivers seamless compatibility with advanced electrode technologies—including Neuropixels probes—with the ability to operate up to four probes simultaneously for high-density, multi-region neural interrogation.
 The ONE+ model is a uniquely versatile platform that unifies multiple capabilities into a single device. It supports up to 1024 channels of high-resolution spike recordings and, in XSR mode, provides up to 128 channels that can be dynamically configured for recording or stimulation. Additionally, the system includes native support for advanced electrode technologies, such as Neuropixels probes, with the capacity to operate up to four probes simultaneously.
 The CORE2 model is a uniquely versatile platform that unifies multiple capabilities into a single device. It supports up to 512 channels of high-resolution spike recordings and, in XSR mode, provides up to 32 channels that can be dynamically configured for recording or stimulation. Additionally, the system includes native support for advanced electrode technologies, such as Neuropixels probes, with the capacity to operate up to two probes simultaneously.
-XDAQ AIO
+§H3§ XDAQ AIO
 System Adapter
 IO Expander
 SAdpt-Port-EXP
@@ -25,7 +25,7 @@ XeSR16-HDMI
 XeSR32-HDMI
 System Adapter
 SAdpt-XDAQ-EXP
-XDAQ ONE+
+§H3§ XDAQ ONE+
 System Adapter
 IO Expander
 SAdpt-Port-EXP
@@ -46,7 +46,7 @@ XeSR16-HDMI
 XeSR32-HDMI
 System Adapter
 SAdpt-XDAQ-EXP
-XDAQ CORE2
+§H3§ XDAQ CORE2
 System Adapter
 IO Expander
 SAdpt-Port-EXP

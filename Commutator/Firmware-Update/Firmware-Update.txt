@@ -1,15 +1,15 @@
-Commutator PRO Firmware Update
+§H1§ Commutator PRO Firmware Update
 2026-05-08
-Overview
+§H3§ Overview
 This manual provides the step-by-step procedure to update the firmware on your Commutator Pro. Please ensure you have the correct
 .uf2
 update file provided by KonteX before proceeding.
-Preparation
+§H3§ Preparation
 Ensure your Commutator Pro is powered off before starting the process.
 Prepare a high-quality USB cable to connect the device to your PC.
 A paperclip or a similar thin tool is required to access the firmware update button.
 Locate the Firmware Update Button (pinhole) on the device interface.
-Step-by-Step Update Procedure
+§H3§ Step-by-Step Update Procedure
 1. Connect to PC: Plug the USB cable from the Commutator Pro's USB port into your computer.
 2. Enter Bootloader Mode:
 Use a thin tool (like a paperclip) to press and hold the pinhole button.
@@ -20,5 +20,5 @@ While holding the button, switch the Power on.
 6. Finalize Update: Toggle the power switch to Restart the Commutator. Your device is now updated and ready for use.
 NOTE:
 Do not disconnect the USB cable or power off the device while the drive is active and the file is being transferred, as this may result in firmware corruption.
-Download Firmware File
+§H3§ Download Firmware File
 Commutator Pro firmware (.uf2)

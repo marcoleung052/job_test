@@ -1,18 +1,18 @@
-SAdpt-Port-EXP
+§H1§ SAdpt-Port-EXP
 2025-12-18
-Overview
+§H3§ Overview
 The Port Expander is designed for researchers looking to maximize the number of animals monitored by the XDAQ system. It allows each HDMI headstage port in the XDAQ to support up to four animals with XR Headstages or up to two animals with XSR (stim-record) Headstages. Please refer to the XDAQ model and headstage compatibility table for more details.
 The Port Expander conditions the control signal and provides isolated and dedicated electrical systems to each connected headstage. As a result, the ground and reference nodes from each animal's headstage do not interfere with one another.
-Components
-Cable and Commutator Compatibility
+§H3§ Components
+§H3§ Cable and Commutator Compatibility
 The Port Expander is compatible with all KonteX cable and commutator solutions. For optimal performance, it is recommended to use the same cable configuration and commutator model for all connected headstages.
-Dimension and Weight
+§H3§ Dimension and Weight
 Weight 350g
 unit: mm
-Getting Started
+§H3§ Getting Started
 Power on the Port Expander by supplying power to the USB-PD port with the provided AC adapter and turn on the power button. The Power LED in the front panel should light up immediately.
-To use the Port Expander with the XR Headstage :
-① Set the Mode switch
+§H4§ To use the Port Expander with the XR Headstage :
+§H4§ ① Set the Mode switch
 XR:
 If selected, no LED indicator
 XSR:
@@ -23,8 +23,8 @@ When useing XR mode, no LED indicator on Port A/B.
 ⚠
 IMPORTANT:
 Plugging into non-designated ports may result in improper headstage control.
-To use the Port Expander with the XSR Headstage :
-① Set the Mode switch
+§H4§ To use the Port Expander with the XSR Headstage :
+§H4§ ① Set the Mode switch
 XR:
 If selected, no LED indicator
 XSR:
@@ -35,18 +35,18 @@ If selected, the EXP A & B LED indicator light on in solid
 ⚠
 IMPORTANT:
 Plugging into non-designated ports may result in improper headstage control.
-VStim Mode Indicator LEDs
+§H3§ VStim Mode Indicator LEDs
 These LEDs indicate the stimulus compliance voltage range selected for EXP A and EXP B ports (located on the rear panel).
 Each column corresponds to a VStim output:
 Column A → VStim EXP A
 Column B → VStim EXP B
-Each row represents a voltage configuration:
+§H4§ Each row represents a voltage configuration:
 The illuminated LED in each column reflects the voltage range currently selected using the rear-panel VStim switches.
 These indicators are only active when the Mode Switch is set to XSR.
 In XR mode, all VStim LEDs remain off.
 ⚠
 IMPORTANT:
 The VStim setting is hardware-controlled and cannot be adjusted through the software interface.
-Port expander compatibility with XDAQ models and Headstage
-Using Port Expander with the XR Headstage :
-Using Port Expander with the XSR Headstage :
+§H3§ Port expander compatibility with XDAQ models and Headstage
+§H4§ Using Port Expander with the XR Headstage :
+§H4§ Using Port Expander with the XSR Headstage :
