@@ -1,0 +1,1 @@
+{"config": {"lang": ["en"], "separator": "[\\s\\u200b\\-_,:!=\\[\\]()\"/]+", "pipeline": ["stopWordFilter"]}, "docs": []}
