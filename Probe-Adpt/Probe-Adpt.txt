@@ -1,0 +1,11 @@
+Probe Adapter
+The KonteX Probe Adapter Series provides flexible signal interfacing solutions between neural probes and KonteX X-Headstage™ systems.
+Designed to expand probe compatibility across multiple connector formats, channel configurations, and reference architectures, these adapters enable seamless integration of diverse electrode technologies into the KonteX acquisition ecosystem.
+Probe Adapters serve as modular interface bridges, ensuring correct signal routing, stable electrical connectivity, and consistent recording performance.
+Adpt-MEA2
+Adpt-A-series
+Adpt-SRRemap
+Adpt-Omnetics series
+X3 M1P Adapter Series
+NeuroNexus X3 Dual 16ch
+X-Series External Interface Adapters

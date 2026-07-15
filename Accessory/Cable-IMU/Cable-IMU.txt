@@ -1,0 +1,39 @@
+Cable-IMU
+2026-06-15
+Overview
+The Commutator IMU Cable is a dedicated communication cable designed to interface an external Inertial Measurement Unit (IMU) sensor with the KonteX Commutator system. The cable serves as the communication link that enables real-time transmission of motion and orientation data from the IMU sensor to the Commutator controller.
+During freely moving experiments, animals may continuously rotate, causing tethered cables to twist and accumulate torque. The IMU sensor monitors the animal’s rotational movement using gyroscopic measurements and transmits this information through the IMU Cable to the Commutator. Based on the detected direction and magnitude of rotation, the Commutator automatically rotates in the corresponding direction, preventing cable twisting and maintaining a low-torque environment throughout the experiment.
+By actively compensating for rotational motion, the Commutator IMU system helps preserve natural animal behavior, reduces mechanical stress on implants and cables, and improves the reliability of long-duration recording sessions.
+The IMU Cable is dedicated to motion-sensing communication and Commutator control functions. It does not carry neural recording signals, stimulation signals, video data, or other experimental data streams.
+Dimension And Weight
+unit: mm
+Weight
+With USB Connector
+Without USB Connector
+1 M
+3 g
+0.5 g
+5 M
+5.5 g
+3 g
+Connector
+Real-Time Motion Communication
+Provides continuous transmission of IMU sensor data to the Commutator controller for real-time motion tracking and analysis.
+Automatic Rotation Compensation
+Enables the Commutator to automatically rotate according to the animal’s movement, minimizing cable twisting and preventing tether entanglement.
+Reduced Mechanical Load
+Helps reduce rotational torque transmitted to the animal, improving comfort and supporting more natural behavioral responses.
+Improved Experimental Stability
+Prevents excessive cable winding that can interfere with recordings, damage cables, or affect animal movement during long-term experiments.
+Dedicated Control Interface
+Functions exclusively as a communication pathway between the IMU sensor and the Commutator control system, independent of neural recording and stimulation signal paths.
+Part Number
+Cable-NP
+(-) Length
+(-) Connector
+1M: 1 meter
+J: JST headstage side connector. Direct plug in to KonteX NP Headstages
+5M: 5 meter
+K: Kit Options: J cable with IMEC headstage adapter (SKU: Adpt-NP-J2OM)
+contact us for custom length
+Replacement cable or adapter can be purchased separately.

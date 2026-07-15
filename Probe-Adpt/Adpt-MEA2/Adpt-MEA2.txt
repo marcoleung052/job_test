@@ -1,0 +1,58 @@
+Adpt-MEA2
+2026-04-23
+Overview
+MEA (Microelectrode Array) is a simplified electrophysiological signal recording system designed to streamline the electrophysiological recording process. Its design allows users to conveniently swap different types of microelectrode array chips based on specific experimental requirements.
+Record electrical signals from multiple sites within the culture.
+Replicate the biophysical microenvironment found in vivo.
+MEA2 Overview
+MEA2 exploded view
+Dimension
+unit: mm
+Device Overview
+In vitro experiments often struggle to replicate the cellular conditions found in living organisms. Primary cells cultured on rigid multi-electrode arrays (MEAs) exhibit significant differences from their in vivo counterparts, limiting the predictive value of such data. MEAs utilize glass multi-electrode arrays to recreate the mechanical and electrical environments of in vivo cells in a controlled setting. They can be paired with various headstages and stimulation array boards for optical imaging and electrical stimulation/recording, effectively bridging the gap between in vitro and in vivo research and enhancing the relevance of experimental findings.
+Assembly Process
+① Remove the ITO conductive glass
+② Remove the silicone gasket
+③ Unscrew the six anti-loosening thumb screws
+④ Separate the top and bottom housings
+⑤ Remove and replace the MEA cup
+Key Features
+Flexibility:
+Compatible with various brands and types of microelectrode array chips, enabling users to choose according to their experimental needs.
+Efficiency:
+The simplified system design enhances the efficiency of electrophysiological signal recording, reducing preparation time for experiments.
+Data Precision:
+MEA captures neuronal activity and electrophysiological signals between cells with high accuracy, facilitating further analysis and research.
+User-Friendly:
+The interface is designed to be intuitive, suitable for researchers of varying experience levels.
+Scalability:
+The system can be expanded as needed, allowing for the addition of more channels to record additional signals.
+Experimental Applications
+Neuroscience Research:
+Used to study interactions between neurons.
+Biomedical Research:
+Employed in drug testing and research on neurological disorders.
+Immunology:
+Applicable for investigating cellular signaling and interactions.
+The flexibility and efficiency of MEA make it an essential tool in many biomedical research applications.
+MEA Cup
+MEA2 supports a range of MEA cup sizes, with a maximum supported size of 59.9 × 59.9 mm.
+unit: mm
+Ground & Reference Configuration
+Proper grounding and referencing are essential for high-quality signal acquisition. Always ensure that both ground and reference signals are securely connected. If either is left floating, significant noise may be introduced into the recordings.
+By default, the headstage ground (G) and reference (R) are independent.
+- To connect reference and ground at the adapter, short JP1.
+- Reference (R) is sourced from the probe reference (PR). To use an external reference (ER) via the adapter, cut JP3 and solder a wire to the ER pad.
+- Shielding (S) is connected by default to ground (G). To use an external shielding signal (ES) via the adapter, cut JP4 and connected via the terminal screw.
+Configuring the Jumper Pad
+① To connect the jumper, apply solder around JP1 until a solid solder bead forms.
+② To disconnect, use a soldering iron and desoldering mesh to remove the solder bridging the jumper pad.
+If the jumper pas has a default short configuration, use a scalpel or precision blade to cleanly sever the trace.
+③ After modification, clean the area thoroughly using isopropyl alcohol or flux remover to eliminate any residual material.
+④ Always verify connectivity using a multimeter to ensure proper configuration.
+Pin Map
+MEA2 (HSR64-MCS8x8) - Recording only
+MEA2 (HSSR64-MCS8x8 (stim-rec)) - Stim-Recordind
+⚠
+IMPORTANT:
+XDAQ CORE models do not support simultaneous full-channel operation for the MEA2 (HSSR64-MC8x8(stim-rec)). The specific active channels and mapping are determined by the selected HDMI port connection.

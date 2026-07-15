@@ -1,0 +1,16 @@
+SAdpt-HDMI-OM16
+2026-04-11
+Overview
+This adapter enables XSR32-HDMI X-Headstage with KonteX HDMI cables to connect to the Intan Stimulation/Recording Controller directly or via the SPI cable.
+SAdpt-HDMI-OM16 Overview
+SAdpt-HDMI-OM16
+Dimension
+unit: mm
+Usage Scenarios
+The RHS connector is recessed into a slot on the board, enabling direct plug-in the adapter into the acquisition box. It can be used to transmit the recording signals and stimulation functions from the KonteX's XSR headstage to the Intan RHS Stimulation/Recording cpntroller system through the HDMI port on the adapter.
+Connector
+HDMI
+HDMI Type A female
+Intan/Open Ephys
+Omnetics Polarized NANO 16-pin
+Pin Map

@@ -1,0 +1,38 @@
+Cable-HDMI
+2026-03-23
+Overview
+The HDMI A to D Cable (3M) is a high-quality data transmission cable designed to connect devices with a standard HDMI Type-A port to equipment requiring a HDMI Type-D (Micro HDMI) interface. With a 3-meter length, this cable provides flexible routing for experimental setups where distance between devices is required, such as between the XDAQ system and headstage adapters or commutators.
+This cable is optimized for high-speed digital signal integrity and is suitable for use in data acquisition systems, video capture setups, and synchronized multimodal experiments.
+Dimension And Weight
+HDMI A to D cable 80CM / 3M
+HDMI A to D cable without body
+unit: mm
+Cable Length
+Entire cable
+Entire cable Without Jacket insulation
+80 CM
+22.5 g
+16.5 g
+3 M
+44.5 g
+22 g
+HDMI D Only
+HDMI D Without Body
+5.5 g
+3.5 g
+Connector
+Cable End
+Connector Type
+Orientation
+System Side
+HDMI Type-A Male
+Standard HDMI interface
+Device Side
+HDMI Type-D (Micro HDMI) Male
+Compact micro HDMI interface
+Compatibility
+The HDMI A to D Cable (3M) is compatible with:
+KonteX XDAQ systems with HDMI output
+Adapters or devices requiring Micro HDMI input
+HDMI-equipped displays, capture cards, or acquisition hardware
+Standard HDMI-based instruments and modules

@@ -1,0 +1,262 @@
+// 100% 在瀏覽器端執行的語意搜尋：完全不需要 app.py / localhost:8000 這種
+// 本機後端伺服器，模型 (transformers.js + ONNX) 和向量資料庫都是直接從
+// CDN／同一個靜態網站下載到使用者的瀏覽器裡執行，所以整個網站可以單純當作
+// 靜態檔案放在 GitHub Pages 上運作。
+import {
+  pipeline,
+  env,
+} from "https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.0.2";
+
+// 不要嘗試去讀取本機檔案系統上的模型，一律從 Hugging Face Hub 的 CDN 下載，
+// 這樣才符合「開啟網頁就自動下載模型」的需求。
+env.allowLocalModels = false;
+
+const MODEL_ID = "Xenova/all-MiniLM-L6-v2"; // 對應 model.txt 選定的輕量模型
+const META_URL = "docs-meta.json"; // build_client_embeddings.py 產生
+const EMBEDDINGS_URL = "docs-embeddings.bin"; // 同上，float32 二進位向量
+const DEBOUNCE_MS = 300;
+const SIM_THRESHOLD = 0.35; // MiniLM 的餘弦相似度分佈跟 e5 不同，門檻要低一點
+
+const state = {
+  extractor: null, // transformers.js 的 feature-extraction pipeline
+  documents: null, // [{title, url, text}, ...]
+  embeddings: null, // Float32Array，row-major，每列 dim 長
+  dim: 0,
+  ready: false,
+  modelProgress: 0,
+  dataProgress: 0,
+};
+
+let debounceTimer = null;
+let requestSeq = 0;
+
+function getInput() {
+  return document.querySelector('[data-md-component="search-query"]');
+}
+
+function getResultBox() {
+  const box = document.querySelector('[data-md-component="search-result"]');
+  if (!box) return null;
+  return {
+    meta: box.querySelector(".md-search-result__meta"),
+    list: box.querySelector(".md-search-result__list"),
+  };
+}
+
+function setMeta(text) {
+  const box = getResultBox();
+  if (box && box.meta) box.meta.textContent = text;
+}
+
+function setList(html) {
+  const box = getResultBox();
+  if (box && box.list) box.list.innerHTML = html;
+}
+
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function showLoadingStatus() {
+  const pct = Math.round((state.modelProgress * 0.7 + state.dataProgress * 0.3) * 100);
+  setMeta(`AI 搜尋引擎啟動中，正在下載模型與向量資料庫… ${pct}%`);
+  setList("");
+}
+
+// 載入 all-MiniLM-L6-v2 的 ONNX 權重 (量化版，約 0.7MB)，下載進度透過
+// progress_callback 回報，讓使用者知道還要等多久，而不是整頁沒反應。
+async function loadModel() {
+  state.extractor = await pipeline("feature-extraction", MODEL_ID, {
+    dtype: "q8",
+    progress_callback: (data) => {
+      if (data.status === "progress" && data.total) {
+        state.modelProgress = data.loaded / data.total;
+        if (!state.ready) showLoadingStatus();
+      }
+    },
+  });
+  state.modelProgress = 1;
+}
+
+// 下載預先算好的文件向量資料庫 (docs-meta.json + docs-embeddings.bin)，
+// 這兩個檔案由 build_client_embeddings.py 離線產生，跟這個網站一起發布，
+// 瀏覽器只需要 fetch 下來，不用自己重新對整份文件庫做 embedding。
+async function loadDocsDatabase() {
+  const [metaRes, binRes] = await Promise.all([
+    fetch(META_URL),
+    fetch(EMBEDDINGS_URL),
+  ]);
+
+  if (!metaRes.ok || !binRes.ok) {
+    throw new Error("無法下載向量資料庫檔案");
+  }
+
+  const meta = await metaRes.json();
+  const buffer = await binRes.arrayBuffer();
+
+  state.documents = meta.documents;
+  state.dim = meta.dim;
+  state.embeddings = new Float32Array(buffer);
+  state.dataProgress = 1;
+}
+
+// 計算查詢向量跟資料庫中每一列文件向量的餘弦相似度。
+// 因為 build_client_embeddings.py 存檔前就已經對每個向量做過 L2 normalize，
+// 這裡的向量長度都是 1，所以「餘弦相似度」直接用內積 (dot product) 算就好，
+// 不用再各自除以向量長度。
+function cosineSimilarityAll(queryVec) {
+  const { embeddings, dim, documents } = state;
+  const n = documents.length;
+  const scores = new Float32Array(n);
+
+  for (let i = 0; i < n; i++) {
+    const offset = i * dim;
+    let dot = 0;
+    for (let d = 0; d < dim; d++) {
+      dot += embeddings[offset + d] * queryVec[d];
+    }
+    scores[i] = dot;
+  }
+
+  return scores;
+}
+
+// 跟 app.py 的 keyword_boost 邏輯一致：向量相似度是語意層面的比對，
+// 可能讓「意思相近但沒中關鍵字」的片段排到「完全打中同一個字」的片段前面，
+// 所以額外對真的包含查詢字串的片段加分，調整排序但不影響原始語意分數。
+function keywordBoost(text, queryLower, queryWords) {
+  const textLower = text.toLowerCase();
+  let boost = 0;
+  if (queryLower && textLower.includes(queryLower)) {
+    boost += 0.05;
+  }
+  if (queryWords.length > 1) {
+    boost += 0.02 * queryWords.filter((w) => textLower.includes(w)).length;
+  }
+  return boost;
+}
+
+function renderResults(results) {
+  if (!results.length) {
+    setMeta("沒有找到符合的文件");
+    setList("");
+    return;
+  }
+  setMeta(results.length + " 筆結果");
+  const html = results
+    .map(
+      (r) =>
+        '<li class="md-search-result__item">' +
+        '<a href="' + escapeHtml(r.url) + '" class="md-search-result__link">' +
+        '<article class="md-search-result__article md-search-result__article--document">' +
+        "<h1>" + escapeHtml(r.title) + "</h1>" +
+        "<p>" + escapeHtml(r.text) + "</p>" +
+        "</article>" +
+        "</a>" +
+        "</li>"
+    )
+    .join("");
+  setList(html);
+}
+
+async function runSearch(query) {
+  if (!state.ready) {
+    showLoadingStatus();
+    return;
+  }
+
+  setMeta("搜尋中…");
+  const seq = ++requestSeq;
+
+  // MiniLM 不像 E5 需要 "query: " / "passage: " 前綴，直接編碼原始字句即可。
+  const output = await state.extractor(query, { pooling: "mean", normalize: true });
+  if (seq !== requestSeq) return; // 有更新的查詢已送出，捨棄過期結果
+  const queryVec = output.data;
+
+  const scores = cosineSimilarityAll(queryVec);
+
+  const queryLower = query.trim().toLowerCase();
+  const queryWords = queryLower.split(/\s+/).filter(Boolean);
+
+  const scored = state.documents.map((doc, i) => {
+    const boost = keywordBoost(doc.title + " " + doc.text, queryLower, queryWords);
+    return { doc, baseScore: scores[i], adjustedScore: scores[i] + boost };
+  });
+
+  scored.sort((a, b) => b.adjustedScore - a.adjustedScore);
+
+  const results = scored
+    .filter((s) => s.baseScore >= SIM_THRESHOLD)
+    .slice(0, 5)
+    .map((s) => ({
+      title: s.doc.title,
+      url: s.doc.url,
+      text: s.doc.text,
+      score: s.adjustedScore,
+    }));
+
+  renderResults(results);
+}
+
+function onQueryChanged(event) {
+  // 阻止 mkdocs 內建的本地搜尋 (worker) 接手同一個輸入事件
+  event.stopImmediatePropagation();
+
+  const query = event.target.value.trim();
+  clearTimeout(debounceTimer);
+
+  if (!query) {
+    setMeta(state.ready ? "輸入關鍵字開始搜尋" : "AI 搜尋引擎啟動中，請稍候…");
+    setList("");
+    return;
+  }
+
+  debounceTimer = setTimeout(() => runSearch(query), DEBOUNCE_MS);
+}
+
+function onFocus(event) {
+  event.stopImmediatePropagation();
+  const query = event.target.value.trim();
+  if (query) {
+    runSearch(query);
+  } else if (!state.ready) {
+    showLoadingStatus();
+  }
+}
+
+async function init() {
+  const input = getInput();
+  if (!input) return;
+
+  // 用 capture 階段攔截，並在處理常式內呼叫 stopImmediatePropagation()，
+  // 讓 mkdocs 內建搜尋的事件處理常式不會再被觸發，藉此改造既有搜尋框
+  input.addEventListener("input", onQueryChanged, true);
+  input.addEventListener("focus", onFocus, true);
+
+  showLoadingStatus();
+
+  try {
+    await Promise.all([loadModel(), loadDocsDatabase()]);
+    state.ready = true;
+
+    const query = input.value.trim();
+    if (query) {
+      runSearch(query);
+    } else {
+      setMeta("輸入關鍵字開始搜尋");
+    }
+  } catch (err) {
+    console.error(err);
+    setMeta("AI 搜尋引擎啟動失敗，請重新整理頁面再試一次");
+  }
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", init);
+} else {
+  init();
+}

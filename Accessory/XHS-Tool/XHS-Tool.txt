@@ -1,0 +1,18 @@
+XHS-Tool
+2026-01-17
+Overview
+The X-Headstage™ Removal Tool is a custom-designed flat-head tool with tips specifically shaped to interface with both X3 and X6 headstages. It enables safe and controlled removal of headstages from connected accessories or adapters.
+Operation
+Use the included Phillips screwdriver to remove the screws securing the X-Headstage.
+Insert the flat-head tip into the designated removal slot on the headstage interface.
+Apply gentle, even force to disengage the connector.
+Avoid twisting or prying at an angle to prevent mechanical stress on the connector or PCB.
+NOTE:
+• Use only the X-Headstage™ Removal Tool to remove headstages; improper tools may damage the connector or housing.
+• Do not apply excessive force during removal.
+• Ensure the system is powered off before removing the headstage.
+Intended Use
+This tool is intended to assist users in detaching X3 or X6 headstages during system reconfiguration, maintenance, or component replacement.
+Compatibility
+Compatible with X3 headstages
+Compatible with X6 headstages

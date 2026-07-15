@@ -1,0 +1,4325 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="User Manual for KonteX Neuroscience Products">
+      
+      
+      
+        <link rel="canonical" href="https://docs.kontex.io/Commutator/PRO/">
+      
+      
+        <link rel="prev" href="../Standard/">
+      
+      
+        <link rel="next" href="../Firmware-Update/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Commutator PRO - User Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/material.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/light.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/backdrop.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/tippy.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/scale.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/shift-away.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/core/core.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/user.config.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="User Manual" class="md-header__button md-logo" aria-label="User Manual" data-md-component="logo">
+      
+  <img src="../../KonteX.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            User Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Commutator PRO
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="User Manual" class="md-nav__button md-logo" aria-label="User Manual" data-md-component="logo">
+      
+  <img src="../../KonteX.png" alt="logo">
+
+    </a>
+    User Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../XDAQ/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XDAQ
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    XDAQ
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../XDAQ/CORE2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XDAQ CORE2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../XDAQ/ONE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XDAQ ONE+
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../XDAQ/AIO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XDAQ AIO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Headstage/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Headstage
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Headstage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/X3R/X3R32_OM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X3R32-OM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/X3R/X3R32_HDMI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X3R32-HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/X3R/X3R64_OM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X3R64-OM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/X3R/X3R64_HDMI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X3R64-HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/X3SR/X3SR32_HDMI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X3SR32-HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/X3SR/X3SR32_OM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X3SR32-OM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/X3SR/X3SR64_HDMI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X3SR64-HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/X6R/X6R128_HDMI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X6R128-HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/XeR/XeR16_HDMI_ACC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XeR16-HDMI-ACC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/XeR/XeR64_HDMI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XeR64-HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/XeSR/XeSR16_HDMI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XeSR16-HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/XeSR/XeSR32_HDMI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XeSR32-HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commutator
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Commutator
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Standard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standard Commutator HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commutator PRO
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commutator PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Features
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model Number
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-customer-provided-parts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Customer Provided Parts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dimension-and-weight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dimension and Weight
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#device-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Device Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#led-indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LED Indicators
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-the-commutator-pro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing the Commutator Pro
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#magnetic-sensor-sensitivity-speed-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Magnetic Sensor Sensitivity &amp; Speed Controls
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-commutator-pro-with-intan-or-open-ephys-acquisition-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the Commutator PRO with Intan or Open Ephys Acquisition Systems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#left-right-manual-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Left &amp; Right Manual Control
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modular-cable-fixation-and-extension-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modular Cable Fixation and Extension Components
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tested-cable-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tested Cable Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pc-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PC Interface
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#firmware-interface-and-imu-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Firmware Interface and IMU Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-verification-and-imu-status-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Verification and IMU Status Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#undermount-cutout-installation-sepcification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Undermount Cutout Installation Sepcification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pin-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pin Map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compatible-accessories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compatible Accessories
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-with-passthrough-channel-pt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model with Passthrough Channel (-PT)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mitigating-emi-induced-errors-in-gmsl-differential-signal-routing-near-power-switched-commutators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mitigating EMI-Induced Errors in GMSL Differential Signal Routing Near Power-Switched Commutators
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Firmware-Update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commutator PRO Firmware Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UART-JSON-Controller-Operational-Manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commutator Pro - UART JSON Controller Operational Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../EIB/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EIB
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    EIB
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EIB/Adpt-JP-X3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-JP-X3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EIB/EIB32-LR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EIB32-LRCombo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EIB/EIB-L-32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EIB32-L
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EIB/EIB-R-32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EIB32-R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EIB/EIB16-M1S/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EIB16-M1S
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EIB/EIB32-M1S/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EIB32-M1S
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EIB/EIB32SR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EIB32SR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Probe-Adpt/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Probe Adapter
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Probe Adapter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-MEA2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-MEA2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-A16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-A16
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-A32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-A32
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-A64/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-A64
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-A64-SR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-A64-SR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-SRRemap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-SRRemap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-OM16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-OM16
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-OM16-V/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-OM16-V
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-OM32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-OM32
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-OM32-Stim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-OM32-Stim
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-OM64/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-OM64
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-X3-M1P16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-X3-M1P16
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-X3R32-M1P32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-X3R32-M1P32
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-X6toX3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-X6toX3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-NNx-X3-16ch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-NNx-X3-16ch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-X3-EXT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-X3-EXT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-X6-EXT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-X6-EXT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../System-Adpt/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Adapter
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    System Adapter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SyncLink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SyncLink
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/IO-Expander/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IO Expander
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-EXP-BNC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-EXP-BNC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-HDMI-OM12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-HDMI-OM12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-HDMI-OM16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-HDMI-OM16
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-Port-EXP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-Port-EXP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-SR64/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-SR64
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-uHDMI-Smartlink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-uHDMI-Smartlink
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-XDAQ-BNC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-XDAQ-BNC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-XDAQ-OM12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-XDAQ-OM12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-XDAQ-OM16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-XDAQ-OM16
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-XDAQ-Smartlink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-XDAQ-Smartlink
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Accessory/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accessory
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Accessory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Accessory/Fine-Cable-Organizer-Kit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fine-Cable Organizer Kit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Accessory/Tester-Stim-X3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tester-Stim-X3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Accessory/Tester-Z-X3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tester-Z-X3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Accessory/XHS-Screw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XHS-Screw
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Accessory/XHS-Tool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XHS-Tool
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Accessory/Cable-HDMI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cable-HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Accessory/Cable-NP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cable-NP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Accessory/Cable-IMU/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cable-IMU
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Instrument/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instrument
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Instrument
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Instrument/DDS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inst-BrainSim
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Instrument/Short-Circuit-Analyzer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Short Circuit Analyzer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Features
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model Number
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-customer-provided-parts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Customer Provided Parts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dimension-and-weight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dimension and Weight
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#device-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Device Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#led-indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LED Indicators
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-the-commutator-pro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing the Commutator Pro
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#magnetic-sensor-sensitivity-speed-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Magnetic Sensor Sensitivity &amp; Speed Controls
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-commutator-pro-with-intan-or-open-ephys-acquisition-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the Commutator PRO with Intan or Open Ephys Acquisition Systems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#left-right-manual-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Left &amp; Right Manual Control
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modular-cable-fixation-and-extension-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modular Cable Fixation and Extension Components
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tested-cable-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tested Cable Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pc-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PC Interface
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#firmware-interface-and-imu-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Firmware Interface and IMU Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-verification-and-imu-status-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Verification and IMU Status Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#undermount-cutout-installation-sepcification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Undermount Cutout Installation Sepcification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pin-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pin Map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compatible-accessories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compatible Accessories
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-with-passthrough-channel-pt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model with Passthrough Channel (-PT)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mitigating-emi-induced-errors-in-gmsl-differential-signal-routing-near-power-switched-commutators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mitigating EMI-Induced Errors in GMSL Differential Signal Routing Near Power-Switched Commutators
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Commutator PRO</h1>
+
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><span data-tippy-content data-tippy-raw='2026-06-16'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-06-16T09:52:53+00:00'>2026-06-16</time></span></div></div>
+<p><br><br><br></p>
+<p><img alt="test1" src="Commutator%20PRO-01.png" /></p>
+<p><br><br><br><br><br><br></p>
+<h3 id="overview"><strong>Overview</strong></h3>
+<div class="text-block">
+    <p>The Commutator Pro is a high-performance, motorized commutator designed to prevent tether tangling during neuroscience experiments, ensuring smooth and uninterrupted behavioral recordings. It can operate using external power or its integrated, rechargeable lithium battery, offering flexible deployment options. A built-in microprocessor, working in tandem with a rotary magnetic sensor and/ or an external gyroscopic sensor, actively manages cable orientation by automatically counteracting twists.</p>
+
+    The system is highly configurable, supporting up to four Neuropixels ports alongside a conventional probe driven by either recording or stim-record headstages, and offers up to nine GPIO channels for user-defined applications. Its adaptable mounting and cable management system, complemented by an optional passthrough channel, enables seamless integration across a wide range of experimental setups—providing robust performance and maximum versatility.
+</div>
+
+<p><br><br><br></p>
+<h3 id="key-features"><strong>Key Features</strong></h3>
+<div class="text-block1">
+    <h4> &#9312; Dual sensor options </h4>
+    <ul>
+    <li> Gyroscopic sensor </li>
+    <p style="margin-left: 1.5em;">Ideal for seamless behavioral integration, especially in small animal setups. Can be easily adapted.</p>
+    <li> Magnetic sensor </li> 
+    <p style="margin-left: 1.5em;">Integrated magnetic encoder detects rotation without external sensors. Recommended for rats and non-Neuropixels experiments.</p>
+    </ul>
+</div>
+
+<div class="text-block1">
+    <h4> &#9313; Neuropixels & passive probe support </h4>
+    <ul>
+    <li> Supports up to 4 Neuropixels headstage ports. Each headstage supports either 1 Neuropixels 1.0 probe or 2 Neuropixels 2.0 probes. </li>
+    <br>
+    <li> Supports simultaneous Neuropixels and passive probe (e.g. electrical stimulation) operation. </li>
+    </ul>
+</div>
+<p><br></p>
+<div class="text-block1">
+    <h4> &#9314; Integrated sensor cable </h4>
+    <ul>
+    <li> Lightweight (< 1g) and highly flexible 34 AWG wire bundle. </li>
+    <br>
+    <li> Compatible with all existing headstage setup. </li>
+    </ul>
+</div>
+<p><br></p>
+<div class="text-block">
+    <h4> &#9315; Optional fluidic/fiber passthrough channel </h4>
+    <ul><li> 5 mm inner diameter channel enables optical fiber or fluidic tubing access during ongoing experiments. </li>
+    </ul>
+</div>
+<p><br></p>
+<div class="text-block">
+    <h4> &#9316; Low Operation acoustic noise </h4>
+    <ul><li> 33-35dB. Measured at 30cm away using iPhone 16 Pro (Note: ambient is measured to be 32dB). </li>
+    </ul>
+</div>
+<p><br></p>
+<div class="text-block1">
+    <h4> &#9317; GPIO & PC control </h4>
+    <ul>
+    <li> Up to 9 GPIO lines for custom application. </li>
+    <br>
+    <li> Up to 9 GPIO lines for custom application. </li>
+    <br>
+    <li> Left/right override via PC or hardware panel. </li>
+    </ul>
+</div>
+<p><br></p>
+<div class="text-block">
+    <h4> &#9318; Intelligent Battery Management </h4>
+    <ul>
+    <li> System power is supplied through the battery at all times. An onboard controller maintains the battery between 20% and 80% charge to help extend battery lifespan. </li>
+    <li>For applications requiring maximum runtime, intelligent battery management can be disabled through the GUI UART Control App, allowing the battery to remain fully charged at 100% capacity. </li>
+    </ul>
+</div>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="model-number"><strong>Model Number</strong></h3>
+<h4><strong> COMP- IH - XH1 - NP1 - PT - B </strong></h4>
+
+<p><img alt="test1" src="Commutator%20PRO-02.png" />
+<br></p>
+<div class="text-block5">
+    <p align="left"><i>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Not all combination is possible </i></p>
+</div>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="components"><strong>Components</strong></h3>
+<p><br></p>
+<p><img alt="test1" src="Commutator%20PRO-03.png" /></p>
+<p><br></p>
+<p class="hanging-indent-NOTE">
+  <strong>NOTE:</strong> See Tested Cable Configuration and Compatible Accessories for additional cable length options.
+</p>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="required-customer-provided-parts"><strong>Required Customer Provided Parts</strong></h3>
+<div class="text-block1">
+    <h4> 1. Compatible power source </h4>
+    <p> USB Power Brick supplying 5V, 1A or AC Power Supply: 20V 1A ; 2.5mm jack (5525) </p>
+    <br>
+    <h4> 2. USB-C charging cable, if applicable </h4>
+</div>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="dimension-and-weight"><strong>Dimension and Weight</strong></h3>
+<p><br></p>
+<p><img alt="test1" src="Commutator%20PRO-04.png" /></p>
+<div class="text-block2">
+    <p align="right">Weight ~825g</p>
+    <p align="right">unit: mm</p>
+</div>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="device-overview"><strong>Device Overview</strong></h3>
+<p><br></p>
+<p><img alt="test1" src="Commutator%20PRO-05.png" /></p>
+<div class="text-block2">
+    <p align="right">Weight ~0.18g</p>
+    <p align="right">unit: mm</p>
+</div>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="led-indicators"><strong>LED Indicators</strong></h3>
+<div class="text-block">
+    The KonteX Commutator Pro features several LED indicators designed to provide real-time visual feedback on device power status, connectivity, control mode, and battery level. Understanding these indicators is essential for proper setup and reliable operation in laboratory environments.
+</div>
+<p><br></p>
+<p><img alt="test1" src="Commutator%20PRO-06.png" /></p>
+<div class="text-block">
+    <h4>&#9313; Power indicator LED (White ring light) </h4>
+    <strong>Function:</strong>
+    Indicates that adequate power is supplied to the commutator (the motor drive system) when the main ON-OFF toggle button is toggled to ON.
+    <br><br>
+    <strong>Behavior: </strong>
+    <ul><Li> <strong>Solid white:</strong> The device is powered and functioning normally.</Li>
+    <Li> <strong>Off:</strong> The commutator is powered off or not receiving sufficient input voltage. </Li></ul>
+</div>
+
+<div class="text-block">
+    <h4>&#9314; PC connection status LED </h4>
+    <strong>Function:</strong>
+    Indicates the status of USB-C communication with a host computer.
+    <br><br>
+    <strong>Behavior: </strong>
+    <ul><Li> <strong>Solid light ON:</strong> The commutator is connected to a PC and has entered Remote Control Mode. In this mode, Sensitivity and Speed are governed by software settings displayed on the PC interface. Manual knob control on the front panel is overridden.</Li>
+    <Li> <strong>Off:</strong> No active USB connection or operating in local manual mode (hardware knob control applies). </Li></ul>
+</div>
+
+<p><br></p>
+<p class="hanging-indent-NOTE">
+  <strong>NOTE:</strong> The battery is a consumable component and is not covered under warranty. When it reaches the end of its lifespan—evidenced by rapid charging and immediate shutdown upon disconnecting external power—the device remains fully functional when powered externally. To replace the battery, please return the unit for servicing.
+</p>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="installing-the-commutator-pro"><strong>Installing the Commutator Pro</strong></h3>
+<div class="text-block">
+    <h4> Option 1: Undermount </h4>
+    The Commutator Pro can be securely mounted to a behavior box with 3 set screws that are preattached to the commutator. (See undermount cutout installation sepcification)
+</div>
+
+<p><img alt="test1" src="Commutator%20PRO-07.png" /></p>
+<div class="text-block">
+    <h4> Option 2: Camera mount </h4>
+    The Commutator Pro includes a standard 1/4-inch mounting screw socket that is compatible with standard camera mounting accessories. Cost effective camera mounts with articulated arm can be used to easily suspend the Commutator Pro above the recording rig.
+</div>
+
+<p><img alt="test1" src="Commutator%20PRO-08.png" /></p>
+<center><h4> Commutator Pro installation diagram</center>
+<p><br></p>
+<p class="hanging-indent-IMP">
+    &#9888; <strong>IMPORTANT:</strong> Always ensure the Commutator is mounted level. Installing the Commutator Pro at an angle may lead to increased acoustic noise and accelerated mechanical wear.
+</p>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="getting-started"><strong>Getting Started</strong></h3>
+<div class="text-block">
+    <h3><strong> Step 1: Powering the commutator </strong></h3>
+    The Commutator Pro can be powered via either the USB-C port or the DC jack. When using the USB-C port—particularly during remote operation under PC control—ensure a stable 5V, 1A power supply, compliant with USB 3.0 or USB Power Delivery (USB-PD) specifications. Powering the device with only 5V, 0.5A (typical of USB 2.0) may result in unreliable performance, including failure to power on or disruptions in motion tracking.
+</div>
+
+<div class="text-block">
+    <ul><li><h4> Battery charging </h4></li>
+    <P>If your Commutator Pro is equipped with an internal battery (models designated with -B), the battery will begin charging automatically when power is connected. During charging, the front-panel battery level indicator LEDs will flash and illuminate progressively to reflect the current charge level, indicating active charging (see LED Indicators section for details).</P>
+    <P>Once fully charged, all four power LEDs will remain steadily illuminated. The Commutator Pro is equipped with an integrated Battery Management System (BMS) that prevents overcharging, making it safe to leave the device plugged in during operation. </P>
+    <P>A full charge takes approximately 7 hours, and under normal operating conditions, the device can run for up to 6-9 hours on a full charge.</P></ul>
+</div>
+
+<p><img alt="test1" src="Commutator%20PRO-09.png" /></p>
+<p><br><br><br></p>
+<div class="text-block">
+    <h3><strong> Step 2: Connecting to the XDAQ </strong></h3>
+    Use the supplied DAQ cable to connect between a XDAQ headstage port and the appropriate headstage port (Neuropixels or HDMI) of the Commutator Pro.</ul>
+</div>
+
+<p><img alt="test1" src="Commutator%20PRO-10.png" /></p>
+<p><br></p>
+<p class="hanging-indent-IMP">
+    &#9888; <strong>IMPORTANT:</strong> For Neuropixels, connect the black USB-C connector to the DAQ systems (XDAQ, PXIQBSC, OneBox) and the white connector to the Commutator Pro. Reversing the connector order will cause Neuropixels to be un-detectable.
+</p>
+
+<p><br><br><br></p>
+<div class="text-block">
+    <h3><strong> Step 3: Connecting the headstage cable to the rotating interface </strong></h3>
+    <p>To connect the headstage cable to the Commutator Pro, locate the headstage port(s) positioned on the underside of the device, which serves as the rotating interface of the commutator. </p>
+    Identify the appropriate port based on the headstage type (HDMI or Neuropixels) as labeled near each connector. Carefully align the headstage cable connector with the corresponding port and insert it straight and firmly until it is securely seated. These ports are designed to maintain a stable connection while allowing continuous rotation during operation. </ul>
+</div>
+
+<p><img alt="test1" src="Commutator%20PRO-11.png" /></p>
+<p><br></p>
+<div class="text-block4">
+&#9888; <strong>IMPORTANT:</strong> 
+    - Ensure the cable is connected to the correct port.<br>
+    - Avoid twisting or pulling the cable during installation.<br>
+    - It is recommended to power off the device before making connections to prevent hardware damage.<br>
+    Once connected, signal input from the headstage will be routed through the commutator and transmitted to the corresponding output port on the top of the commutator base.
+</div>
+
+<p><br><br><br></p>
+<div class="text-block">
+    <h3><strong> Step 4: Managing excess cable </strong></h3>
+    When connecting the headstage cable to the Commutator Pro, the signal pathway begins at the rotating interface and exits through the fixed-side rotor side ports. After selecting the appropriate rotor side port (e.g., HDMI or Neuropixels), the user may route the cable toward the downstream recording amplifier. <br>
+    To ensure stable cable handling during rotation and prevent signal artifacts caused by tension or displacement, proper cable management is essential.<br>
+    Route the cable as illustrated below and securely lock the cable using the integrated screw clips, ensuring that adequate slack is maintained to prevent tension on the headstage connection and to allow smooth rotation of the commutator.
+</div>
+
+<p><img alt="test1" src="Commutator%20PRO-12.png" /></p>
+<p><br></p>
+<p class="hanging-indent-IMP">
+    &#9888; <strong>IMPORTANT:</strong> It is important to leave a small amount of slack in the cable to prevent tension that could affect the device's movement and sensitivity.
+</p>
+
+<p><br><br><br></p>
+<div class="text-block">
+    <h3><strong> Step 5: Sensor configuration </strong></h3>
+    The Commutator Pro can be driven using a compatible animal side IMU sensor or the integrated magnetic encoder. Note: the IMU sensor found in the X-Headstage or Intan stock recording headstages is not compatible with the Commutator Pro.<br>
+    <h4> IMU Sensor Models (designated with -I or -IH) </h4>
+    <ul><strong><Li> -I Model: </Li></strong>
+    Connect the integrated IMU sensor cable to the GYRO port on the rotating interface.
+    <strong><Li> -IH Model: </Li></strong>
+    Disconnect the integrated IMU sensor cable from the GYRO port, if applicable. Connect a custom headstage that includes a compatible and integrated IMU sensor to the HDMI cable.</ul>
+</div>
+
+<p><br></p>
+<p class="hanging-indent-NOTE">
+    <strong>NOTE:</strong> If no compatible headstage is available, connect the integrated IMU sensor cable instead. The device will not function correctly if both custom GYRO headstage and integrated IMU sensor cable are connected.
+</p>
+
+<p><br><br></p>
+<div class="text-block">
+    <h4> Magnetic sensor model (designated with -M) </h4>
+    This configuration uses the integrated magnetic encoder located on the rotating interface to detect cable rotation. It eliminates the need for the external IMU sensor. No setup is necessary, proceed to the next step.<br>
+    <h4> Combined GYRO & magnetic sensor model (designated with -MI) </h4>
+    <ul><strong>To use IMU sensor as the primary input: </strong><br>
+    If your Commutator Pro supports both GYRO and magnetic Sensor: <br><br>
+    <Li><strong> -IH Model: </strong></Li>
+    Plug the integrated IMU sensor cable into the GYRO port on the rotating interface. When a valid GYRO signal is detected, the magnetic encoder input will be automatically ignored.<br><br>
+    <strong> To switch to Magnetic encoder sensor: </strong><br>
+    Disconnect the IMU sensor cable. Release the lock screw securing the cable encoder attached to the magnetic encoder.</ul>
+</div>
+
+<p><img alt="test1" src="Commutator%20PRO-13.png" /></p>
+<p><br></p>
+<p class="hanging-indent-NOTE">
+    <strong>NOTE:</strong> When using the IMU sensor, ensure the lock screw is fastened to secure the cable encoder in place.
+</p>
+
+<p class="hanging-indent-IMP">
+    &#9888; <strong>IMPORTANT:</strong> The IMU sensor must be connected to the Commutator PRO before powering on to ensure proper operation.
+</p>
+
+<p><br><br><br></p>
+<div class="text-block">
+    <h3><strong> Step 6: Connecting GPIO </strong></h3>
+    This interface allows users to transmit analog or digital signals from external equipments. The signal enters via the fixed-side GPIO DB9 port and is routed directly to the rotating-side port, enabling seamless integration with devices mounted on the animal.<br>
+    A pre-assembled cable for accessing the rotating-side GPIO is available for purchase from Digi-Key or Mouser. To locate compatible options, search for 'JST SH' connector (10-pin).
+</div>
+<p><br></p>
+<p><img alt="test1" src="Commutator%20PRO-14.png" /></p>
+<p><br></p>
+<p class="hanging-indent-NOTE">
+  <strong>NOTE:</strong> GPIO signal can be routed through the HDMI port at the expense of reduction of maximum supported number of headstage channels. Contact us for the customization. Such customization should be done at the time of the order.
+</p>
+
+<p><br><br><br></p>
+<div class="text-block">
+    <h3><strong> Step 7: Connecting to the headstage, setting up IMU sensor and turning on </strong></h3>
+    <h4> Connect the headstage cable to the headstage </h4> 
+</div>
+
+<p><img alt="test1" src="Commutator%20PRO-15.png" /></p>
+<p><br></p>
+<div class="text-block">
+    <ul><h4> Attach IMU sensor to the headstage or cable </h4>
+    <Li> Attach the IMU sensor to the headstage or the headstage cable using adhesive or other suitable methods. </Li>
+    <Li> Ensure the sensor is perpendicular to the moving plane and parallel to the cable; do not rotate its orientation. </Li></ul>
+</div>
+
+<p><img alt="test1" src="Commutator%20PRO-16.png" /></p>
+<p><br></p>
+<div class="text-block">
+    <h4> Power On </h4>
+    <p> Press and hold the power button for one second. The LED indicator will flash three times to confirm the device has successfully powered on. </p>
+    Press and hold the power button again for one second to power off the device.
+</div>
+
+<p><img alt="test1" src="Commutator%20PRO-17.png" /></p>
+<p><br></p>
+<p class="hanging-indent-IMP">
+    &#9888; <strong>IMPORTANT:</strong> The IMU sensor must be connected to the Commutator PRO before powering on to ensure proper operation.
+</p>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="magnetic-sensor-sensitivity-speed-controls"><strong>Magnetic Sensor Sensitivity &amp; Speed Controls</strong></h3>
+<div class="text-block">
+    When using the KonteX Commutator Pro with magnetic sensor, two physical adjustment knobs labeled Sensitivity and Speed are available on the control panel. These knobs allow users to manually tune the system’s behavior based on the movement profile of the experimental subject.
+</div>
+
+<p><img alt="test1" src="Commutator%20PRO-18.png" /></p>
+<div class="text-block">
+    <h4>&#9312; Sensitivity knob </h4>
+    <ul><strong>Function:</strong>
+    Adjusts the magnetic sensor sensitivity (7 increments) of the Hall effect sensor.
+    <br>
+    <strong>Effect:</strong>
+    Higher sensitivity increases the system’s responsiveness to small rotational movements of the tether, triggering sensor compensation with less motion input.<br><br>
+    <strong>Usage scenario:</strong>
+    <Li> <strong>Small animals (e.g., mice) or low-activity experiments:</strong> Turn the sensitivity knob clockwise to increase responsiveness.</Li>
+    <Li> <strong>Large animals or highly active behavior:</strong> Reduce sensitivity to avoid overcompensation and motor jitter.</Li>
+    </ul><br>
+    <h4>&#9313; Speed knob </h4>
+    <ul><strong>Function:</strong>
+    Controls the rotation amplitude and velocity (7 increments) of the compensating motor in response to detected movement.
+    <br>
+    <strong>Effect:</strong>
+    Higher speed settings result in faster and larger motor responses, while lower settings make the compensation gentler and more gradual.<br><br>
+    <strong>Usage scenario:</strong>
+    <Li> For <strong>rapid or vigorous animal movements</strong>, increase speed to prevent cable tension buildup.</Li>
+    <Li> For <strong>delicate behaviors</strong> (e.g., head-fixed setups or fine-motor experiments), reduce speed for smoother operation.</Li>
+    </ul>
+</div>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="using-the-commutator-pro-with-intan-or-open-ephys-acquisition-systems"><strong>Using the Commutator PRO with Intan or Open Ephys Acquisition Systems</strong></h3>
+<p><br></p>
+<p><img alt="test1" src="Commutator%20PRO-19.png" /></p>
+<center><h4> Perspective </h4></center>
+
+<h4>uHDMI to RHD adapter<br>
+SKU: SAdpt-uHDMI-OM12 </h4>
+
+<p><img alt="texst3" src="Commutator%20PRO-20.png" /></p>
+<p><br></p>
+<h4>uHDMI to RHS Adapter<br>
+SKU: SAdpt-uHDMI-OM16 </h4>
+
+<p><img alt="test3" src="Commutator%20PRO-21.png" /></p>
+<p><br><br><br></p>
+<p><img alt="test1" src="Commutator%20PRO-22.png" /></p>
+<center><h4> Bottom view </h4></center>
+
+<p><br></p>
+<h4>XDAQ to RHD headstage adapter<br>
+SKU: SAdpt-XDAQ-OM12 </h4>
+
+<p><img alt="test1" src="Commutator%20PRO-23.png" /></p>
+<p><br></p>
+<h4>XDAQ to RHS headstage adapter<br>
+SKU: SAdpt-XDAQ-OM16 </h4>
+
+<p><img alt="test1" src="Commutator%20PRO-24.png" /></p>
+<p><br><br><br><br><br><br></p>
+<h3 id="left-right-manual-control"><strong>Left &amp; Right Manual Control</strong></h3>
+<div class="text-block">
+    The Commutator Pro control panel is equipped with left and right rotation buttons, allowing manual adjustment of the commutator’s rotating end. 
+    These controls allow for accurate repositioning with each button press.
+</div>
+
+<div class="text-block">
+    <h4>-M or -MI model</h4>
+</div>
+
+<p><img alt="test1" src="Commutator%20PRO-25.png" /></p>
+<div class="text-block">
+    <h4>-I or -IH model</h4>
+</div>
+
+<p><img alt="test1" src="Commutator%20PRO-26.png" /></p>
+<p><br><br><br><br><br><br></p>
+<h3 id="modular-cable-fixation-and-extension-components"><strong>Modular Cable Fixation and Extension Components</strong></h3>
+<div class="text-block">
+    The Commutator Pro features a modular design for the lower cable fixation and extension components, allowing configuration changes by removing the mounting screws.
+    <h4>This modularity applies differently depending on the commutator model :</h4>
+    <ul>
+    <li>Except for Models with a Straight (COMP-IH-XH1-NP1-B)</li>
+    Extension rod is removable and can be replaced with different lengths. The lower cable fixation assembly is secured with M3 screws and can be swapped to accommodate various cable types and experimental needs.
+    </ul>
+    <ul><li>Passthrough Channel (-PT)</li>
+    Extension rod is fixed and cannot be replaced. The lower cable fixation assembly remains removable with M3 screws for flexible cable management.
+    </ul>
+</div>
+
+<p><br></p>
+<p><img alt="text1" src="Commutator%20PRO-34.png" /></p>
+<p><br><br><br><br><br><br></p>
+<h3 id="tested-cable-configuration"><strong>Tested Cable Configuration</strong></h3>
+<p><br></p>
+<p><img alt="text1" src="Commutator%20PRO-27.png" /></p>
+<div class="text-block5">
+    <p align="right"><i>For custom cable length configurations, please contact us to discuss customization and validation options.</i></p>
+</div>
+
+<p><br></p>
+<p class="hanging-indent-NOTE">
+  <strong>NOTE:</strong> To ensure optimal data transmission, minimize the total cable length between the DAQ, the commutator, and the animal. For custom cable length configurations, please contact us to discuss available options.
+</p>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="pc-interface"><strong>PC Interface</strong></h3>
+<div class="text-block">
+    The USB-C port on the KonteX Commutator Pro serves as a multi-functional interface for both device configuration / control and power supply.
+</div>
+
+<div class="text-block">
+    <h4>Configuration and control</h4>
+   </div>
+
+<table style="width:100%; font-size:12px;">
+    <colgroup>
+        <col style="width:25%;">
+        <col style="width:27%;">
+        <col style="width:48%;">
+    </colgroup>
+    <thead>
+        <tr>
+            <th><h3><strong><center>Feature</center></strong></h3></th>
+            <th><h3><strong><center>GUI&nbsp;Controls</center></strong></h3></th>
+            <th><h3><strong><center>Description</center></strong></h3></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><span style="display:inline-block; transform: translateY(1.5em);"><strong>Machine Status</strong></span></td>
+            <td><span style="display:inline-block; transform: translateY(1.5em);">Status</span></td>
+            <td>Requests a status update from the Commutator for diagnostic and troubleshooting purposes.</td>
+        </tr>
+        <tr>
+            <td><span style="display:inline-block; transform: translateY(1em);"><strong>Motor Speed Control</strong></span></td>
+            <td>Speed 100, Speed 150, Speed 200, Speed 250</td>
+            <td>Adjusts the motor rotation speed used during automatic or manual operation.</td>
+        </tr>
+        <tr>
+            <td><span style="display:inline-block; transform: translateY(0.9em);"><strong>Motor Control Method</strong></span></td>
+            <td><span style="display:inline-block; transform: translateY(0.9em);">Method 1, Method 2 (Test)</span></td>
+            <td>Selects the motor control algorithm or sensor feedback method used for commutator operation.</td>
+        </tr>
+        <tr>
+            <td><span style="display:inline-block; transform: translateY(0.8em);"><strong>Manual Control</strong></span></td>
+            <td>PC Control, Turn Value Slider, Turn Value</td>
+            <td>Provides direct user control of motor rotation for testing, calibration, and troubleshooting purposes.</td>
+        </tr>
+        <tr>
+            <td><span style="display:inline-block; transform: translateY(1em);"><strong>Enable/Disable USB Data Output</strong></span></td>
+            <td><span style="display:inline-block; transform: translateY(1em);">Enable USB Data, Disable USB Data</span></td>
+            <td>Enables or disables real-time data transmission through the USB interface for monitoring and external software integration.</td>
+        </tr>
+        <tr>
+            <td><span style="display:inline-block; transform: translateY(0.8em);"><strong>Enable/Disable Intelligent Battery Management</strong></span></td>
+            <td><span style="display:inline-block; transform: translateY(1.6em);">Enable iBattery Management, Disable iBattery Management</span></td>
+            <td>Controls the battery charge management feature. When enabled, the battery is maintained between 20% and 80% charge to maximize battery lifespan. When disabled, the battery is allowed to charge to 100% capacity.</td>
+        </tr>
+        <tr>
+            <td><span style="display:inline-block; transform: translateY(1.4em);"><strong>Track Threshold Setting</strong></span></td>
+            <td><span style="display:inline-block; transform: translateY(1.4em);">Tracking Threshold Slider, Tracking Threshold</span></td>
+            <td>Adjusts the IMU/Gyro tracking sensitivity used to trigger automatic motor compensation. Lower values increase responsiveness, while higher values require greater rotational movement before compensation is activated.</td>
+        </tr>
+        <tr>
+            <td><strong>Max Motor Run Degree Setting</strong></td>
+            <td><span style="display:inline-block; transform: translateY(0.8em);">Motor Max Slider, Motor Max</span></td>
+            <td>Sets the maximum rotation angle allowed for each motor compensation event to prevent excessive movement.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="text-block">
+    The USB-C interface communicates through a dedicated software utility or custom API, enabling integration into automated behavioral or electrophysiological setups.<br> 
+    Battery charging behavior can also be configured through the GUI UART Control App, allowing users to switch between battery life optimization mode (20–80% charge range) and full-charge mode (100% charge).
+</div>
+
+<p><br></p>
+<p><img alt="text1" src="Commutator%20PRO-28.png" /></p>
+<center><h4> Charging ports </h4></center>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="firmware-interface-and-imu-reference"><strong>Firmware Interface and IMU Reference</strong></h3>
+<div class="text-block">
+    The Commutator provides real-time device telemetry and configuration control through a USB UART interface. Starting from firmware version 1.2, the system outputs IMU sensor data, motor position information, and system status using a JSON-based communication protocol.，<br>
+    This interface allows users to monitor device orientation, acceleration, and motor behavior during operation. It also enables configuration of operational parameters such as the Y-axis tilt threshold and telemetry output rate.<br>
+    The IMU data reported by the firmware follows the coordinate system defined by the onboard Bosch BNO055 sensor.
+</div>
+
+<h5 style="margin-bottom: 2px;">&emsp;&emsp;• Communication Interface</h5>
+<div style="display: flex; justify-content: center; width: 100%;">
+    <table style="width: 80%; min-width: 700px;">
+        <tr>
+            <th style="text-align:center; width:25%;">Parameter</th>
+            <th style="text-align:center; width:30%;">Specification</th>
+        </tr>
+        <tr><td>Interface</td><td>USB UART (Virtual COM Port)</td></tr>
+        <tr><td>Data Format</td><td>JSON</td></tr>
+        <tr><td>Transmission Mode</td><td>Continuous streaming</td></tr>
+        <tr><td>Default Data Rate</td><td>20 ms</td></tr>
+        <tr><td>Command Format</td><td>JSON</td></tr>
+    </table>
+</div>
+
+<div class="text-block" style="margin-top: 0;">
+   &emsp;&emsp;  Telemetry data is continuously transmitted through the USB interface while the device is operating.
+</div>
+
+<div class="text-block">
+    <h4>Telemetry Data Output</h4>
+    The Commutator continuously outputs IMU and motor status data in JSON format.
+</div>
+
+<h5 style="margin-bottom: 2px;">&emsp;&emsp;• Example Data Packet</h5>
+<div style="display: flex; justify-content: center; width: 100%;">
+    <table style="width: 80%; min-width: 480px; border-radius: 16px; overflow: hidden; border: 1px solid #ccc;">
+        <tr><td>{<br>
+            "v":1.2,<br>
+            "tick":1024,<br>
+            "fail":0,<br>
+            "gy_range":5,<br>
+            "mx":180,<br>
+            "ox":12,<br>
+            "oy":-3,<br>
+            "oz":45,<br>
+            "ax":0.12,<br>
+            "ay":-0.03,<br>
+            "az":0.98,<br>
+            "gx":0.02,<br>
+            "gy":-0.01,<br>
+            "gz":1.00<br>
+            }</td></tr>
+    </table>
+</div>
+
+<h5 style="margin-bottom: 2px;">&emsp;&emsp;• Telemetry Parameter Description</h5>
+<div style="display: flex; justify-content: center; width: 100%;">
+    <table style="width: 80%; min-width: 700px;">
+        <tr>
+            <th style="text-align:center; width:20%;">Parameter</th>
+            <th style="text-align:center; width:25%;">Description</th>
+            <th style="text-align:center; width:20%;">Range</th>
+        </tr>
+        <tr><td><center>v</center></td><td>Firmware version</td><td><center>-</center></td></tr>
+        <tr><td><center>tick</center></td><td>System time counter</td><td><center>milliseconds</center></td></tr>
+        <tr><td><center>fail</center></td><td>IMU read failure count</td><td><center>≥0</center></td></tr>
+        <tr><td><center>gy_range</center></td><td>Current Y-axis tilt threshold</td><td><center>0–10</center></td></tr>
+        <tr><td><center>mx</center></td><td>Motor position</td><td><center>0–359°</center></td></tr>
+        <tr><td><center>ox</center></td><td>IMU orientation (X axis)</td><td><center>0–359°</center></td></tr>
+        <tr><td><center>oy</center></td><td>IMU orientation (Y axis)</td><td><center>−90–90°</center></td></tr>
+        <tr><td><center>oz</center></td><td>IMU orientation (Z axis)</td><td><center>−180–180°</center></td></tr>
+        <tr><td><center>ax</center></td><td>Acceleration (X axis)</td><td><center>±4 g</center></td></tr>
+        <tr><td><center>ay</center></td><td>Acceleration (Y axis)</td><td><center>±4 g</center></td></tr>
+        <tr><td><center>az</center></td><td>Acceleration (Z axis)</td><td><center>±4 g</center></td></tr>
+        <tr><td><center>gx</center></td><td>Gravity vector (X axis)</td><td><center>±4 g</center></td></tr>
+        <tr><td><center>gy</center></td><td>Gravity vector (Y axis)</td><td><center>±4 g</center></td></tr>
+        <tr><td><center>gz</center></td><td>Gravity vector (Z axis)</td><td><center>±4 g</center></td></tr>
+    </table>
+</div>
+
+<p><br><br><br></p>
+<div class="text-block">
+    <h3><strong>IMU Coordinate System</strong></h3>
+    The onboard IMU follows the coordinate system defined by the Bosch BNO055 orientation sensor. All orientation, acceleration, and gravity values reported in the telemetry output correspond to this reference frame.
+</div>
+
+<p><img alt="text1" src="Commutator%20PRO-35.png" /></p>
+<div class="text-block">
+    In this coordinate system:
+    <ul><li>The X-axis represents rotation along the device width direction.</li>
+    <li>The Y-axis represents forward and backward tilt relative to the device.</li>
+    <li>The Z-axis represents vertical rotation perpendicular to the device surface.</li>
+    These axes define the reference frame used for all IMU measurements.</ul>
+</div>
+
+<p><br><br><br></p>
+<div class="text-block">
+    <h3><strong>Relationship Between IMU Data and Telemetry Parameters</strong></h3>
+    The telemetry parameters correspond directly to the IMU axes described above.
+</div>
+
+<div class="text-block">
+    <h4>Orientation</h4>
+    <ul><li>ox — rotation angle around the X-axis</li>
+    <li>oy — rotation angle around the Y-axis</li>
+    <li>oz — rotation angle around the Z-axis</li></ul>
+</div>
+
+<div class="text-block">
+    <h4>Acceleration</h4>
+    <ul><li>gx, gy, gz — gravity vector components along X, Y, Z axes</li></ul>
+    These values describe the spatial orientation and movement of the commutator during operation.
+</div>
+
+<p><br><br><br></p>
+<div class="text-block">
+    <h3><strong>Motor Response Based on IMU Tilt</strong></h3>
+    The Commutator uses the gravity component along the Y-axis (gy) to determine whether the motor should respond.<br>
+    During operation, the firmware continuously monitors the device tilt along the Y-axis. If the detected tilt exceeds the configured gy_range threshold, motor movement will be temporarily disabled.<br>
+    This mechanism prevents unstable motor operation when the device is excessively tilted and helps maintain reliable cable management during freely moving experiments.
+</div>
+
+<div class="text-block">
+    <h4>Command Interface</h4>
+    The firmware supports configuration commands sent through the USB UART interface using JSON format.<br>
+    Commands are applied immediately after they are received.
+</div>
+
+<div class="text-block">
+    <h4>gy_range Configuration</h4>
+    The gy_range parameter defines the allowable tilt range along the Y-axis before motor movement is disabled.
+</div>
+
+<h5 style="margin-bottom: 2px;">&emsp;&emsp;• Default Value</h5>
+<div style="display: flex; justify-content: center; width: 100%;">
+    <table style="width: 80%; min-width: 480px; border-radius: 16px; overflow: hidden; border: 1px solid #ccc;">
+        <tr><td>gy_range = 5</td></tr>
+    </table>
+</div>
+
+<h5 style="margin-bottom: 2px;">&emsp;&emsp;• Range</h5>
+<div style="display: flex; justify-content: center; width: 100%;">
+    <table style="width: 80%; min-width: 480px; border-radius: 16px; overflow: hidden; border: 1px solid #ccc;">
+        <tr><td>0 – 10</td></tr>
+    </table>
+</div>
+
+<div class="text-block" style="margin-top: 0;">
+   &emsp;&emsp; A larger value requires the device to remain within a smaller tilt range before the motor is allowed to move.
+</div>
+
+<h5 style="margin-bottom: 2px;">&emsp;&emsp;• Example command</h5>
+
+<p><img alt="text1" src="Commutator%20PRO-36.png" /></p>
+<div style="display: flex; justify-content: center; width: 100%;">
+    <table style="width: 80%; min-width: 480px; border-radius: 16px; overflow: hidden; border: 1px solid #ccc;">
+        <tr><td>{"gy_range":6}</td></tr>
+    </table>
+</div>
+
+<div class="text-block" style="margin-top: 0;">
+   &emsp;&emsp;  This parameter is stored in non-volatile memory and remains unchanged after power cycling.
+</div>
+
+<p><br><br><br></p>
+<div class="text-block">
+    <h3><strong>Data Rate Configuration</strong></h3>
+    The data rate parameter (dr) controls the telemetry output interval.
+</div>
+
+<h5 style="margin-bottom: 2px;">&emsp;&emsp;• Default Value</h5>
+<div style="display: flex; justify-content: center; width: 100%;">
+    <table style="width: 80%; min-width: 480px; border-radius: 16px; overflow: hidden; border: 1px solid #ccc;">
+        <td>20 ms</td>
+    </table>
+</div>
+
+<h5 style="margin-bottom: 2px;">&emsp;&emsp;• Range</h5>
+<div style="display: flex; justify-content: center; width: 100%;">
+    <table style="width: 80%; min-width: 480px; border-radius: 16px; overflow: hidden; border: 1px solid #ccc;">
+        <td>20 – 5000 ms</td>
+    </table>
+</div>
+
+<h5 style="margin-bottom: 2px;">&emsp;&emsp;• Example command</h5>
+<div style="display: flex; justify-content: center; width: 100%;">
+    <table style="width: 80%; min-width: 480px; border-radius: 16px; overflow: hidden; border: 1px solid #ccc;">
+        <td>{"dr":500}</td>
+    </table>
+</div>
+
+<div class="text-block" style="margin-top: 0;">
+   &emsp;&emsp; This command sets the telemetry output interval to 500 ms.
+</div>
+
+<div class="text-block">
+    The data rate setting is not saved after power cycling and will return to 20 ms after reboot.
+</div>
+
+<p><br><br><br></p>
+<p class="hanging-indent-NOTE">
+    <strong>NOTE :</strong>&ensp; • Commands must be sent as valid JSON strings.<br>
+    &emsp;• Only one parameter should be modified per command.<br>
+    &emsp;• The gy_range parameter is persistent, while the data rate resets after power cycling.<br>
+    &emsp;• Telemetry output continues during configuration commands.
+</p>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="system-verification-and-imu-status-monitoring"><strong>System Verification and IMU Status Monitoring</strong></h3>
+<div class="text-block">
+    This section outlines the procedures for establishing a connection between the Commutator Pro and your workstation using CoolTerm, and how to verify the operational integrity of the integrated IMU (Inertial Measurement Unit).
+</div>
+
+<div class="text-block">
+    <h4> 1. Software Installation and Acquisition </h4>
+    To facilitate communication with the Commutator Pro, users are required to utilize the CoolTerm serial terminal utility as the primary interface for system configuration and monitoring.
+    <ul><Li> Official Download Link: Users can access the software at <a href="https://freeware.the-meiers.org/" target="_blank">https://freeware.the-meiers.org/</a>. </Li></ul>
+</div>
+
+<p><img alt="text1" src="Commutator%20Pro%20CoolTerm.png" /></p>
+<p><br></p>
+<h4> 2. Connection Procedures </h4>
+
+<p><img alt="text1" src="CoolTerm-1.png" /></p>
+<div class="text-block">
+    Follow these steps to link the hardware to your computer:
+    <ul><li><b>Physical Setup:</b> Connect the Commutator Pro to your PC via USB and power on the device.</li>
+    <li><b>CoolTerm Configuration:</b><br>
+    1. Open CoolTerm. <br>
+    2. Click on the Connection menu at the bottom left (as shown in the reference image) or the Options icon in the top toolbar. <br>
+    3. Ensure the settings are: Baudrate: 115200, Data Bits: 8, Parity: None, and Stop Bits: 1. <br>
+    4. Click Connect.</li></ul>
+</div>
+
+<p><br></p>
+<h4> 3. Interpreting the Startup Sequence </h4>
+
+<div class="text-block">
+    The system performs a self-test upon connection. Use the following logs to verify the status of the IMU sensor.
+</div>
+
+<h4>&nbsp;  A. Normal Operational Status (Success) </h4>
+
+<p><img alt="text1" src="CoolTerm-2.png" /></p>
+<div class="text-block">
+    A successful connection is confirmed when the terminal displays the initialization sequence below:
+    <ul><b> 1. Sensor Detection: </b>The string BNO055 detected appears.<br>
+    <b> 2. System Setup: </b>The log will show IMU Mode 1, Low Power Mode, and the motor initialization (Setup Motor, Init Motor, Motor On).<br>
+    <b> 3.Data Streaming: </b>Numerical values will begin to scroll, indicating real-time orientation tracking is active.<br></ul>
+</div>
+
+<p><br></p>
+<p class="hanging-indent-NOTE">
+  <strong>NOTE:</strong> It is normal to see several .Failed to send! messages at the very top of the log during the initial handshake. These can be ignored once the BNO055 detected message appears.
+</p>
+
+<p><br></p>
+<h4>&nbsp;  B. IMU Disconnected Status (Error) </h4>
+
+<p><img alt="text1" src="CoolTerm-3.png" /></p>
+<div class="text-block">
+    If the IMU sensor is disconnected or failing to communicate, the terminal will display a repetitive error log:
+    <ul><li><b>Error Message: </b> The screen will fill with Not detected and No BNO055 detected.</li>
+    <li><b>System Stall:</b>You will see .Failed to send! repeated, and the motor initialization sequence will not start.</li></ul>
+</div>
+
+<p><br></p>
+<h4> 4. Troubleshooting the IMU Link </h4>
+
+<div class="text-block">
+    If a "Disconnected" state is observed, please perform the following diagnostic steps before proceeding with your experiment: <br>
+    <ul><b>1. Physical Inspection:</b> Ensure the internal sensor or external interface cables are securely connected and haven't been dislodged during setup.<br>
+    <b>2. Reset Connection:</b> Click Disconnect in CoolTerm and then Connect again to refresh the communication buffer.</ul>
+</div>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="undermount-cutout-installation-sepcification"><strong>Undermount Cutout Installation Sepcification</strong></h3>
+<p><img alt="test1" src="Commutator%20PRO-29.png" /></p>
+<center><h4> Cutout dimensions diagram &emsp; </h4></center>
+
+<div class="text-block2">
+    <p align="right">unit: mm</p>
+</div>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="pin-map"><strong>Pin Map</strong></h3>
+<p><img alt="test1" src="Commutator%20PRO-30.png" /></p>
+<p><br></p>
+<div class="text-block5">
+    <palign="left"><i># of GPIO available always start from left and count to right.<br><br>
+    Example, if the Commutator has 3 GPIO, then pin 5, 9 and 4 are available.</i>
+</div>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="compatible-accessories"><strong>Compatible Accessories</strong></h3>
+<p><br></p>
+<table>
+<thead>
+<tr>
+<th><center>SKU</center></th>
+<th><center>Description</center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><h4> Headstage </h4></td>
+<td></td>
+</tr>
+<tr>
+<td>HS-NP1</td>
+<td>KonteX Neuropixels 1.0 headstage with JST connector</td>
+</tr>
+<tr>
+<td>HS-NP2</td>
+<td>KonteX Neuropixels 2.0 headstage with JST connector</td>
+</tr>
+<tr>
+<td>X-Headstages</td>
+<td>All X-Headstages except X3SR64 (contact us to discuss X3SR64 option)</td>
+</tr>
+<tr>
+<td><h4> DAQ Cable </h4></td>
+<td></td>
+</tr>
+<tr>
+<td>Cable-COMP-1M</td>
+<td>Neuropixels DAQ cable (connecting system to the commutator) 1 M (included for NP model)</td>
+</tr>
+<tr>
+<td>Cable-COMP-2M</td>
+<td>Neuropixels DAQ cable (connecting system to the commutator) 2M</td>
+</tr>
+<tr>
+<td>Cable-COMP-Cust</td>
+<td>Contact us for custom length option for Neuropixels DAQ cable</td>
+</tr>
+<tr>
+<td>Cable-HDMl-80cm</td>
+<td>X-Headstage DAQ cable 80cm (included for XH model)</td>
+</tr>
+<tr>
+<td>Cable-HDMI-3M</td>
+<td>X-Headstage DAQ cable 3M</td>
+</tr>
+<tr>
+<td><h4> Headstage Cable </h4></td>
+<td></td>
+</tr>
+<tr>
+<td>Cable-NP-1M-J</td>
+<td>KonteX Neuropixels 34AWG cable 1 M with JST connector for KonteX headstages</td>
+</tr>
+<tr>
+<td>Cable-NP-2.5M-J</td>
+<td>KonteX Neuropixels 34AWG cable 2.5M with JST connector for KonteX headstages</td>
+</tr>
+<tr>
+<td>Cable-NP-5M-J</td>
+<td>KonteX Neuropixels 34AWG cable 5M with JST connector for KonteX headstages</td>
+</tr>
+<tr>
+<td>Cable-NP-1M-K</td>
+<td>KonteX Neuropixels 34AWG cable 1 M with JST connector and Omnetics adapter bundle for IMEC headstage</td>
+</tr>
+<tr>
+<td>Cable-NP-2.5 M-K</td>
+<td>KonteX Neuropixels 34AWG cable 2.5 M with JST connector and Omnetics adapter bundle for IMEC headstage</td>
+</tr>
+<tr>
+<td>Cable-NP-5M-K</td>
+<td>KonteX Neuropixels 34AWG cable 5 M with JST connector and Omnetics adapter bundle for IMEC headstage</td>
+</tr>
+<tr>
+<td>Cable-HDMl-80cm</td>
+<td>80cm HDMI cable for X-Headstages</td>
+</tr>
+<tr>
+<td><h4> IMU Cable </h4></td>
+<td></td>
+</tr>
+<tr>
+<td>Cable-lMU-1M</td>
+<td>KonteX Neuropixels 34AWG cable 1 M with JST connector for KonteX headstages</td>
+</tr>
+<tr>
+<td>Cable-lMU-2.5M</td>
+<td>KonteX Neuropixels 34AWG cable 2.5M with JST connector for KonteX headstages</td>
+</tr>
+<tr>
+<td>Cable-lMU-5M</td>
+<td>KonteX Neuropixels 34AWG cable 5M with JST connector for KonteX headstages</td>
+</tr>
+<tr>
+<td><h4> IMU sensor </h4></td>
+<td></td>
+</tr>
+<tr>
+<td>HS-IMU</td>
+<td>Replacement IMU sensor module (included for -I model)</td>
+</tr>
+<tr>
+<td><h4> Adapter </h4></td>
+<td></td>
+</tr>
+<tr>
+<td>Adpt-NP-J2OM</td>
+<td>JST to Omnetics adapter for interfacing IMEC headstages with -J cables</td>
+</tr>
+<tr>
+<td>SAdpt-XDAQ-OM12</td>
+<td>Animal side commutator adapter for lntan RHD headstage and SPI cable</td>
+</tr>
+<tr>
+<td>SAdpt-XDAQ-OM16</td>
+<td>Animal side commutator adapter for lntan RHS headstage and SPI cable</td>
+</tr>
+<tr>
+<td>SAdpt-uHDMI-OM12</td>
+<td>System side commutator adapter for lntan RHD controller</td>
+</tr>
+<tr>
+<td>SAdpt-uHDMI-OM16</td>
+<td>System side commutator adapter for lntan RHS controller</td>
+</tr>
+</tbody>
+</table>
+<p><br><br><br><br><br><br></p>
+<h3 id="model-with-passthrough-channel-pt"><strong>Model with Passthrough Channel (-PT)</strong></h3>
+<p><br></p>
+<p><img alt="test1" src="Commutator%20PRO-31.png" /></p>
+<center><h4> Passthrough channel dimensions diagram </h4></center>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="mitigating-emi-induced-errors-in-gmsl-differential-signal-routing-near-power-switched-commutators"><strong>Mitigating EMI-Induced Errors in GMSL Differential Signal Routing Near Power-Switched Commutators</strong></h3>
+<div class="text-block">
+    The Commutator Pro is designed to provide reliable power switching in high-speed data transmission systems such as NP serial transmit applications. When operating with GMSL differential signals, users must take precautions to avoid electromagnetic interference (EMI) that may lead to errors during PRBS or serial transmission testing.
+</div>
+
+<p><br><br><br><br><br></p>
+<hr />
+<p><img alt="test2" src="../../LOGO-1.png" /></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 <a href="https://www.kontex.io/" target="_blank" rel="noopener">KonteX Neuroscience</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.indexes"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/menu-accordion.js"></script>
+        <script src="../../javascripts/ai-search.js"></script>
+      
+        <script src="../../assets/document_dates/tippy/popper.min.js"></script>
+      
+        <script src="../../assets/document_dates/tippy/tippy.umd.min.js"></script>
+      
+        <script src="../../assets/document_dates/core/default.config.js"></script>
+      
+        <script src="../../assets/document_dates/user.config.js"></script>
+      
+        <script src="../../assets/document_dates/core/utils.js"></script>
+      
+        <script src="../../assets/document_dates/core/core.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3508 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="User Manual for KonteX Neuroscience Products">
+      
+      
+      
+        <link rel="canonical" href="https://docs.kontex.io/Instrument/DDS/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../Short-Circuit-Analyzer/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Inst-BrainSim - User Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/material.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/light.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/backdrop.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/tippy.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/scale.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/shift-away.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/core/core.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/user.config.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="User Manual" class="md-header__button md-logo" aria-label="User Manual" data-md-component="logo">
+      
+  <img src="../../KonteX.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            User Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Inst-BrainSim
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="User Manual" class="md-nav__button md-logo" aria-label="User Manual" data-md-component="logo">
+      
+  <img src="../../KonteX.png" alt="logo">
+
+    </a>
+    User Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../XDAQ/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XDAQ
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    XDAQ
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../XDAQ/CORE2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XDAQ CORE2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../XDAQ/ONE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XDAQ ONE+
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../XDAQ/AIO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XDAQ AIO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Headstage/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Headstage
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Headstage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/X3R/X3R32_OM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X3R32-OM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/X3R/X3R32_HDMI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X3R32-HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/X3R/X3R64_OM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X3R64-OM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/X3R/X3R64_HDMI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X3R64-HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/X3SR/X3SR32_HDMI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X3SR32-HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/X3SR/X3SR32_OM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X3SR32-OM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/X3SR/X3SR64_HDMI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X3SR64-HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/X6R/X6R128_HDMI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X6R128-HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/XeR/XeR16_HDMI_ACC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XeR16-HDMI-ACC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/XeR/XeR64_HDMI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XeR64-HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/XeSR/XeSR16_HDMI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XeSR16-HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/XeSR/XeSR32_HDMI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XeSR32-HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Commutator/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commutator
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Commutator
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Commutator/Standard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standard Commutator HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Commutator/PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commutator PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Commutator/Firmware-Update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commutator PRO Firmware Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Commutator/UART-JSON-Controller-Operational-Manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commutator Pro - UART JSON Controller Operational Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../EIB/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EIB
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    EIB
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EIB/Adpt-JP-X3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-JP-X3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EIB/EIB32-LR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EIB32-LRCombo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EIB/EIB-L-32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EIB32-L
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EIB/EIB-R-32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EIB32-R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EIB/EIB16-M1S/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EIB16-M1S
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EIB/EIB32-M1S/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EIB32-M1S
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EIB/EIB32SR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EIB32SR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Probe-Adpt/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Probe Adapter
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Probe Adapter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-MEA2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-MEA2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-A16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-A16
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-A32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-A32
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-A64/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-A64
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-A64-SR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-A64-SR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-SRRemap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-SRRemap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-OM16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-OM16
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-OM16-V/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-OM16-V
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-OM32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-OM32
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-OM32-Stim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-OM32-Stim
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-OM64/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-OM64
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-X3-M1P16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-X3-M1P16
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-X3R32-M1P32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-X3R32-M1P32
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-X6toX3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-X6toX3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-NNx-X3-16ch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-NNx-X3-16ch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-X3-EXT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-X3-EXT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-X6-EXT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-X6-EXT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../System-Adpt/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Adapter
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    System Adapter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SyncLink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SyncLink
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/IO-Expander/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IO Expander
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-EXP-BNC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-EXP-BNC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-HDMI-OM12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-HDMI-OM12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-HDMI-OM16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-HDMI-OM16
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-Port-EXP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-Port-EXP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-SR64/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-SR64
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-uHDMI-Smartlink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-uHDMI-Smartlink
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-XDAQ-BNC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-XDAQ-BNC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-XDAQ-OM12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-XDAQ-OM12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-XDAQ-OM16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-XDAQ-OM16
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-XDAQ-Smartlink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-XDAQ-Smartlink
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Accessory/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accessory
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Accessory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Accessory/Fine-Cable-Organizer-Kit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fine-Cable Organizer Kit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Accessory/Tester-Stim-X3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tester-Stim-X3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Accessory/Tester-Z-X3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tester-Z-X3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Accessory/XHS-Screw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XHS-Screw
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Accessory/XHS-Tool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XHS-Tool
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Accessory/Cable-HDMI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cable-HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Accessory/Cable-NP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cable-NP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Accessory/Cable-IMU/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cable-IMU
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instrument
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Instrument
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inst-BrainSim
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inst-BrainSim
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dimension-and-weight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dimension And Weight
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Features
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#device-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Device Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#led-indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LED Indicators
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-the-headstage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing the Headstage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-test-waveforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuring Test Waveforms
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-with-electrode-and-headstage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing with Electrode and Headstage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generating-a-digital-pulse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generating a Digital Pulse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connector-specification-pinout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connector Specification &amp; Pinout
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compatible-accessory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compatible Accessory
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Short-Circuit-Analyzer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Short Circuit Analyzer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dimension-and-weight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dimension And Weight
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Features
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#device-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Device Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#led-indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LED Indicators
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-the-headstage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing the Headstage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-test-waveforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuring Test Waveforms
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-with-electrode-and-headstage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing with Electrode and Headstage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generating-a-digital-pulse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generating a Digital Pulse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connector-specification-pinout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connector Specification &amp; Pinout
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compatible-accessory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compatible Accessory
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Inst-BrainSim</h1>
+
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><span data-tippy-content data-tippy-raw='2026-04-17'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-04-17T08:49:39+00:00'>2026-04-17</time></span></div></div>
+<p><br><br><br></p>
+<p><img alt="test1" src="DDS%20user%20manual-01.png" /></p>
+<p><br><br><br><br><br><br></p>
+<h3 id="overview"><strong>Overview</strong></h3>
+<div class="text-block">
+    <p>The BrainWave Simulator is a precision signal-generation platform designed to emulate neural activity for end-to-end validation and calibration of neural acquisition systems—from electrodes and headstages to acquisition platforms (e.g., XDAQ and others) and integrated experimental I/O setups. Its compact form factor, battery-powered operation, and dual-channel programmable outputs provide researchers with a reliable solution for bench-top testing and in-lab system verification—without the need for live tissue samples or biological inputs.</p> 
+    As part of our continuous product enhancement strategy, the BrainWave Simulator has been refined to incorporate expanded signal source options, improved electrical integration, and streamlined control features. These improvements are evolutionary rather than disruptive, ensuring that all devices retain full compatibility with existing workflows while extending their applicability to more advanced experimental paradigms.
+    </div>
+
+<p><br></p>
+<p><img alt="test1" src="DDS%20user%20manual-02.png" /></p>
+<p><br><br><br><br><br><br></p>
+<h3 id="components"><strong>Components</strong></h3>
+<p><br></p>
+<p><img alt="test1" src="DDS%20user%20manual-03.png" /></p>
+<p><br><br><br><br><br><br></p>
+<h3 id="dimension-and-weight"><strong>Dimension And Weight</strong></h3>
+<p><img alt="test1" src="DDS%20user%20manual-04.png" /></p>
+<div class="text-block2">
+    <p align="right">Weight ~260g</p>
+    <p align="right">unit: mm</p>
+</div>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="key-features"><strong>Key Features</strong></h3>
+<div class="text-block1">
+    <h4> Purpose-Built for Validating Neural Acquisition Pipelines</h4> 
+    <ul>
+    <Li> Compatible with KonteX X-Headstages and other headstage systems</Li>
+    <Li> Enables full pipeline testing using electrodes in PBS</Li>
+    </ul>
+    <h4> Dual-Channel, Fully Programmable Signal Output</h4>
+    <ul> 
+    <Li> Two independent output channels, each configurable with discrete amplitude and frequency settings</Li>
+    <Li> Enhanced signal source architecture: selectable onboard signal generator or external source</Li> </ul>
+   <ul><Li><b> Amplitude options:</b></Li></ul>
+    <p style="margin-left: 2em;">
+    <b>- Onboard waveform mode</b><br>
+    3mV, 0.5mV, 0.1mV, or 0mV(mute) to accommodate a wide range of headstage sensitivity requirements.<br><br>
+    <b>- External signal mode</b><br>
+    Divide external signal by: 1,000, 6,000, 30,000, and 0V(off)</p>
+    <ul><Li><b> Frequency options:</b></Li></ul>
+    <p style="margin-left: 2em;">
+    <b>- Onboard waveform mode:</b><br>
+    1000 Hz, 500 Hz, 30 Hz, 10 Hz selected for common neural signal validation bandwidths.<br><br>
+    <b>- External signal mode:</b><br>
+    Integrate filter circuit for common neural signal frequency range from 75Hz to 5KHz.<br></p>
+    <ul><Li>Independent channel configuration ensures
+    channel-isolated testing and headstage characterization.</Li>
+    <Li>While signals outside this bandwidth can still be processed, they may show reduced amplitude or increased distortion.</Li></ul>
+</div>
+
+<div class="text-block1">
+    <h4> Multiple Waveform Profiles for Comprehensive Testing </h4>
+    <ul>
+    <Li><strong>Sine wave:</strong>
+    For baseline gain and frequency response measurements.</Li>
+    <Li><strong>Square wave:</strong>
+    For slew rate and transient response testing.</Li>
+    <Li><strong>Triangle wave:</strong>
+    For linearity and symmetry verification.</Li>
+    <Li><strong>Simulation (Sim) mode:</strong>
+    Synthetic waveform featuring a parameter-adjustable carrier with randomized spike patterns designed to approximate biological neural signals for realistic validation.</Li>
+    </ul>
+</div>
+
+<div class="text-block1">
+    <h4> Integrated TTL Synchronization Output </h4>
+    <ul>
+    <Li>3.3 V logic-level pulse output operates in a push (High) and release (Low) manner.</Li>
+    <Li>Standard 3.5 mm to BNC cable interface for straightforward connection to downstream acquisition or stimulation devices.</Li>
+    <Li>Ideal for time-locking signal generation to data collection or closed-loop feedback systems.</Li>
+    </ul>
+</div>
+
+<div class="text-block1">
+    <h4> Battery-Powered Low-Noise Operation </h4>
+    <ul>
+    <Li>Internal rechargeable Li-ion battery delivers approximately 12 hours of continuous use on a full charge.</Li>
+    <Li>Charging via USB-C takes 2.5 hours and does not require additional configuration.</Li>
+    </ul>
+</div>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="device-overview"><strong>Device Overview</strong></h3>
+<p><img alt="test1" src="DDS%20user%20manual-05.png" /></p>
+<center><h4>&emsp;Side view &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Front view &emsp;</h4></center>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="led-indicators"><strong>LED Indicators</strong></h3>
+<p><img alt="test1" src="DDS%20user%20manual-06.png" /></p>
+<p><br></p>
+<div class="text-block1">
+    <h4> Power Indicator LED </h4>
+    <ul>
+    <Li>Confirms that the BrainWave Simulator is powered on and operating.</Li>
+    <Li>Provides immediate visual feedback that the device is active.</Li>
+    </ul>
+</div>
+
+<div class="text-block1">
+    <h4> Battery Status LED </h4>
+    <ul>
+    <Li>While charging: The indicator light flashes red, indicating that the internal battery is recharging.</Li>
+    <Li>Low battery: The indicator light is solid red, alerting the user to recharge the device to maintain uninterrupted operation.</Li>
+    <Li>See below for a full explanation of the LED status.</Li>
+    </ul>
+</div>
+
+<p><br></p>
+<p><img alt="test1" src="DDS%20user%20manual-07.png" /></p>
+<p><br><br><br><br><br><br></p>
+<h3 id="testing-the-headstage"><strong>Testing the Headstage</strong></h3>
+<div class="text-block">
+    <Li><h4> Attach the X-Headstage™</h4></Li>
+    These steps apply to all KonteX X-Headstage™ compatible accessories.
+</div>
+
+<p><img alt="test1" src="DDS%20user%20manual-08-08.png" /></p>
+<p><br></p>
+<div class="text-block">
+    <h4> 1. Align the Connectors</h4>
+   Carefully align the connectors. When the interface board features an alignment arrow, orient the X-Headstage™ so the micro-HDMI connector matches the arrow's direction.
+</div>
+
+<p><img alt="test1" src="DDS%20user%20manual-9-1.png" /></p>
+<p><br></p>
+<div class="text-block">
+    <h4> 2. Press Down Firmly</h4>
+   Carefully align the connectors. When the interface board features an alignment arrow, orient the X-Headstage™ so the micro-HDMI connector matches the arrow's direction.
+</div>
+
+<p><img alt="test1" src="DDS%20user%20manual-10-1.png" /></p>
+<p><br></p>
+<div class="text-block">
+    <h4> 3. Connect the Micro-HDMI Cable</h4>
+   <p>3A. If the X-Headstage™ is attached to a probe adapter designed with a locking mechanism. Secure the connection by locking the screws before plugging in the Micro-HDMI cable.</p>
+   3B. Insert the cable while applying even pressure to both the X-Headstage™ and the accessory.<br>
+   This minimizes torque to the miniature board-to-board connectors.
+</div>
+
+<p><img alt="test1" src="DDS%20user%20manual-11-1.png" /></p>
+<p><br></p>
+<div class="text-block">
+    <h4> 4. Install the Headstage Stabilization Adapter</h4>
+   4A: Attach and secure the Headstage Stabilization Adapter by tightening the thumb screws.
+</div>
+
+<p><img alt="test1" src="DDS%20user%20manual-12-1.png" /></p>
+<div class="text-block">
+   4B: With the assembly secured, push the headstage assembly into the headstage port on the Brainwave Simulator.
+</div>
+
+<p><img alt="test1" src="DDS%20user%20manual-13-1.png" /></p>
+<p><br><br><br></p>
+<div class="text-block">
+    <Li><h4> Detach the X-Headstage™</h4></Li>
+</div>
+
+<p><img alt="test1" src="DDS%20user%20manual-14.png" /></p>
+<p><br></p>
+<div class="text-block">
+    <h4> 1. Unscrew the thumbscrews to remove the Headstage Stabilization Adapter </h4>
+</div>
+
+<p><img alt="test1" src="DDS%20user%20manual-15.png" /></p>
+<p><br></p>
+<div class="text-block">
+    <h4> 2. Disconnect the Micro-HDMI Cable</h4>
+   While holding the X-Headstage™ and adapter firmly, gently pull the cable straight back — avoid twisting or lateral force.
+</div>
+
+<p><img alt="test1" src="DDS%20user%20manual-16.png" /></p>
+<p><br></p>
+<div class="text-block">
+    <h4> 3. Use the designated XHS tool (removal tool) for detachment </h4>
+   Aim the tool tip from the top or bottom, if accessible. <br>
+   The XHS tool is purpose-built for X-Headstage™, featuring a single tip for X3-series and a dual tip for X6-series models. Each tip is precision-polished to minimize the risk of damage to PCB surfaces.
+</div>
+
+<p><img alt="test1" src="DDS%20user%20manual-17.png" /></p>
+<p><br></p>
+<div class="text-block5">
+    <palign="left"><i># If the XHS tool is unavailable, a flat-head screwdriver with a tip thickness of less than 0.5 mm may be used as an alternative.</i>
+</div>
+
+<p><br></p>
+<div class="text-block">
+    <h4> 4. Release and Catch the X-Headstage™ </h4>
+   Insert the tool tip at a slight angle into the gap between the X-Headstage™ and its accessory.<br>
+   The headstage should release easily with minimal applied force.
+</div>
+
+<p><img alt="test1" src="DDS%20user%20manual-18.png" /></p>
+<p><br></p>
+<div class="text-block">
+    <h4> 5. Optional Accessory: Cycle Extender or Remapper </h4>
+   Users may consider using this sacrificial interface adapter to reduce wear on the X-Headstage connector from repeated connection cycles and extend its operational lifespan.
+</div>
+
+<p><img alt="test1" src="DDS%20user%20manual-19.png" /></p>
+<p><br><br><br><br><br><br></p>
+<h3 id="configuring-test-waveforms"><strong>Configuring Test Waveforms</strong></h3>
+<div class="text-block">
+    <h4> 1. Power On </h4>
+    <ul>
+    <Li>Turn on the BrainWave Simulator by sliding the System Mode Switch to ON.</Li>
+    <Li>In Onboard waveform mode, the device outputs a 3 mV, 1 kHz sine wave to all channels by default. </Li>
+    <Li>In External signal mode, the device configure on divide 1,000 by default.</Li>
+    </ul>
+</div>
+<p><br></p>
+<p class="hanging-indent-IMP">
+    &#9888; <strong>IMPORTANT :</strong> Do not using the device while charging, as this may cause ground coupling and increase measurement noise.<br>
+</p>
+<p><br></p>
+<div class="text-block">
+    <h4> 2. Output Waveform Adjustment </h4>
+    The onboard signal generator is capable of producing two independent waveforms—CH1 and CH2—which are alternately assigned across all headstage input channels.
+    <ul>
+    <Li>Use the CH button to toggle between CH1 and CH2 for configuration.</Li>
+    <Li>Adjust the parameters as required using the corresponding control knobs or software interface.</Li>
+    </ul>
+</div>
+
+<div class="text-block1">
+    <strong>Adjustable Parameters: </strong>
+    <ul>
+    <Li>Amplitude (Amp mV): 3 mV, 500 μV, 100 μV, 0 (off)</Li>
+    <Li>Frequency (Freq Hz): 1000, 500, 30, 10</Li>
+    <Li>Waveform Type (Mode): Sine (Sine), Square (Sq), Triangle (Tri)</Li>
+    </ul>
+</div>
+
+<div class="text-block1">
+    <strong>Simulated (Sim): </strong>
+    In Simulated Mode, the generator produces a composite waveform consisting of a carrier sine wave combined with randomly generated spikes.
+    <ul>
+    <Li>Amplitude (Amp mV): 3 mV, 500 μV, 100 μV, 0 (off)</Li>
+    <Li>Frequency (Freq Hz): 1000, 500, 30, 10</Li>
+    </ul>
+</div>
+
+<p><br></p>
+<div class="text-block">
+    <h4> 3. Testing with External Signal Source </h4>
+    The BrainWave Simulator accepts external test signal (maximum voltage 2Vrms) via the 3.5 mm stereo jack (e.g. from a PC) and attenuates the signal to appropriate level for headstage or neural probe testing.
+    <ul>
+    <Li>Sliding the ON/OFF switch to the right.</Li>
+    <Li>External signal can be attenuated by:</Li>
+    &emsp;-1000 (3mV LED)<br>
+    &emsp;-6000 (0.5mV LED)<br>
+    &emsp;-30000 (0.1mV LED)<br>
+    &emsp;-∞ (muted output: 0mV LED)
+    <Li>Upon starup, the device is /1000 by default.</Li>
+    <Li>Playing an audio signal on a device enables the BrainWave Simulator to simultaneously generate the corresponding analog output waveform.</Li>
+    <Li>Once the headstage is attached on the BrainWave Simulator and connected to XDAQ, the waveform can be directly recorded using the acquisition software.</Li>
+    </ul>
+</div>
+
+<p><br></p>
+<p class="hanging-indent-IMP">
+    &#9888; <strong>IMPORTANT :</strong> The peak to peak limited range of the external input should remain below 2Vrms.<br>
+    Exceeding this level may cause distortion or permanent damage to the input circuitry.<br>
+    For optimal performance, it is recommended to use the headphone output jack of a standard computer as the signal source.
+</p>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="testing-with-electrode-and-headstage"><strong>Testing with Electrode and Headstage</strong></h3>
+<div class="text-block">
+    <p>Evaluates electrode or probe performance and system functionality in saline using the BrainWave Simulator before actual recordings.<br><br>
+    1.&emsp;Immerse the in-house electrode or Neuropixels probe in the saline bath and connect its headstage to XDAQ.<br>
+    2.&emsp;Short the GND/REF of the electrode or Neuropixels and connect them to the GND terminal of the BrainWave Simulator using the saline test adapter with the connector left floating in the air.<br>
+    3.&emsp;Immerse the signal electrode from the BrainWave Simulator output channel (CH1 or CH2) into the saline bath to deliver the simulated signal.<br>
+    4.&emsp;Adjust the BrainWave Simulator output parameters and observe the signal in the acquisition software. The displayed waveform should change accordingly to the simulator settings.
+    </div>
+
+<p><br></p>
+<p><img alt="test1" src="DDS%20user%20manual-20.png" /></p>
+<p><br></p>
+<p class="hanging-indent-IMP">
+    &#9888; <strong>IMPORTANT :</strong>  Confirm all connections are correct while applying the signal.<br>
+    Ensure a proper grounding and shielding environment to reduce noise and maintain signal stability.
+</p>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="generating-a-digital-pulse"><strong>Generating a Digital Pulse</strong></h3>
+<div class="text-block">
+    1.&emsp;Connect a 3.5 mm jack–to–BNC patch cord between the TTL Out port of the BrainWave Simulator and the device receiving the digital pulse (e.g., XDAQ).<br>
+    </div>
+
+<p><img alt="test1" src="DDS%20user%20manual-21.png" /></p>
+<div class="text-block">
+    2.&emsp;Press the Pulse Trigger button to output a 3.3 V TTL pulse. The signal remains high while the button is pressed and returns low upon release. The pulse frequency depends on the speed of button activation.<br>
+    </div>
+
+<p><img alt="test1" src="DDS%20user%20manual-22.png" /></p>
+<div class="text-block">
+    3.&emsp;All four frequency indicator LEDs illuminate when the TTL Out signal is at a high logic level.<br>
+    </div>
+
+<p><img alt="test1" src="DDS%20user%20manual-23.png" /></p>
+<p><br><br><br><br><br><br></p>
+<h3 id="connector-specification-pinout"><strong>Connector Specification &amp; Pinout</strong></h3>
+<div class="text-block">
+    The Brainwave Simulator has undergone several optimizations to provide a reliable connection. The latest design, Version 2, uses a board-to-board connector and enables the use of headstage stabilization adapter.
+</div>
+
+<p><br></p>
+<div class="text-block">
+    <h4> Version 2 </h4>
+     <ul>
+    <Li> Main Connector: 40P 0.8mm Board to Board Mezzanine Connector.</Li>
+    </ul>
+</div>
+
+<p><img alt="test1" src="DDS%20user%20manual-24.png" /></p>
+<p><br><br><br><br><br><br></p>
+<h3 id="compatible-accessory"><strong>Compatible Accessory</strong></h3>
+<div class="text-block">
+    <h4> X-Headstage Stabilization Adapter for X3 Headstage (SKU: Adpt-BWS-X3): </h4>
+    <ul>
+    <Li> This is the default adapter shipped with the Brainwave Simulator.</Li>
+    </ul>
+    <h4> X-Headstage Stabilization Adapter for X6 Headstage (SKU: Adpt-BWS-X6): </h4>
+    <ul>
+    <Li> Use this adapter to use with the X6 headstages.</Li>
+    </ul>
+    <h4> 3.5mm plug to BNC patch cord (SKU: ACC-0007): </h4>
+    <ul>
+    <Li> Use this patch cord to send a test digital pulse to an instrument.</Li>
+    </ul>
+    <h4> X-Headstage Remove Tool (SKU: XHS-Tool): </h4>
+    <ul>
+    <Li> Headstage removal tool.</Li>
+    </ul>
+    <h4> DDS V1.0 to V2 Adapter (SKU: ACC-0009): </h4>
+    <ul>
+    <Li> Use this adapter with the v1.0 Brainwave Simulator to use the X3 or X6 Stabilization Adapter.</Li>
+    </ul>
+    <h4> DDS V1.1 to V2 Adapter (SKU: ACC-0010): </h4>
+    <ul>
+    <Li> Use this adapter with the v1.1 Brainwave Simulator to use the X3 or X6 Stabilization Adapter.</Li>
+    </ul>
+    <h4> Adapters to other headstages: </h4>
+    <ul>
+    <Li> Contact us for customization or use reference Eagle design to modify for your own.</Li>
+    </ul>
+</div>
+
+<p><br><br><br><br><br></p>
+<hr />
+<p><img alt="test2" src="../../LOGO-1.png" /></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 <a href="https://www.kontex.io/" target="_blank" rel="noopener">KonteX Neuroscience</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.indexes"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/menu-accordion.js"></script>
+        <script src="../../javascripts/ai-search.js"></script>
+      
+        <script src="../../assets/document_dates/tippy/popper.min.js"></script>
+      
+        <script src="../../assets/document_dates/tippy/tippy.umd.min.js"></script>
+      
+        <script src="../../assets/document_dates/core/default.config.js"></script>
+      
+        <script src="../../assets/document_dates/user.config.js"></script>
+      
+        <script src="../../assets/document_dates/core/utils.js"></script>
+      
+        <script src="../../assets/document_dates/core/core.js"></script>
+      
+    
+  </body>
+</html>

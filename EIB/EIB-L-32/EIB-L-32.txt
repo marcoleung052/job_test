@@ -1,0 +1,24 @@
+EIB32-L
+2025-12-11
+Overview
+The EIB Left 32ch is a 32-channel electrode interface board (EIB) specifically designed for use with the X3 series of KONTEX headstages. It features a left-side extension configuration, allowing for streamlined integration in applications with spatial constraints or specific layout requirements.
+EIB Left 32ch Overview
+Connector
+Headstage
+Molex PN: 505070-3422
+Dimension
+Weight:0.3 g
+unit: mm
+Key Features
+Channel Capacity
+Supports 32 recording or stimulation channels.
+Connector Orientation
+Left-side extension for optimal alignment with X3 headstages.
+Compact Layout
+Designed to minimize footprint and maintain close proximity to neural interfaces.
+Robust Contacts
+Ensures secure and stable electrode connection during experiments.
+Compatible Acquisition System
+Compatible with X3R32 and X3SR32 headstages.
+Designed for electrode arrays utilizing 32-pin Omnetics connectors (1mm pitch).
+Pin Map

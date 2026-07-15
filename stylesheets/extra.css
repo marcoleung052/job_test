@@ -1,0 +1,475 @@
+/* Ensure the sidebar navigation stays above all other elements, including breathing lights */
+.md-sidebar, .md-nav {
+  z-index: 1200 !important;
+}
+:root>* {
+  --md-primary-fg-color: hsl(38, 21%, 47%);
+  
+  /* --md-accent-fg-color: hsl(100, 100%, 0%); */
+  /* --md-accent-fg-color--transparent: hsl(100, 100%, 0%); */
+
+  /* --md-primary-bg-color: hsl(100, 100%, 0%); */
+  /* --md-primary-bg-color--light: hsl(100, 100%, 0%); */
+}
+
+@font-face {
+  font-family: "SF Hello Light";
+  src: url("sf-hello-light.ttf") format('truetype');
+}
+
+:root {
+  --md-text-font: "SF Hello Light";
+}
+
+img[alt=test1] {
+  display: flex;
+  width: 100%;
+  margin: auto;
+}
+
+img[alt=test2] {
+  display: right;
+  width: 100%;
+  margin: auto;
+}
+
+img[alt=test3] {
+  display: left;
+  width: 100%;
+  margin: auto;
+}
+
+/* Overview */
+.text-block {
+  margin: 20px auto;
+  /* 區塊置中 */
+  text-align: justify;
+  /*左右對齊 */
+  line-height: 1.6em;
+  /* 調整行距，增加可讀性 */
+  font-size: 16px;
+}
+
+.text-block1 {
+  margin: 20px auto;
+  /* 區塊置中 */
+  text-align: justify;
+  /* 左右對齊 */
+  line-height: 1em;
+  /* 調整行距，增加可讀性 */
+  font-size: 16px;
+}
+
+.text-block2 {
+  text-align: right;
+  /* 左右對齊 */
+  line-height: 0.8em;
+  /* 調整行距，增加可讀性 */
+  font-size: 12px;
+}
+
+.text-block3 {
+  padding-left: 3em;
+  /* 其餘行向右縮進 2 個字寬 */
+  padding-right: 1.5em;
+  /* 其餘行向右縮進 2 個字寬 */
+  margin: 20px auto;
+  /* 區塊置中 */
+  text-align: justify;
+  /* 左右對齊 */
+  line-height: 1.5em;
+  /* 調整行距，增加可讀性 */
+  font-size: 16px;
+}
+
+.text-block4 {
+  background-color: #f5f5f5;
+  text-indent: -7.4em;
+  /* 首行負縮排，讓第一行保持原位 */
+  padding-left: 9em;
+  /* 其餘行向右縮進 2 個字寬 */
+  padding-right: 1.5em;
+  /* 其餘行向右縮進 2 個字寬 */
+  margin: 20px auto;
+  /* 區塊置中 */
+  text-align: justify;
+  /* 左右對齊 */
+  line-height: 1.3em;
+  /* 調整行距，增加可讀性 */
+  font-size: 14px;
+}
+
+.text-block5 {
+  text-align: right;
+  /* 左右對齊 */
+  line-height: 0.8em;
+  /* 調整行距，增加可讀性 */
+  font-size: 12px;
+}
+
+.num-list {
+  padding-left: 20px;
+  /* 控制縮排距離 */
+  margin-left: 0;
+}
+
+.num-list li {
+  margin-bottom: 6px;
+  /* 控制每行之間的行距 */
+}
+
+.hanging-indent-NOTE {
+  background-color: #f5f5f5;
+  text-indent: -3em;
+  /* 首行負縮排，讓第一行保持原位 */
+  text-align: justify;
+  /* 左右對齊 */
+  padding-left: 4.5em;
+  /* 其餘行向右縮進 2 個字寬 */
+  padding-right: 1.5em;
+  /* 其餘行向右縮進 2 個字寬 */
+  line-height: 1.5;
+  /* 調整行距 */
+  font-size: 14px;
+}
+
+.hanging-indent-IMP {
+  background-color: #f5f5f5;
+  text-indent: -7.4em;
+  /* 首行負縮排，讓第一行保持原位 */
+  padding-left: 9em;
+  /* 其餘行向右縮進 2 個字寬 */
+  padding-right: 1.5em;
+  /* 其餘行向右縮進 2 個字寬 */
+  line-height: 1.5;
+  /* 調整行距 */
+  font-size: 14px;
+}
+
+/* 1. 圖像容器容器：必須是 relative 以便定位熱點 */
+.interactive-map-container {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+
+/* 讓圖片寬度自適應 */
+.interactive-map-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 2. 熱點區域：隱形的點擊範圍 */
+.hotspot {
+  position: absolute;
+  /* 以下數值根據你的圖片位置調整，這是一個範例 */
+  top: 88%;
+  /* 距離頂部 */
+  left: 44%;
+  /* 距離左側 */
+  width: 15%;
+  /* 點擊範圍寬度 */
+  height: 15%;
+  /* 點擊範圍高度 */
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0);
+  /* 預設淡白色方便偵測 */
+  border: 2px dashed hwb(0 100% 0% / 0);
+  /* 虛線邊框提示 */
+  border-radius: 50%;
+  z-index: 10;
+}
+
+/* 3. 點擊後彈出的型號清單 (利用 Checkbox 技巧) */
+.model-menu-trigger {
+  display: none;
+}
+
+.model-menu {
+  display: none;
+  /* 預設隱藏 */
+  position: absolute;
+  top: 100%;
+  /* 顯示在熱點下方 */
+  left: 20%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 99;
+  min-width: 200px;
+}
+
+/* 當勾選隱藏的 Checkbox 時，顯示選單 */
+.model-menu-trigger:checked~.model-menu {
+  display: block;
+}
+
+/* 選單內的連結樣式 */
+.model-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.model-menu {
+  color: #7c6947;
+  margin-bottom: 12px;
+}
+
+.model-menu li a {
+  color: hsl(38, 21%, 47%);
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 1.5em;
+  display: block;
+  padding: 1px;
+}
+
+.model-menu li a:hover {
+  color: hsl(38, 21%, 47%);
+  border-radius: 4px;
+}
+
+
+
+/* 1. 呼吸燈動畫定義 */
+@keyframes breathing {
+  0% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.4;
+    box-shadow: 0 0 0 0px hsla(38, 21%, 47%, 0.5);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.8;
+    box-shadow: 0 0 0 10px hsla(38, 21%, 47%, 0);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.4;
+    box-shadow: 0 0 0 0px hsla(38, 21%, 47%, 0.5);
+  }
+}
+
+/* 2. 熱點樣式：改為圓點，並套用動畫 */
+.hotspot {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: #007bff;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  /* 讓熱點居中對齊座標 */
+  transform: translate(-50%, -50%);
+  animation: breathing 2s infinite ease-in-out;
+}
+
+/* 3. 隱藏 Checkbox 控制器 */
+.model-trigger {
+  display: none;
+}
+
+/* 菜單內部的可收縮部分 */
+.menu-section-toggle {
+  display: none;
+}
+
+/* 菜單標題樣式 - 可點擊的 */
+.menu-section-title {
+  display: block;
+  cursor: pointer;
+  font-weight: bold;
+  color: #7c6947;
+  padding: 4px 0;
+  user-select: none;
+  position: relative;
+  padding-left: 20px;
+}
+
+/* 為標題添加箭頭指示器 */
+.menu-section-title::before {
+  content: "»";
+  position: absolute;
+  left: 0;
+  transition: transform 0.3s ease;
+}
+
+/* 當 checkbox 未勾選時，隱藏列表並旋轉箭頭 */
+.menu-section-toggle:not(:checked)~ul {
+  display: none;
+}
+
+.menu-section-toggle:not(:checked)~.menu-section-title::before {
+  transform: rotate(-90deg);
+}
+
+/* 4. 選單彈出框樣式 */
+.model-menu {
+  display: none;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 99;
+  width: 220px;
+}
+
+/* 觸發邏輯：當對應的 Checkbox 被勾選時顯示 */
+#trigger-std-headstage:checked~#menu-std-headstage,
+#trigger-std-battery:checked~#menu-std-battery,
+#trigger-pro-headstage:checked~#menu-pro-headstage,
+#trigger-pro-battery:checked~#menu-pro-battery {
+  display: block;
+}
+
+/* XDAQ ONE+ Home */
+#trigger-one-headstage:checked ~ #menu-one-headstage,
+#trigger-one-battery:checked ~ #menu-one-battery,
+#trigger-one-pro-battery:checked ~ #menu-one-pro-battery {
+  display: block;
+}
+
+/* XDAQ CORE2 Home */
+#trigger-core2-headstage:checked ~ #menu-core2-headstage,
+#trigger-core2-battery:checked ~ #menu-core2-battery,
+#trigger-core2-pro-battery:checked ~ #menu-core2-pro-battery {
+  display: block;
+}
+
+/* Commutator side-by-side and tooltip */
+.side-by-side-Homepage {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  margin: 24px;
+}
+
+.side-by-side-commutators .comm-figure {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* Two-column layout for MEA2 jumper configuration */
+.two-col {
+  display: flex;
+  gap: 0.1rem;
+  /* reduced gap so text sits closer to the image */
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.two-col .text-block {
+  flex: 1 1 60%;
+}
+
+.two-col .image-block {
+  flex: 0 0 220px;
+  display: flex;
+  justify-content: flex-end;
+  /* align image to the right edge */
+  align-items: center;
+}
+
+.two-col .image-block img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  /* extra safety to keep image to the right */
+}
+
+@media (max-width: 720px) {
+  .two-col {
+    flex-direction: column-reverse;
+  }
+
+  .two-col .image-block {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+
+.comm-figure {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.comm-figure img {
+  width: 100%;
+  height: auto;
+  max-height: 320px;
+  object-fit: contain;
+  display: block;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  margin: 0 auto;
+}
+
+.comm-tooltip {
+  position: absolute;
+  left: 35%;
+  bottom: -120px;
+  transform: translate(-50%, 10px);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 12px 12px;
+  border-radius: 8px;
+  max-width: 100%;
+  font-size: 12px;
+  line-height: 1.5;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .18s ease, transform .18s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  max-height: 220px;
+  overflow: auto;
+  font-family: var(--md-text-font, inherit);
+  font-style: normal;
+  font-weight: 300;
+}
+
+.comm-figure:hover .comm-tooltip,
+.comm-figure:focus-within .comm-tooltip {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+}
+
+@media (max-width:700px) {
+  .comm-figure {
+    width: 100%;
+  }
+
+  .comm-tooltip {
+    left: 80%;
+    width: calc(100% - 30px);
+  }
+}
+
+/* Show tooltip when an element is being dragged over */
+.comm-figure.is-dragover .comm-tooltip {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+}
+
+.comm-figure.is-dragover img {
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
+}
+
+/* Ensure the top navigation bar stays above all other elements */
+.md-header {
+  z-index: 1100 !important;
+}

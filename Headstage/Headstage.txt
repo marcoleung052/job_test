@@ -1,0 +1,9 @@
+Headstage
+The KonteX X-Headstage™ series is a family of high-performance neural recording interfaces designed to provide stable, low-noise signal acquisition across a wide range of experimental configurations.
+Engineered for both head-fixed and freely moving animal studies, X-Headstages combine compact mechanical design, flexible connectivity, and scalable channel configurations to support modern electrophysiology research.
+The series is fully compatible with the XDAQ acquisition platform and supports integration with multiple probe technologies and adapter ecosystems.
+X3R
+X3SR
+X6R
+XeR
+XeSR

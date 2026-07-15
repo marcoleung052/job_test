@@ -1,0 +1,48 @@
+SyncLink
+2026-04-17
+Overview
+The primary purpose of the SyncLink is to enable precise time-step synchronization between multiple XDAQ systems. This is especially critical when performing simultaneous XR and XSR experiments on the same subject, which require the use of separate XDAQ units.
+By synchronizing multiple XDAQs, the SyncLink ensures that data acquired from different headstage types are time-aligned, enabling accurate integration and analysis across systems.
+Components
+Dimension and Weight
+Weight 230g
+unit: mm
+Device Overview
+① Sync Ports (IN / OUT) :
+Each SyncLink is equipped with Sync IN and Sync OUT ports.
+SyncLinks are interconnected using standard Ethernet cables.
+The IN / OUT configuration allows synchronization signals to be distributed across multiple SyncLinks in a daisy-chain.
+② Harp Port :
+A 3.5 mm audio jack is provided for connection to the Harp Clock Synchronizer.
+An adjacent status LED indicates the operational state of the Harp Port.
+③ Expansion Port :
+The Expansion Port is used to connect a KonteX IO Expander, allowing extended I/O functionality as required by the experimental setup.
+④ XDAQ Expansion Ports :
+EXP1/2 (HDMI): Connects the SyncLink to an XDAQ system.
+These ports enable synchronization signal exchange between the SyncLink and connected XDAQ units.
+⑤ Ground Ports :
+SYS GND (4 mm) — The digital ground shared by the internal electronic circuitry.
+Chassis GND (4 mm) — Connected to the metal enclosure, the outer shield of the HDMI cable, and earth ground via the power supply.
+As a starting point, we recommend bonding SYS GND and Chassis GND together and using this common node to ground the Faraday cage shielding. Since environmental conditions can vary significantly, users should evaluate and adjust the grounding configuration to determine the most effective setup for their specific environment.
+LED Indicators
+The SyncLink is equipped with multiple LEDs to indicate power and synchronization status:
+① Power LED :
+Indicates that the SyncLink is powered on.
+② S1 LED :
+Indicates the status of Synchronization Channel 1.
+③ S2 LED :
+Indicates the status of Synchronization Channel 2.
+④ Harp Port LED :
+Indicates the connection and activity status of the Harp port.
+Getting Started
+1. XDAQ and PC Setup
+Connect one SyncLink to one XDAQ, and connect each XDAQ to its corresponding PC. Each SyncLink operates as the synchronization interface for its associated XDAQ–PC pair.
+2. Interconnecting Sync SyncLinks
+To synchronize multiple XDAQ systems, connect the SyncLinks using standard Ethernet cables via the Sync Ports.
+3. Sync Port Configuration
+On the SyncLink connected to the first XDAQ, connect the Ethernet cable to the Sync Port (OUT).
+Connect the other end of the Ethernet cable to the Sync Port (IN) on the SyncLink connected to the second XDAQ.
+4. Expanding the Sync Chain
+Additional SyncLinks can be connected in the same OUT-to-IN configuration to synchronize more XDAQ systems as required.
+5. System Verification
+Power on all SyncLinks, XDAQ systems, and PCs. Verify proper synchronization using the status LEDs on each Sync Box before starting data acquisition.

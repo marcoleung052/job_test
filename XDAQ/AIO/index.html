@@ -1,0 +1,3659 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="User Manual for KonteX Neuroscience Products">
+      
+      
+      
+        <link rel="canonical" href="https://docs.kontex.io/XDAQ/AIO/">
+      
+      
+        <link rel="prev" href="../ONE/">
+      
+      
+        <link rel="next" href="../../Headstage/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>XDAQ AIO - User Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/material.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/light.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/backdrop.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/tippy.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/scale.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/shift-away.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/core/core.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/user.config.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="User Manual" class="md-header__button md-logo" aria-label="User Manual" data-md-component="logo">
+      
+  <img src="../../KonteX.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            User Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              XDAQ AIO
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="User Manual" class="md-nav__button md-logo" aria-label="User Manual" data-md-component="logo">
+      
+  <img src="../../KonteX.png" alt="logo">
+
+    </a>
+    User Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XDAQ
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    XDAQ
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CORE2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XDAQ CORE2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ONE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XDAQ ONE+
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XDAQ AIO
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XDAQ AIO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dimension-and-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dimension And Weights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#device-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Device Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#headstage-led-indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Headstage LED Indicators
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-the-xdaqtm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting Up The XDAQ™
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-the-io-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting Up The IO Ports
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-the-headstage-and-probe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting Up The Headstage And Probe
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-driver-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing Driver &amp; Software
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating-the-firmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updating The Firmware
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Starting The Application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pc-requirement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PC Requirement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xdaqtm-db25-io-connector-pinout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XDAQ™ DB25 IO Connector Pinout
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#video-capture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Video Capture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessory
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-specifications-aio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Specifications - AIO
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model Comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Headstage/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Headstage
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Headstage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/X3R/X3R32_OM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X3R32-OM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/X3R/X3R32_HDMI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X3R32-HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/X3R/X3R64_OM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X3R64-OM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/X3R/X3R64_HDMI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X3R64-HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/X3SR/X3SR32_HDMI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X3SR32-HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/X3SR/X3SR32_OM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X3SR32-OM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/X3SR/X3SR64_HDMI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X3SR64-HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/X6R/X6R128_HDMI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X6R128-HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/XeR/XeR16_HDMI_ACC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XeR16-HDMI-ACC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/XeR/XeR64_HDMI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XeR64-HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/XeSR/XeSR16_HDMI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XeSR16-HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Headstage/XeSR/XeSR32_HDMI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XeSR32-HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Commutator/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commutator
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Commutator
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Commutator/Standard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standard Commutator HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Commutator/PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commutator PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Commutator/Firmware-Update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commutator PRO Firmware Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Commutator/UART-JSON-Controller-Operational-Manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commutator Pro - UART JSON Controller Operational Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../EIB/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EIB
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    EIB
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EIB/Adpt-JP-X3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-JP-X3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EIB/EIB32-LR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EIB32-LRCombo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EIB/EIB-L-32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EIB32-L
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EIB/EIB-R-32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EIB32-R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EIB/EIB16-M1S/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EIB16-M1S
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EIB/EIB32-M1S/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EIB32-M1S
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EIB/EIB32SR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EIB32SR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Probe-Adpt/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Probe Adapter
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Probe Adapter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-MEA2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-MEA2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-A16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-A16
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-A32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-A32
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-A64/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-A64
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-A64-SR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-A64-SR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-SRRemap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-SRRemap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-OM16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-OM16
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-OM16-V/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-OM16-V
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-OM32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-OM32
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-OM32-Stim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-OM32-Stim
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-OM64/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-OM64
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-X3-M1P16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-X3-M1P16
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-X3R32-M1P32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-X3R32-M1P32
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-X6toX3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-X6toX3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-NNx-X3-16ch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-NNx-X3-16ch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-X3-EXT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-X3-EXT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probe-Adpt/Adpt-X6-EXT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adpt-X6-EXT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../System-Adpt/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Adapter
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    System Adapter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SyncLink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SyncLink
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/IO-Expander/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IO Expander
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-EXP-BNC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-EXP-BNC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-HDMI-OM12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-HDMI-OM12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-HDMI-OM16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-HDMI-OM16
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-Port-EXP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-Port-EXP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-SR64/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-SR64
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-uHDMI-Smartlink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-uHDMI-Smartlink
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-XDAQ-BNC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-XDAQ-BNC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-XDAQ-OM12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-XDAQ-OM12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-XDAQ-OM16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-XDAQ-OM16
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../System-Adpt/SAdpt-XDAQ-Smartlink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAdpt-XDAQ-Smartlink
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Accessory/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accessory
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Accessory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Accessory/Fine-Cable-Organizer-Kit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fine-Cable Organizer Kit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Accessory/Tester-Stim-X3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tester-Stim-X3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Accessory/Tester-Z-X3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tester-Z-X3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Accessory/XHS-Screw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XHS-Screw
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Accessory/XHS-Tool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XHS-Tool
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Accessory/Cable-HDMI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cable-HDMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Accessory/Cable-NP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cable-NP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Accessory/Cable-IMU/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cable-IMU
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Instrument/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instrument
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Instrument
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Instrument/DDS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inst-BrainSim
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Instrument/Short-Circuit-Analyzer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Short Circuit Analyzer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dimension-and-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dimension And Weights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#device-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Device Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#headstage-led-indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Headstage LED Indicators
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-the-xdaqtm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting Up The XDAQ™
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-the-io-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting Up The IO Ports
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-the-headstage-and-probe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting Up The Headstage And Probe
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-driver-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing Driver &amp; Software
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating-the-firmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updating The Firmware
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Starting The Application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pc-requirement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PC Requirement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xdaqtm-db25-io-connector-pinout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XDAQ™ DB25 IO Connector Pinout
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#video-capture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Video Capture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessory
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-specifications-aio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Specifications - AIO
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model Comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>XDAQ AIO</h1>
+
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><span data-tippy-content data-tippy-raw='2025-12-11'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2025-12-11T08:12:15+00:00'>2025-12-11</time></span></div></div>
+<p><br><br><br></p>
+<p><img alt="test1" src="XDAQ%20AIO-01.png" /></p>
+<p><br><br><br><br><br><br></p>
+<h3 id="overview"><strong>Overview</strong></h3>
+<div class="text-block">
+    <p>The XDAQ™ product line offers a suite of acquisition solutions designed to address the evolving needs of modern neuroscience research. These systems combine flexibility and performance, enabling integrated, multimodal approaches to a wide range of experimental techniques.</p>
+    <p>As the top-tier model in the XDAQ series, the AIO sets a new standard for versatility and capability in neuroscience instrumentation, offering robust native support for large-scale neural recording, optogenetic stimulation, and synchronized video acquisition. It supports up to 1024 channels of high-resolution spike recordings and, in XSR mode, provides up to 128 channels that can be dynamically configured for recording or stimulation. It also delivers seamless compatibility with advanced electrode technologies—including Neuropixels probes—with the ability to operate up to four probes simultaneously for high-density, multi-region neural interrogation.</p>
+    With its high-bandwidth architecture, extensive I/O options, and precision timing synchronization, the AIO is purpose-built for real-time, closed-loop experiments, multimodal fusion, and large-scale parallel data acquisition across complex behavioral paradigms.
+</div>
+
+<p><br></p>
+<p><img alt="test1" src="XDAQ%20AIO-02.png" /></p>
+<p><br><br><br><br><br><br></p>
+<h3 id="components"><strong>Components</strong></h3>
+<p><br></p>
+<p><img alt="test1" src="XDAQ%20AIO-03.png" /></p>
+<p><br><br><br><br><br><br></p>
+<h3 id="dimension-and-weights"><strong>Dimension And Weights</strong></h3>
+<p><br></p>
+<p><img alt="test1" src="XDAQ%20AIO-04.png" /></p>
+<div class="text-block2">
+    <p align="right">Weight 3050g</p>
+    <p align="right">unit: mm</p>
+</div>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="device-overview"><strong>Device Overview</strong></h3>
+<h4>The AIO Front Panel</h4>
+
+<p><img alt="test1" src="XDAQ%20AIO-05.png" /></p>
+<p><br><br><br></p>
+<h4>The AIO Back Panel</h4>
+
+<p><img alt="test1" src="XDAQ%20AIO-06.png" /></p>
+<p><br><br><br></p>
+<h4>System LED Indicators</h4>
+
+<p><img alt="test1" src="XDAQ%20AIO-07.png" /></p>
+<div class="text-block">
+    <strong>&#9312; STB LED: </strong>
+    Indicates that adequate power is being supplied to the XDAQ™ from the power supply
+    <strong>&#9313; ON LED: </strong>
+    Indicates that power has been supplied to the system and the system is turned ON.
+</div>
+
+<p><br><br><br></p>
+<h4>XDAQ Mode Indicator</h4>
+
+<p><img alt="test1" src="XDAQ%20AIO-08.png" /></p>
+<p><br></p>
+<h4>XSR Mode VStim Indicator</h4>
+
+<p><img alt="test1" src="XDAQ%20AIO-09.png" /></p>
+<p><br></p>
+<h4>System Status Indicator</h4>
+
+<p><img alt="test1" src="XDAQ%20AIO-10.png" /></p>
+<p><br><br><br><br><br><br></p>
+<h3 id="headstage-led-indicators"><strong>Headstage LED Indicators</strong></h3>
+<p><img alt="test1" src="XDAQ%20AIO-11.png" /></p>
+<div class="text-block">
+    <strong>&#9312; X-Headstage™ Port LED P1 - P4: </strong>
+    Indicates that the headstage is properly detected; it will only illuminate after the software initialization is complete.
+    <br><br><br>
+    <strong>&#9313; Neuropixels Port LED 1 - 4: </strong>
+</div>
+
+<p><img alt="test1" src="XDAQ%20AIO-12.png" /></p>
+<p><br><br><br><br><br><br></p>
+<h3 id="setting-up-the-xdaqtm"><strong>Setting Up The XDAQ™</strong></h3>
+<div class="text-block">
+    Connect the DC plug of the supplied power supply, into the power input port.
+</div>
+
+<p><br><br><br></p>
+<div class="text-block">
+    <h4>Turning on the XDAQ™</h4>
+</div>
+
+<p><img alt="test1" src="XDAQ%20AIO-13.png" /></p>
+<div class="text-block">
+    <h4>Turning off the XDAQ™</h4>
+</div>
+
+<p><img alt="test1" src="XDAQ%20AIO-14.png" /></p>
+<p><br><br><br><br><br><br></p>
+<h3 id="setting-up-the-io-ports"><strong>Setting Up The IO Ports</strong></h3>
+<p><img alt="test1" src="XDAQ%20AIO-15.png" /></p>
+<div class="text-block">
+    <strong>&#9312; Analog BNC Ports </strong><br>
+    AIO features two pairs of wide range (±10V), general purpose 16-bit ADC (AI-01, AI-02) and DAC (AO-01, AO-02) channels, each equipped with a BNC connector for easy access. These ports operate on the same sample rate as the X-Headstage™ (XR, XSR Mode). In NP mode, the sample rate is fixed at 30kHz.
+    <br><br><br>
+    <strong>&#9313; Digital BNC Ports </strong><br>
+    AIO features two pairs of digital input (DI-01, DI-02) and output (DO-01, DO-02) channels, each equipped with a BNC connector. The digital inputs support both 3.3V and 5V digital signals. The signal level for the BNC digital output ports can be configured via software to either 3.3V or 5V logic high. The digital I/Os operate at the same sample rate as the X-Headstage™ (XR, XSR mode). In NP mode, the sample rate is fixed at 30 kHz.
+</div>
+
+<p><br><br><br></p>
+<p class="hanging-indent-IMP">
+    &#9888; <strong>IMPORTANT:</strong> Do not connect ports to unintended signal type. Permanet damage may occour.
+</p>
+
+<p><br><br><br></p>
+<p><img alt="test1" src="XDAQ%20AIO-16.png" /></p>
+<div class="text-block">
+    <strong>&#9314; Thor Vision USB Port </strong><br>
+    XDAQ AIO features a on-board hardware video processor capable of capturing up to four UVC camera streams simultaneously, or a single high-speed camera stream at up to 300 FPS. Each video frame is precisely time-stamped with the corresponding neural data acquisition timestamp.<br>
+    By utilizing a dedicated hardware video encoding engine, the system ensures reliable, lossless frame capture—eliminating dropped or skipped frames commonly associated with software-based solutions.
+    <br><br><br>
+    <strong>&#9315; LED Driver Ports </strong><br>
+    XDAQ AIO features 4ch of onboard high-power light source drivers. Drive LED light sources from commercial vendors like Thorlab, Plexon, TDT etc.<br>
+    Stimulus intensity and modulation can be controlled independently of the main neural acquisition.Each light source driver supports up to 1A of power output and modulation frequency from DC to 10kHz.
+    <br><br><br>
+    <strong>&#9316; DB25 IO Port </strong><br>
+    The DB25 connector provides six additional pairs of digital I/O channels. The digital inputs on the DB25 connector (DI-03 to DI-08) are compatible with both 3.3V and 5V digital signals. The digital outputs on the DB25 connector (DO-03 to DO-08) are designed for 3.3V logic high. The digital I/Os operate at the same sample rate as the X-Headstage™ (XR, XSR mode). The connector also includes supplementary device signals for interfacing with external devices.
+    <br><br><br>
+    <strong>&#9317; Ground Ports </strong><br>
+    <strong>Sys GND — </strong> the digital ground shared by the internal electronic circuitry.<br>
+    <strong>Chassis GND — </strong> connected to the metal enclosure, the outer shield of the HDMI cable, and earth ground via the power supply.<br>
+    As a starting point, we recommend bonding the two ground ports together and using this common node to ground the Faraday cage shielding. Since environmental conditions can vary significantly, users should test and adjust the grounding configuration to determine the most effective setup for their specific environment.
+    <br><br><br>
+    <strong>&#9318; Expansion Ports </strong><br>
+    The EXP1 and EXP2 ports connect to XDAQ™ accessories, such as the I/O Expander, to provide additional digital and analog I/O functionality.
+    <br><br><br>
+    <strong>&#9319; 3.5mm Audio Port </strong><br>
+    This 3.5mm stereo jack enables audio monitoring of two selected headstage amplifier channels, configured via software: Analog Out 1 (AO-01), which is routed to the left audio channel, and Analog Out 2 (AO-02), which is routed to the right audio channel.
+</div>
+
+<p><br><br><br></p>
+<p class="hanging-indent-IMP">
+    &#9888; <strong>IMPORTANT:</strong> Do not connect ports to unintended signal type. Permanet damage may occour.
+</p>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="setting-up-the-headstage-and-probe"><strong>Setting Up The Headstage And Probe</strong></h3>
+<div class="text-block">
+    <h4> For Record-Only (XR) or Stim-Record (XSR) Experiments </h4>
+    1.&emsp;Connect the Type-D micro-HDMI connector of the stock KonteX HDMI cable to the X-Headstage™.<br>
+    2.&emsp;Connect the Type-A HDMI connector to one of the XDAQ™ Headstage Ports. Always use Port 1, as other ports may be unavailable depending on the license purchased with the XDAQ™.<br>
+    3.&emsp;Optionally, a commutator can be used between the headstage and the XDAQ™ Headstage Ports.<br>
+    4.&emsp;Plug the electrode into the headstage.
+</div>
+
+<p><br></p>
+<div class="text-block">
+    <h4> For Neuropixels Experiments (NP Mode) </h4>
+    1.&emsp;Connect the Omnetics connector of the Neuropixels cable to the headstage.<br>
+    2.&emsp;Connect the USB-C connector of the cable to one of the Neuropixels Ports (Port 1–4).<br>
+    3.&emsp;Optionally, a commutator can be used between the Neuropixels headstage and the XDAQ™. Refer to the Commutator User Manual for more information.<br>
+    4.&emsp;Insert the Neuropixels probe into the headstage by connecting the flex cable of the Neuropixels probe to the headstage. Note: The metal pads on the flex cable should face downward when inserting it into the headstage. Flip the flex cable connector down to lock the probe in place.
+</div>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="installing-driver-software"><strong>Installing Driver &amp; Software</strong></h3>
+<div class="text-block">
+   <h4>1. Connecting to a PC</h4>
+    Use the supplied Thunderbolt cable to connect the Computer Port on the XDAQ™ to a Thunderbolt port on the PC. The cable is identifiable by the lightning bolt symbol on its connector.<br>
+    The XDAQ™ can also supply power to the connected computer: CORE2 can deliver up to 15 W, sufficient to power most laptops. The Peripheral Port supplies up to 15 W of power.<br>
+    The Peripheral Port can also be used to connect a Thunderbolt accessory, such as a storage device, which will be accessible from the host PC.
+</div>
+
+<p><br></p>
+<div class="text-block">
+   <h4>2. Download the driver</h4>
+   <ul>
+    <Li>Windows: <a href="https://developer.kontex.io" target="_blank">https://developer.kontex.io</a></Li>
+    <Li>macOS: Search for XDAQ™ from the App Store</Li>
+    <Li>Linux: Contact us</Li>
+    </ul>
+</div>
+
+<p><br></p>
+<div class="text-block">
+   <h4>3. Install the driver</h4><br><br>
+   <strong>Windows</strong><br>
+    1. Before installation, ensure that a "PCI Simple Communications Controller" is listed in the Device Manager.
+</div>
+
+<p><img alt="test1" src="XDAQ%20AIO-17.png" /></p>
+<div class="text-block">
+    2. Download and unzip the latest XDAQ™ driver from the KonteX website.<br>
+    3. Locate "XDAQ.inf", right-click on it, and select “Install.”<br>
+    4. Once the driver is successfully installed, this entry will update to "KonteX XDAQ".
+</div>
+
+<p><img alt="test１" src="XDAQ%20AIO-18.png" /></p>
+<p><br><br><br></p>
+<div class="text-block">
+   <h4>MacOS</h4>
+   1.&emsp;Go to App Store, search for "XDAQ" and install "KONTEX XDAQ" app.
+</div>
+
+<p><img alt="test１" src="XDAQ%20AIO-19.png" /></p>
+<div class="text-block">
+   ２.&emsp;Open the XDAQ™ Application ("XDAQ Dext Loading Utils")
+</div>
+
+<p><img alt="test１" src="XDAQ%20AIO-20.png" /></p>
+<div class="text-block">
+   ３.&emsp;Click on "Load driver" button, A system message box will appear, click "Open System Settings". If you clicked OK instead, go to: System Settings / General / Login Items & Extensions
+</div>
+
+<p><img alt="test１" src="XDAQ%20AIO-21.png" /></p>
+<div class="text-block">
+   ４.&emsp;Enable XDAQ Dext Loading Utils
+</div>
+
+<p><img alt="test１" src="XDAQ%20AIO-22.png" /></p>
+<div class="text-block">
+   ５.&emsp;The App should display "Loading Status: Load successful"
+</div>
+
+<p><img alt="test１" src="XDAQ%20AIO-23.png" /></p>
+<p><br><br><br></p>
+<div class="text-block">
+   <h4>4. Download the software</h4>
+   XDAQ can run on popular open source applications.
+   Download the latest from our <a href="https://www.kontex.io/software" target="_blank">website</a>. Note that not all applications supports all experiment modes.<br>
+   <strong>XR Headstages (XR Mode):</strong>
+    Open-Ephys ("Install XDAQ Plugin") or XDAQ-RHX<br>
+    <strong>XSR Headstages (XSR Mode):</strong>
+    XDAQ-RHX<br>
+    <strong>Neuropixels (NP Mode):</strong>
+    Open-Ephys ("Install XDAQ Neuropixels Plugin")<br>
+</div>
+
+<p><br><br><br></p>
+<div class="text-block">
+   <h4>Verify Device Connection</h4>
+   Once the PC is connected and the XDAQ™ is powered on, it should be automatically recognized by the operating system. For additional details, refer to the Install the Driver section.
+</div>
+
+<p><br><br><br></p>
+<p class="hanging-indent-IMP">
+    &#9888; <strong>IMPORTANT :</strong> A USB-C data cable cannot substitute for the supplied Thunderbolt cable when connecting to the PC.
+</p>
+
+<p class="hanging-indent-NOTE">
+  <strong>PRO TIP :</strong> The XDAQ™ is compatible with Thunderbolt cables up to 3 meters in length. If stock Thunderbolt cable will not be used, be sure to select an Intel/Apple-certified cable (identified by a lightning bolt symbol) that complies with Thunderbolt 3 or higher specification.
+</p>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="updating-the-firmware"><strong>Updating The Firmware</strong></h3>
+<div class="text-block">
+    <p>KonteX may occationally release new firmwares for bug fixes and new functionalities. Additional capabilities may be enabled if they were not selected in the initial purchase (e.g. adding the SR128 capability or Neuropixels support).</p>
+    <p>Check KonteX website (<a href="https://developer.kontex.io" target="_blank">https://developer.kontex.io</a>) for firmware update tool. Follow the prompt from the application to proceed.</p>
+    When XDAQ™ is up to date
+</div>
+
+<p><img alt="test１" src="XDAQ%20AIO-24.png" /></p>
+<div class="text-block">
+    <p>Upgrading XDAQ™</p>
+</div>
+
+<p><img alt="test１" src="XDAQ%20AIO-25.png" /></p>
+<div class="text-block">
+    <p>When XDAQ™ is not connected</p>
+</div>
+
+<p><img alt="test１" src="XDAQ%20AIO-26.png" /></p>
+<p><br><br><br><br><br><br></p>
+<h3 id="starting-the-application"><strong>Starting The Application</strong></h3>
+<div class="text-block">
+    <h4>Check your firmware version before launching the application</h4>
+    Before launching the application, please update the system firmware to the latest version.<br>
+    Systems with the default “0-0-0” configuration will not be recognized properly by the software until the firmware update is completed.<br>
+    Please refer to the Firmware Update section in this manual for detailed instructions before proceeding with any recording or stimulation experiments.
+</div>
+
+<div class="text-block">
+    <h4>Run the record-only experiment (XR Mode)</h4>
+    1.&emsp;Connect the XR headstage (X3R, X6R, or XeR) to the system using the KonteX HDMI cable.<br>
+    2.&emsp;Launch a compatible application, such as Open-Ephys or XDAQ-RHX, downloaded from the KonteX website.<br>
+    3.&emsp;If the XR Mode LED is not illuminated (indicating that the XR firmware is not loaded), the system will automatically boot into XR Mode when prompted by the software. This process may take a few minutes, after which the XR Mode LED should turn on.<br>
+    4.&emsp;Once the application launches, it should detect the headstage and display the number of available channels.<br>
+    5.&emsp;If the software does not detect the headstage, ensure that an XR-type headstage is correctly connected and securely attached. Restart the application or rescan the ports.<br>
+</div>
+
+<div class="text-block">
+    <h4>Run the stimulation-recording experiment (XSR Mode)</h4>
+    1.&emsp;Connect the XSR headstage (X3SR or XeSR) to the system using the KonteX HDMI cable.<br>
+    2.&emsp;Launch a compatible application, such as Open-Ephys or XDAQ-RHX, downloaded from the KonteX website.<br>
+    3.&emsp;If the XR Mode LED is not illuminated (indicating that the XR firmware is not loaded), the system will automatically boot into XR Mode when prompted by the software. This process may take a few minutes, after which the XR Mode LED should turn on.<br>
+    4.&emsp;Once the application launches, it should detect the headstage and display the number of available channels.<br>
+    5.&emsp;If the software does not detect the headstage, ensure that an XR-type headstage is correctly connected and securely attached. Restart the application or rescan the ports.<br>
+</div>
+
+<p><br></p>
+<p class="hanging-indent-IMP">
+    &#9888; <strong>IMPORTANT :</strong> Using non-KonteX HDMI cables is possible but not recommended. Many commercial cables contain active electronics that can interfere with XDAQ™ communication and potentially damage the XDAQ™ system or the X-Headstage™.
+</p>
+
+<p><br><br><br></p>
+<div class="text-block">
+    <h4>Run the Neuropixels experiment (NP Mode)</h4>
+    1.&emsp;Connect the Neuropixels probe and headstage to the XDAQ™.<br>
+    2.&emsp;Copy the Neuropixels calibration data provided by IMEC into "OpenEphys/Calibrationinfo" folder.<br>
+    3.&emsp;Launch the compatible application (OpenEphys XDAQ™ Neuropixels plugin, currently the only compatible open-source application) downloaded from the KonteX website.<br>
+    4.&emsp;If the NP Mode LED is not illuminated (indicating that the Neuropixels firmware is not loaded), the system will automatically boot into NP Mode when prompted by the software. This process may take a few minutes, after which the NP Mode LED should turn on.<br>
+    5.&emsp;Once the application starts, the software will automatically scan for installed probes and upload the corresponding calibration data. The XDAQ™ Neuropixels plugin GUI will display a green dot, indicating that the system is ready to begin streaming data.<br>
+    6.&emsp;During data streaming, the Neuropixels Port LED will flash green and blue.<br>
+    7.&emsp;If the PC experiences difficulty keeping up with the data transfer, the S2 LED will flash.
+</div>
+
+<p><br></p>
+<p class="hanging-indent-IMP">
+    &#9888; <strong>IMPORTANT :</strong> Currently, it is not possible to use Probes/Headstages from different modes simultaneously (e.g. X3SR32 and X6R128 headstages simultaneously or X3SR32 headstage/probe with the Neuropixels).
+</p>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="pc-requirement"><strong>PC Requirement</strong></h3>
+<div class="text-block">
+    The XDAQ™ AIO requires a modern PC with a minimum of a 6-core CPU, 16 GB of RAM, and at least one Thunderbolt 3 (or higher) port, identifiable by the lightning bolt symbol.
+</div>
+
+<p><br></p>
+<div class="text-block">
+    <h4>Reference PC configuration</h4>
+    Apple Mac Mini M4 PRO 16GB<br>
+    MSI Cubi Series with i7 or above
+</div>
+
+<p><img alt="test１" src="XDAQ%20AIO-27.png" /></p>
+<p><br></p>
+<p class="hanging-indent-IMP">
+    &#9888; <strong>IMPORTANT:</strong> While Thunderbolt and USB-C share the same physical connector, they are not interchangeable. Thunderbolt offers significantly higher data transfer rates and requires specific compatible cables. Retrofitting a PC with a Thunderbolt add-on card is generally impractical, as these cards are model-specific and often incompatible with other systems. To prevent compatibility issues, users should verify that their PC includes native Thunderbolt support.
+</p>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="xdaqtm-db25-io-connector-pinout"><strong>XDAQ™ DB25 IO Connector Pinout</strong></h3>
+<div class="text-block">
+    The DB25 connector on the XDAQ™ offers access to additional I/O ports and system signals. A breakout board is available to facilitate easy access to these signals via BNC connectors.
+</div>
+
+<p><img alt="test１" src="XDAQ%20AIO-28.png" /></p>
+<p><br></p>
+<div class="text-block">
+    DAQ ON: Logic high at onset of a recording session<br>
+    Sample CLK: is the sampling clock used to drive the X-Headstage™<br><br>
+    All digital inputs (DI-01 to DI-08) are compatible with both 3.3V and 5V digital signals. The BNC digital output ports (DO-01, DO-02) can be configured via software to output either a 3.3V or 5V logic high signal. The digital output channels on the DB25 connector (DO-03 to DO-08) are designed for 3.3V logic high output.
+</div>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="video-capture"><strong>Video Capture</strong></h3>
+<div class="text-block">
+    <h4>Comprehensive video capture of the test subject</h4>
+    <ul>
+    <Li>Simultaneous multi-camera (4ch) with guaranteed recording alignment with neural signal</Li>
+    <Li>High frame rate (>100FPS) capture</Li>
+    <Li>Synchronized DAQ time stamps and IO events directly encoded in the video meta data</Li>
+    <Li>Supports wide variety of cameras from webcam to industrial</Li>
+    </ul>
+</div>
+
+<p><img alt="test１" src="XDAQ%20AIO-29.png" /></p>
+<p><br></p>
+<div class="text-block">
+    <h4>Software resources & downloads</h4>
+    For camera setup instructions, recording configuration, and real-time viewing via Thor Vision, please visit our official software page
+    <a href="https://kontex-neuro.github.io/ThorVisionUserManual/">Thor Vision Software Portal</a>
+</div>
+
+<p><br><br><br></p>
+<p class="hanging-indent-IMP">
+    &#9888; <strong>IMPORTANT :</strong> To ensure optimal performance distribution, users are advised to connect cameras or USB hubs evenly across the four USB ports on both sides of the system.
+</p>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="accessory"><strong>Accessory</strong></h3>
+<p><img alt="test１" src="XDAQ%20AIO-30.png" /></p>
+<p><br><br><br><br><br><br></p>
+<h3 id="technical-specifications-aio"><strong>Technical Specifications - AIO</strong></h3>
+<p><img alt="test１" src="XDAQ%20AIO-31.png" /></p>
+<div class="text-block5">
+    <p align="left">
+    1. XR mode acquisition specifications are based on Intan Technologies’ RHD2000 series IC. In case of any discrepancies, the manufacturer's specifications shall take precedence.<br><br>
+    2. The acquisition and stimulation specifications for XSR Mode are based on Intan Technologies' RHS2000 series IC. In case of any discrepancies, the manufacturer's specifications shall take precedence.<br><br>
+    3. NP mode acquisition specifications are derived from IMEC’s Neuropixels 1.0 and 2.0 electrode. In case of any discrepancies, the manufacturer's specifications shall take precedence.</p>
+</div>
+
+<p><br><br><br><br><br><br></p>
+<h3 id="model-comparison"><strong>Model Comparison</strong></h3>
+<p><img alt="test１" src="XDAQ%20AIO-32.png" /></p>
+<div class="text-block5">
+    <p align="left">
+    1. Neuropixel support (NP Mode) can be configured without the XR Mode or XSR Mode for passive probes.<br><br>
+    2. Number of animals monitored can be increased using Port Expander, which provide each animal monitored with independent and isolated ground circuit.<br><br>
+    3. Adpt-SR64 adapter is required to drive 64ch X3SR64 headstage.<br><br>
+    4. IO Expander is required to increase the IO support.<br><br>
+    5. Latency may vary with OS.</p>
+</div>
+
+<p><br><br><br><br><br></p>
+<hr />
+<p><img alt="test2" src="../../LOGO-1.png" /></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 <a href="https://www.kontex.io/" target="_blank" rel="noopener">KonteX Neuroscience</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.indexes"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/menu-accordion.js"></script>
+        <script src="../../javascripts/ai-search.js"></script>
+      
+        <script src="../../assets/document_dates/tippy/popper.min.js"></script>
+      
+        <script src="../../assets/document_dates/tippy/tippy.umd.min.js"></script>
+      
+        <script src="../../assets/document_dates/core/default.config.js"></script>
+      
+        <script src="../../assets/document_dates/user.config.js"></script>
+      
+        <script src="../../assets/document_dates/core/utils.js"></script>
+      
+        <script src="../../assets/document_dates/core/core.js"></script>
+      
+    
+  </body>
+</html>

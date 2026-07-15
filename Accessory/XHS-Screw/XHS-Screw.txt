@@ -1,0 +1,9 @@
+XHS-Screw
+2026-01-04
+Overview
+The X-Headstage™ Armor Screw Set is designed for use with the S-Armor enclosure. The set includes 3 mm standard-length screws and 5 mm extended-length screws, allowing secure mechanical assembly of the headstage under different stacking configurations.
+Dimension
+unit: mm
+Compatibility
+Compatible with X-Headstage™ S-Armor
+Compatible with X-Headstage™ systems using remap boards or cycle extender boards
