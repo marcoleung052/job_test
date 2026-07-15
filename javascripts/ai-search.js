@@ -191,9 +191,9 @@ function escapeRegExp(str) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-// 把片段裡符合查詢字詞的地方、以及看起來像規格數字的地方 (像 "512"、"32"、
-// "10V" 這種，使用者搜規格時通常最想直接看到的就是數字) 用 <mark> 包起來，
-// 讓使用者一眼就能看到「為什麼是這個結果」，不用整段慢慢讀。
+// 把片段裡符合查詢字詞的地方用 <mark> 包起來，讓使用者一眼就能看到
+// 「為什麼是這個結果」，不用整段慢慢讀。只標查詢字詞本身，不特別標數字，
+// 避免跟查詢無關的數字也被醒目提示，反而分散注意力。
 // 一定要先 escapeHtml 再插入 <mark>，避免片段內容裡本來就有的 < > & 被誤判成標籤。
 function highlightSnippet(text, queryWords) {
   const escaped = escapeHtml(text);
@@ -201,10 +201,8 @@ function highlightSnippet(text, queryWords) {
     .filter(Boolean)
     .map(escapeRegExp)
     .sort((a, b) => b.length - a.length);
-  const alternatives = wordPatterns.length
-    ? [...wordPatterns, "\\d[\\d.,]*"]
-    : ["\\d[\\d.,]*"];
-  const re = new RegExp(`\\b(?:${alternatives.join("|")})\\b`, "gi");
+  if (!wordPatterns.length) return escaped;
+  const re = new RegExp(`\\b(?:${wordPatterns.join("|")})\\b`, "gi");
   return escaped.replace(re, (m) => `<mark>${m}</mark>`);
 }
 
