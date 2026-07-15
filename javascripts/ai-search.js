@@ -30,6 +30,11 @@ const SIM_THRESHOLD = 0.3;
 const RESULT_RELATIVE_CUTOFF = 0.8;
 // 極端情況 (例如查詢字詞多、命中太多片段) 的保底上限，避免整頁被灌爆。
 const RESULT_MAX_COUNT = 15;
+// 鎖定商品 (見 detectProductFilter) 之外、但字面上真的有命中查詢字詞的
+// 片段，排在鎖定商品的結果後面最多顯示幾筆。例如查 "core"：CORE2 自己的
+// 內容排最前面，但 "6-core CPU"、"XDAQ CORE models do not support..."
+// 這種其他商品頁面裡真的有出現這個字的內容，還是要看得到，只是排後面。
+const OTHER_PRODUCT_MAX_COUNT = 5;
 
 const state = {
   extractor: null, // transformers.js 的 feature-extraction pipeline
@@ -370,16 +375,18 @@ async function runSearch(query) {
   const queryLower = query.trim().toLowerCase();
   const queryWords = queryLower.split(/\s+/).filter(Boolean);
   const idfWeights = queryWords.length > 1 ? computeIdfWeights(queryWords) : {};
-  // 查詢字詞裡如果有指定到特定商品 (見 detectProductFilter)，其他商品的
-  // 片段直接不列入候選，而不是只是排名比較後面而已。
+  // 查詢字詞裡如果有指定到特定商品 (見 detectProductFilter)，那個商品的
+  // 結果排最前面；其他商品不是直接排除，而是分開處理，只要片段字面上
+  // 真的有命中查詢字詞，還是會顯示在鎖定商品的結果後面 (見下面
+  // OTHER_PRODUCT_MAX_COUNT)。像查 "core"：CORE2 自己的內容排最前面，
+  // 但其他頁面裡提到 "6-core CPU"、"XDAQ CORE models" 這種真的有這個字
+  // 的內容，不該完全被藏起來看不到。
   const productFilter = queryWords.length ? detectProductFilter(queryWords) : null;
 
-  const scored = state.documents
-    .map((doc, i) => {
-      const { boost, matched } = keywordBoost(doc.title, doc.text, queryLower, queryWords, idfWeights);
-      return { doc, baseScore: scores[i], adjustedScore: scores[i] + boost, matched };
-    })
-    .filter((s) => !productFilter || productFilter.has(productNameOf(s.doc.title)));
+  const scored = state.documents.map((doc, i) => {
+    const { boost, matched } = keywordBoost(doc.title, doc.text, queryLower, queryWords, idfWeights);
+    return { doc, baseScore: scores[i], adjustedScore: scores[i] + boost, matched };
+  });
 
   scored.sort((a, b) => b.adjustedScore - a.adjustedScore);
 
@@ -388,24 +395,42 @@ async function runSearch(query) {
     // 避免完全不相關的內容單靠語意分數的雜訊擠進結果
     .filter((s) => s.matched || s.baseScore >= SIM_THRESHOLD);
 
-  const topScore = passing.length ? passing[0].adjustedScore : 0;
-  const scoreFloor = topScore * RESULT_RELATIVE_CUTOFF;
+  const toResult = (s) => ({
+    title: s.doc.title,
+    url: s.doc.url,
+    text: s.doc.text,
+    score: s.adjustedScore,
+  });
 
-  const results = passing
-    // 關鍵字完全命中的片段不受這個百分比門檻限制：一個字面上真的有搜尋字詞
-    // 的片段，語意分數不管高低都是有效結果，不該因為語意分數比最高分低
-    // 太多就被濾掉 (例如搜 "animal" 有 25 個片段字面上真的有這個字，
-    // 只因為語意分數分佈得比較開，硬套百分比門檻會只剩 3 筆)。
-    // 百分比門檻只用來收斂「沒有命中關鍵字、純粹靠語意分數擠進來」的那些
-    // 邊緣結果，避免它們把清單灌得太長太雜。
-    .filter((s) => s.matched || s.adjustedScore >= scoreFloor)
-    .slice(0, RESULT_MAX_COUNT)
-    .map((s) => ({
-      title: s.doc.title,
-      url: s.doc.url,
-      text: s.doc.text,
-      score: s.adjustedScore,
-    }));
+  let results;
+  if (productFilter) {
+    const inProduct = passing.filter((s) => productFilter.has(productNameOf(s.doc.title)));
+    const outProduct = passing.filter((s) => s.matched && !productFilter.has(productNameOf(s.doc.title)));
+
+    const topScore = inProduct.length ? inProduct[0].adjustedScore : (passing.length ? passing[0].adjustedScore : 0);
+    const scoreFloor = topScore * RESULT_RELATIVE_CUTOFF;
+
+    const inProductResults = inProduct
+      // 關鍵字完全命中的片段不受這個百分比門檻限制：一個字面上真的有搜尋
+      // 字詞的片段，語意分數不管高低都是有效結果，不該因為語意分數比
+      // 最高分低太多就被濾掉 (例如搜 "animal" 有 25 個片段字面上真的有
+      // 這個字，只因為語意分數分佈得比較開，硬套百分比門檻會只剩 3 筆)。
+      .filter((s) => s.matched || s.adjustedScore >= scoreFloor)
+      .slice(0, RESULT_MAX_COUNT)
+      .map(toResult);
+
+    const outProductResults = outProduct.slice(0, OTHER_PRODUCT_MAX_COUNT).map(toResult);
+
+    results = inProductResults.concat(outProductResults);
+  } else {
+    const topScore = passing.length ? passing[0].adjustedScore : 0;
+    const scoreFloor = topScore * RESULT_RELATIVE_CUTOFF;
+
+    results = passing
+      .filter((s) => s.matched || s.adjustedScore >= scoreFloor)
+      .slice(0, RESULT_MAX_COUNT)
+      .map(toResult);
+  }
 
   renderResults(results, queryWords);
 }
