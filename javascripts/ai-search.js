@@ -175,6 +175,31 @@ function wordSimilarity(a, b) {
 
 const HIGHLIGHT_SIMILARITY = 0.87;
 
+// 英文常見字 (stopwords)：這些字幾乎每個片段都有，拿去做關鍵字比對／IDF
+// 加權／商品鎖定只會稀釋掉真正有意義的查詢字詞，所以在分詞後就先濾掉，
+// 不讓它們進入 keywordBoost / computeIdfWeights / detectProductFilter。
+const STOPWORDS = new Set([
+  "a", "an", "the", "is", "are", "was", "were", "be", "been", "being",
+  "am", "do", "does", "did", "doing", "have", "has", "had", "having",
+  "and", "or", "but", "if", "so", "as", "of", "at", "by", "for", "with",
+  "about", "against", "between", "into", "through", "during", "before",
+  "after", "above", "below", "to", "from", "up", "down", "in", "out",
+  "on", "off", "over", "under", "again", "further", "then", "once",
+  "here", "there", "when", "where", "why", "how", "all", "any", "both",
+  "each", "few", "more", "most", "other", "some", "such", "no", "nor",
+  "not", "only", "own", "same", "than", "too", "very", "can", "will",
+  "just", "should", "now", "this", "that", "these", "those", "it", "its",
+  "i", "you", "he", "she", "we", "they", "them", "his", "her", "their",
+  "what", "which", "who", "whom",
+]);
+
+// 把常見字從查詢字詞裡濾掉，但如果濾完整句都是常見字 (例如只搜 "the")，
+// 就保留原本的字詞，避免搜尋條件整個消失。
+function filterStopwords(words) {
+  const filtered = words.filter((w) => !STOPWORDS.has(w));
+  return filtered.length ? filtered : words;
+}
+
 // 判斷兩個「字」算不算同一個詞。故意不用單純的子字串比對 (a.includes(b))，
 // 因為那樣查 "on" 會連 "only"、"recording" 裡面都算比對到 — "on" 剛好是
 // "only" 的前綴，子字串／前綴比對兩種寫法都擋不掉這個誤判。原則是：
@@ -373,7 +398,7 @@ async function runSearch(query) {
   const scores = cosineSimilarityAll(queryVec);
 
   const queryLower = query.trim().toLowerCase();
-  const queryWords = queryLower.split(/\s+/).filter(Boolean);
+  const queryWords = filterStopwords(queryLower.split(/\s+/).filter(Boolean));
   const idfWeights = queryWords.length > 1 ? computeIdfWeights(queryWords) : {};
   // 查詢字詞裡如果有指定到特定商品 (見 detectProductFilter)，那個商品的
   // 結果排最前面；其他商品不是直接排除，而是分開處理，只要片段字面上
