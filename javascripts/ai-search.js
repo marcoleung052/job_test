@@ -12,16 +12,17 @@ import {
 // 這樣才符合「開啟網頁就自動下載模型」的需求。
 env.allowLocalModels = false;
 
-const MODEL_ID = "Xenova/all-MiniLM-L6-v2"; // 對應 model.txt 選定的輕量模型
+const MODEL_ID = "SmartComponents/bge-micro-v2"; // 對應 model.txt 選定的輕量模型
 const META_URL = "docs-meta.json"; // build_client_embeddings.py 產生
 const EMBEDDINGS_URL = "docs-embeddings.bin"; // 同上，float32 二進位向量
 const DEBOUNCE_MS = 300;
-// MiniLM 的餘弦相似度分佈跟 e5 不同、也沒有那麼可靠：實測完全無關的查詢
-// 最高分也常落在 0.25~0.3，真正相關的英文查詢多半在 0.45 以上，中文查詢因為
-// 這顆模型對中文語意的理解本來就比較弱 (見 model.txt)，分數會再更低。
+// bge-micro-v2 的餘弦相似度分佈整體比 MiniLM 高很多、也沒有那麼可靠 (見
+// model.txt：這顆模型只適合關鍵字導向的搜尋)：實測完全無關的查詢 (跟站內
+// 主題八竿子打不著，例如食譜、地理常識) 最高分也常落在 0.47~0.55，真正
+// 相關的查詢多半在 0.75 以上，中間還有一段模糊帶。
 // 這個門檻只用來擋「沒有命中任何關鍵字」的片段，命中關鍵字的片段一律保留
 // (見 keywordBoost / matched)，所以就算門檻抓得寬鬆一點，也不會被雜訊灌爆。
-const SIM_THRESHOLD = 0.3;
+const SIM_THRESHOLD = 0.55;
 // 不要固定只顯示前 5 筆：片段現在切得很細 (一個項目/一段話就是一筆)，
 // 有時候真正相關的結果只有 1、2 筆，硬湊滿 5 筆會塞進不太相關的內容；
 // 有時候同一個章節底下有 8、9 個子項目都跟查詢同樣相關，硬砍成 5 筆
@@ -86,7 +87,7 @@ function showLoadingStatus() {
   setList("");
 }
 
-// 載入 all-MiniLM-L6-v2 的 ONNX 權重 (量化版，約 0.7MB)，下載進度透過
+// 載入 MODEL_ID 的 ONNX 權重 (量化版)，下載進度透過
 // progress_callback 回報，讓使用者知道還要等多久，而不是整頁沒反應。
 async function loadModel() {
   state.extractor = await pipeline("feature-extraction", MODEL_ID, {
