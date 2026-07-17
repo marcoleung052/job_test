@@ -20,9 +20,13 @@ const DEBOUNCE_MS = 300;
 // model.txt：這顆模型只適合關鍵字導向的搜尋)：實測完全無關的查詢 (跟站內
 // 主題八竿子打不著，例如食譜、地理常識) 最高分也常落在 0.47~0.55，真正
 // 相關的查詢多半在 0.75 以上，中間還有一段模糊帶。
-// 這個門檻只用來擋「沒有命中任何關鍵字」的片段，命中關鍵字的片段一律保留
-// (見 keywordBoost / matched)，所以就算門檻抓得寬鬆一點，也不會被雜訊灌爆。
 const SIM_THRESHOLD = 0.55;
+// 關鍵字命中 (matched) 不該完全跳過語意門檻——之前的寫法是只要字面對到就
+// 整段保留，語意分數再低、再不相關都算數，等於完全不看語意分數，太依賴
+// 字面命中。改成「降低門檻」而不是「跳過門檻」：命中關鍵字的片段門檻打
+// 對折，比沒命中的寬鬆，但還是要有基本的語意相關性，不能靠一個巧合命中
+// 的字就把完全不相關的內容也拉進來。
+const MATCHED_SIM_FLOOR = SIM_THRESHOLD * 0.5;
 // 不要固定只顯示前 5 筆：片段現在切得很細 (一個項目/一段話就是一筆)，
 // 有時候真正相關的結果只有 1、2 筆，硬湊滿 5 筆會塞進不太相關的內容；
 // 有時候同一個章節底下有 8、9 個子項目都跟查詢同樣相關，硬砍成 5 筆
@@ -301,6 +305,11 @@ function detectProductFilter(queryWords) {
 // 挑出來的關鍵字，內文命中則可能只是這個字剛好出現在某句話裡，不見得是
 // 片段的重點)，但終究是 LLM 生成、不是原文，可信度比不上真正的標題。
 // 這也讓中文查詢能對到只有英文原文的片段 (標籤裡有中文翻譯)。
+//
+// 這些加分數值刻意壓低，只用來在語意分數相近時微調排序，不能讓字面命中
+// 主導排名——之前的權重 (0.15 / 0.09 / 0.06 / 0.04 / 0.015) 跟語意分數
+// 疊加後，很容易讓一個字面上剛好命中、但語意完全不相關的片段，排到真正
+// 語意相關但沒命中字面的片段前面，等於排序太看字面匹配、不看語意。
 function keywordBoost(title, text, tags, queryLower, queryWords, idfWeights) {
   const titleLower = title.toLowerCase();
   const textLower = text.toLowerCase();
@@ -308,7 +317,7 @@ function keywordBoost(title, text, tags, queryLower, queryWords, idfWeights) {
   let boost = 0;
   let matched = false;
   if (queryLower && (titleLower + " " + textLower + " " + tagsLower).includes(queryLower)) {
-    boost += 0.15;
+    boost += 0.05;
     matched = true;
   }
   if (queryWords.length > 1) {
@@ -319,16 +328,16 @@ function keywordBoost(title, text, tags, queryLower, queryWords, idfWeights) {
       const inText = hasWholeWordMatch(text, w);
       const inTags = tags && hasWholeWordMatch(tags, w);
       if (inTitle && inText) {
-        boost += 0.09 * idf;
+        boost += 0.03 * idf;
         hitCount++;
       } else if (inTitle) {
-        boost += 0.06 * idf;
+        boost += 0.02 * idf;
         hitCount++;
       } else if (inTags) {
-        boost += 0.04 * idf;
+        boost += 0.015 * idf;
         hitCount++;
       } else if (inText) {
-        boost += 0.015 * idf;
+        boost += 0.005 * idf;
         hitCount++;
       }
     }
@@ -433,9 +442,10 @@ async function runSearch(query) {
   scored.sort((a, b) => b.adjustedScore - a.adjustedScore);
 
   const passing = scored
-    // 關鍵字完全命中的片段一定保留；沒命中關鍵字的片段才用語意分數把關，
-    // 避免完全不相關的內容單靠語意分數的雜訊擠進結果
-    .filter((s) => s.matched || s.baseScore >= SIM_THRESHOLD);
+    // 關鍵字完全命中的片段門檻打對折 (MATCHED_SIM_FLOOR)，比沒命中的寬鬆，
+    // 但不是完全跳過語意門檻——語意分數還是要顧到基本的相關性下限，不能
+    // 只靠字面命中就把語意上完全不相關的內容也算進結果。
+    .filter((s) => s.baseScore >= (s.matched ? MATCHED_SIM_FLOOR : SIM_THRESHOLD));
 
   const toResult = (s) => ({
     title: s.doc.title,
