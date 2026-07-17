@@ -3,11 +3,7 @@
 §H3§ Overview
 E-series X-Headstage™ is designed to offer the best value while maintaining the flexibility of the X-Headstage™ that can be used with several off-the-shelf probe adapters. The advantage of adapter based approach can increase the utilization and longevity of headstage usage. If the probe facing connector breaks due to daily wear, it can be easily and cheaply replaced.
 E-series X-Headstage™ is denoted by the Xe- followed by R for recording only headstage and SR for switchable stim-record headstage.
-§H4§ XeSR32_HDMI Overview
-§H3§ Components
-§H3§ Dimension
-Weight 1.18g
-unit: mm
+XeSR32_HDMI Overview Components Dimension: Weight 1.18g unit: mm
 §H3§ Compatible Acquisition System
 The X-Headstage™ delivers optimal performance when paired with the XDAQ™ system. It is also adaptable for use with a range of open-source hardware and proprietary systems, although signal remap adapters may sometimes be required. Below is a list of known compatible systems;
 dditional unlisted platforms may also be capable of supporting the X6R:
@@ -15,6 +11,4 @@ Intan Recording Controller (512ch or 1024ch)
 Intan Stim-Record Controller
 Open-Ephys acquisition box
 NeuroNexus Smartbox
-§H3§ Pin Map
-§H4§ XeSR32 HDMI Probe side
-§H4§ XeSR32 HDMI System side
+Pin Map XeSR32 HDMI Probe side XeSR32 HDMI System side

@@ -4,13 +4,7 @@
 The XDAQ™ product line offers a suite of acquisition solutions designed to address the evolving needs of modern neuroscience research. These systems combine flexibility and performance, enabling integrated, multimodal approaches to a wide range of experimental techniques.
 The CORE2 model is a uniquely versatile platform that unifies multiple capabilities into a single device. It supports up to 512 channels of high-resolution spike recordings and, in XSR mode, provides up to 32 channels that can be dynamically configured for recording or stimulation. Additionally, the system includes native support for advanced electrode technologies, such as Neuropixels probes, with the capacity to operate up to two probes simultaneously.
 With comprehensive onboard and expandable input/output (I/O) capabilities, the XDAQ™ seamlessly integrates with standard laboratory equipments, ensuring compatibility across diverse experimental setups.
-§H3§ Components
-§H3§ Dimension And Weights
-Weight 900g
-unit: mm
-§H3§ Device Overview
-§H4§ The CORE2 Front Panel
-§H4§ The CORE2 Back Panel
+Components Dimension And Weights: Weight 900g unit: mm Device Overview The CORE2 Front Panel The CORE2 Back Panel
 §H4§ System LED Indicators
 ① Power LED:
 Indicates adequate power is being supplied to the system.
@@ -29,7 +23,7 @@ Indicates that the XDAQ™ is in NP (Neuropixels) mode and ready to use.
 ① X-Headstage™ Port LED P1 - P4:
 Indicates that the headstage is properly detected; it will only illuminate after the software initialization is complete.
 ② Neuropixels Port LED 1 - 2:
-§H3§ Setting Up The XDAQ™
+Setting Up The XDAQ™
 §H4§ Turning on the XDAQ™
 Connect the provided USB-C power cable to the device.
 Ensure that the other end of the cable is securely plugged into a power outlet.
@@ -60,7 +54,7 @@ This 3.5mm stereo jack enables audio monitoring of two selected headstage amplif
 ⚠
 IMPORTANT:
 Do not connect ports to unintended signal type. Permanet damage may occour.
-§H3§ Setting Up The Headstage And Probe
+Setting Up The Headstage And Probe
 §H4§ For Record-Only (XR) or Stim-Record (XSR) Experiments
 Connect the Type-D micro-HDMI connector of the stock KonteX HDMI cable to the X-Headstage™.
 Connect the Type-A HDMI connector to one of the XDAQ™ Headstage Ports. Always use Port 1, as other ports may be unavailable depending on the license purchased with the XDAQ™.
@@ -71,16 +65,12 @@ Connect the Omnetics connector of the Neuropixels cable to the headstage.
 Connect the USB-C connector of the cable to one of the Neuropixels Ports (Port 1–4).
 Optionally, a commutator can be used between the Neuropixels headstage and the XDAQ™. Refer to the Commutator User Manual for more information.
 Insert the Neuropixels probe into the headstage by connecting the flex cable of the Neuropixels probe to the headstage. Note: The metal pads on the flex cable should face downward when inserting it into the headstage. Flip the flex cable connector down to lock the probe in place.
-§H3§ Installing Driver & Software
+Installing Driver & Software
 §H4§ 1. Connecting to a PC
 Use the supplied Thunderbolt cable to connect the Computer Port on the XDAQ™ to a Thunderbolt port on the PC. The cable is identifiable by the lightning bolt symbol on its connector.
 The XDAQ™ can also supply power to the connected computer: CORE2 can deliver up to 15 W, sufficient to power most laptops. The Peripheral Port supplies up to 15 W of power.
 The Peripheral Port can also be used to connect a Thunderbolt accessory, such as a storage device, which will be accessible from the host PC.
-§H4§ 2. Download the driver
-Windows:
-https://developer.kontex.io
-macOS: Search for XDAQ™ from the App Store
-Linux: Contact us
+2. Download the driver: Windows: https://developer.kontex.io macOS: Search for XDAQ™ from the App Store Linux: Contact us
 §H4§ 3. Install the driver
 Windows
 1. Before installation, ensure that a "PCI Simple Communications Controller" is listed in the Device Manager.
@@ -119,7 +109,7 @@ https://developer.kontex.io
 When XDAQ™ is up to date
 Upgrading XDAQ™
 When XDAQ™ is not connected
-§H3§ Starting The Application
+Starting The Application
 §H4§ Check your firmware version before launching the application
 Before launching the application, please update the system firmware to the latest version.
 Systems with the default “0-0-0” configuration will not be recognized properly by the software until the firmware update is completed.
@@ -163,7 +153,7 @@ The DB25 connector on the XDAQ™ offers access to additional I/O ports and syst
 DAQ ON: Logic high at onset of a recording session
 Sample CLK: is the sampling clock used to drive the X-Headstage™
 All digital inputs (DI-01 to DI-08) are compatible with both 3.3V and 5V digital signals. The BNC digital output ports (DO-01, DO-02) can be configured via software to output either a 3.3V or 5V logic high signal. The digital output channels on the DB25 connector (DO-03 to DO-08) are designed for 3.3V logic high output.
-§H3§ Accessory
+Accessory
 §H3§ Technical Specifications - CORE2
 1. XR mode acquisition specifications are based on Intan Technologies’ RHD2000 series IC. In case of any discrepancies, the manufacturer's specifications shall take precedence.
 2. The acquisition and stimulation specifications for XSR Mode are based on Intan Technologies' RHS2000 series IC. In case of any discrepancies, the manufacturer's specifications shall take precedence.

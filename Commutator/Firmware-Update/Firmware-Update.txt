@@ -20,5 +20,4 @@ While holding the button, switch the Power on.
 6. Finalize Update: Toggle the power switch to Restart the Commutator. Your device is now updated and ready for use.
 NOTE:
 Do not disconnect the USB cable or power off the device while the drive is active and the file is being transferred, as this may result in firmware corruption.
-§H3§ Download Firmware File
-Commutator Pro firmware (.uf2)
+Download Firmware File: Commutator Pro firmware (.uf2)

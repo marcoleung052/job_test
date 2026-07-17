@@ -3,20 +3,13 @@
 §H3§ Overview
 The SR Headstage Remapper is designed specifically for use with the X3SR32 headstage. It enables compatibility with standard probe adapters that lack the "SR" (Stim-Record) designation. This adapter enables users to connect SR-type headstages to a wider range of compatible adapters and also functions as a headstage cycle extender.
 Adpt-SRRemap
-§H3§ Dimension
-unit: mm
-§H3§ Connector
-§H4§ Headstage
-Molex PN: 505070-3422
+Dimension: unit: mm Connector Headstage: Molex PN: 505070-3422
 §H4§ Probe
 Samtec PN: FOLC-110-01-S-Q
 Compatiable NNx probes: A32, MRA32, OA32LP, OA32LP V2, OXA32LP
 NOTE :
 To securely attach the S-Armor headstage to the probe or probe adapter when used with a remapper or cycle extender, a longer screw (SKU: XHS-Screw-5mm) is required.
-§H3§ Key Functions
-§H4§ Probe Compatibility Expansion
-Allows the X3SR32 headstage to interface with standard (non-SR) probe adapters.
+Key Functions Probe Compatibility Expansion: Allows the X3SR32 headstage to interface with standard (non-SR) probe adapters.
 §H4§ Connector Cycle Extension
 Serves as a protective, disposable intermediary that extends the connector life of the X3SR32 headstage during frequent connection and disconnection cycles.
-§H3§ Pin Map
-§H4§ Identified by X3SR to X3R on PCB
+Pin Map Identified by X3SR to X3R on PCB

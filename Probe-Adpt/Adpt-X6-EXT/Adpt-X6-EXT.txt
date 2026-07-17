@@ -3,18 +3,11 @@
 §H3§ Overview
 The X6 Cycle Extender (SKU: Adpt-X6-EXT) is a disposable interface adapter designed for use with X6 headstages. It provides a sacrificial connection point that helps reduce mechanical wear and tear on the X6 headstage connector from repeated mating cycles. This accessory prolongs the usable life of the expensive headstage connector by absorbing the connection cycles instead of the headstage itself.
 Adpt X6 EXT
-§H3§ Dimension
-unit: mm
-§H3§ Connector
-§H4§ Headstage
-Yamaichi PN: PKS019-4011-0
-Omnetics PN: A79623-001
-§H4§ Probe
-Panasonic PN: AXG144144A
+Dimension: unit: mm Connector Headstage: Yamaichi PN: PKS019-4011-0 Omnetics PN: A79623-001 Probe: Panasonic PN: AXG144144A
 §H3§ Key Functions
 Serves as a replaceable cycle-limiting adapter for X6 headstages.
 Protects the high-pin-count connector of the X6 headstage from wear due to repeated use.
 Extends the service life of the headstage by isolating mating cycles to the extender.
 Preserves signal integrity and system compatibility with X6 acquisition hardware.
 Ideal for high-usage research environments requiring frequent headstage handling.
-§H3§ Pin Map
+Pin Map

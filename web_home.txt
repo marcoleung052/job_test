@@ -1,12 +1,5 @@
 §H1§ Home
-XDAQ
-Headstage
-Commutator
-EIB
-Probe Adapter
-System Adapter
-Accessory
-Instrument
+XDAQ Headstage Commutator EIB Probe Adapter System Adapter Accessory Instrument
 §H3§ Guide Updates
 2026-06-29
 X3SR64-HDMI

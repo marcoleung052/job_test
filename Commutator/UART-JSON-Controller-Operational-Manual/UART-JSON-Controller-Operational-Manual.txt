@@ -2,9 +2,7 @@
 2026-06-23
 §H3§ Overview
 This manual provides a detailed functional overview of the UART JSON Controller - Pro Edition interface. The software is designed to manage hardware devices, such as the Commutator Pro, through real-time command transmission and data visualization.
-§H3§ UART JSON Controller Interface Overview
-§H3§ Feature
-§H3§ GUI Controls
+UART JSON Controller Interface Overview Feature GUI Controls
 §H3§ Description
 Machine Status
 Status
@@ -30,5 +28,4 @@ Adjusts the IMU/Gyro tracking sensitivity used to trigger automatic motor compen
 Max Motor Run Degree Setting
 Motor Max Slider, Motor Max
 Sets the maximum rotation angle allowed for each motor compensation event to prevent excessive movement.
-§H3§ Download Firmware File
-UART JSON Controller
+Download Firmware File: UART JSON Controller

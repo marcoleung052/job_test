@@ -2,7 +2,4 @@
 The KonteX Electrode Interface Board (EIB) series provides a reliable and modular interface between neural probes and KonteX X-Headstage™ systems.
 Designed to ensure stable electrical connectivity, flexible probe integration, and efficient experimental configuration, the EIB platform supports a wide range of electrode formats and recording architectures used in modern neuroscience research.
 Each EIB is engineered to maintain signal integrity while minimizing mechanical load on implanted hardware, making the series suitable for both acute and chronic experimental applications.
-§H3§ Adpt-JP-X3
-§H3§ EIB-L & R-32
-§H3§ EIB16 & 32 -M1S
-§H3§ EIB32SR
+Adpt-JP-X3 EIB-L & R-32 EIB16 & 32 -M1S EIB32SR

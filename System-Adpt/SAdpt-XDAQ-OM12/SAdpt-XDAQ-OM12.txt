@@ -2,16 +2,8 @@
 2026-04-11
 §H3§ Overview
 The XDAQ™ to Intan RHD Headstage Adapter is designed to interface the XDAQ acquisition system with Intan’s RHD headstages via SPI cables. This adapter provides a direct and reliable connection path, enabling precise recording control while maintaining compatibility with Intan’s standard hardware architecture.
-§H4§ SAdpt-XDAQ-OM12 Overview
-§H4§ Headstage side            System side
-§H3§ Dimension
-unit: mm
+SAdpt-XDAQ-OM12 Overview Headstage side            System side Dimension: unit: mm
 §H3§ Usage Scenarios
 The SAdpt-XDAQ-OM12 adapter provides a direct and reliable interface between Intan RHD headstages and the XDAQ system. It can be used in experimental setups where stable high- channel-count recording is required, and it also supports extended configurations through optional SPI cables, allowing flexible positioning of the headstages relative to the acquisition system.
 The HDMI slot on the board allows the adaptor to be plugged directly into the XDAQ acquisition box. Both the P1 and P2 connectors on the adaptor can also be used with SPI cable to extend the connection to the acquisition system.
-§H3§ Connector
-§H4§ HDMI
-HDMI Type A male
-§H4§ Intan/Open Ephys
-Omnetics Polarized NANO 12-pin
-§H3§ Pin Map
+Connector HDMI: HDMI Type A male Intan/Open Ephys: Omnetics Polarized NANO 12-pin Pin Map

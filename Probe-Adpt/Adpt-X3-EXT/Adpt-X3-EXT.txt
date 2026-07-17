@@ -3,17 +3,11 @@
 §H3§ Overview
 The X3 Cycle Extender is a disposable adapter designed for use with KonteX X3 headstages. It serves as a protective intermediary between the headstage and connected accessories, reducing mechanical wear on the headstage connector caused by frequent mating and unmating cycles. By absorbing connector wear, the Cycle Extender helps prolong the operational lifespan of X3 headstages.
 Adpt X3 EXT
-§H3§ Dimension
-unit: mm
-§H3§ Connector
-§H4§ Headstage
-Molex PN: 505070-3422
-§H4§ Probe
-Molex PN: 505066-3422
+Dimension: unit: mm Connector Headstage: Molex PN: 505070-3422 Probe: Molex PN: 505066-3422
 §H3§ Key Functions
 Acts as a disposable, sacrificial interface between the X3 headstage and the acquisition system.
 Reduces mechanical wear on the X3 headstage connector caused by repeated mating cycles.
 Helps extend the operational lifespan of the headstage by absorbing connection stress.
 Maintains full electrical compatibility with X3 headstages without signal degradation.
 Enables frequent connection and disconnection during experiments without risking permanent connector damage.
-§H3§ Pin Map
+Pin Map

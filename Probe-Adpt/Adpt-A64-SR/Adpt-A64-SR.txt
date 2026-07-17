@@ -3,28 +3,13 @@
 §H3§ Overview
 The Adpt-A64-SR is a signal remapping adapter designed for use with X3SR64 headstages. It enables compatibility with 64-channel probe adapters and accessories that do not use the SR (Split-Reference) configuration by internally remapping channel and reference assignments to the SR architecture.
 This adapter provides a compact, inline interface that preserves signal integrity while expanding probe and accessory compatibility within XSR-mode acquisition workflows.
-§H3§ Adpt-A64-SR Overview
-Adpt-A64-SR
-§H3§ Connector
-§H4§ Headstage
-Molex PN: 505070-3422
-§H4§ Probe
-Samtec PN: FOLC-110-01-S-Q
-Compatible Neuronexus probes: A64, MRA64, OA64LP, OA64LP V2
-§H3§ Dimension
-§H4§ V1: Identified by 100282 on PCB
-Original design
-§H4§ V2: Identified by 100282C on PCB
-unit: mm
-§H3§ Versions
-§H4§ V1: Identified by 100282 on PCB
-Original design
-§H4§ V2: Identified by 100282C on PCB
-§H3§ Ground & Reference Configuration
+Adpt-A64-SR Overview: Adpt-A64-SR Connector Headstage: Molex PN: 505070-3422 Probe: Samtec PN: FOLC-110-01-S-Q Compatible Neuronexus probes: A64, MRA64, OA64LP, OA64LP V2
+Dimension V1: Identified by 100282 on PCB: Original design V2: Identified by 100282C on PCB: unit: mm Versions V1: Identified by 100282 on PCB: Original design
+V2: Identified by 100282C on PCB Ground & Reference Configuration
 §H4§ A64 SR V1 Adapter (SKU: Adpt-A64-SRv1)
 Ground (G) and reference (R) signals are independent by default.
 To short them together at the adapter, solder a short wire between the G and R pads.
-§H4§ Adpt-A64-SR
+Adpt-A64-SR
 §H4§ A64 V2 Adapter (SKU: Adpt-A64-SRv2)
 Proper grounding and referencing are essential for high-quality signal acquisition. Always ensure that both ground and reference signals are securely connected. If either is left floating, significant noise may be introduced into the recordings.
 ER: Solder pad for external reference (wire), this solder pad is connected fo signal R.
@@ -42,7 +27,4 @@ By default, the headstage ground (G) and reference (R) are independent.
 If the jumper pas has a default short configuration, use a scalpel or precision blade to cleanly sever the trace.
 ③ After modification, clean the area thoroughly using isopropyl alcohol or flux remover to eliminate any residual material.
 ④ Always verify connectivity using a multimeter to ensure proper configuration.
-§H3§ Pin Map
-§H4§ V1: Identified by 100282 on PCB
-Original design
-§H4§ V2: Identified by 100282C on PCB
+Pin Map V1: Identified by 100282 on PCB: Original design V2: Identified by 100282C on PCB

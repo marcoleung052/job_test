@@ -3,11 +3,7 @@
 §H3§ Overview
 The SR64 Adapter is essential for the proper operation of the X3SR64 Headstage. It features active electronic circuitry that conditions and merges headstage communication, which typically requires two separate HDMI cables. Unlike the standard X3SR32 headstage, which uses LVDS signal lines that require double the number of signal pins, the SR64 Adapter converts LVDS signal pairs into single-ended CMOS signals.
 This allows it to drive four RHS2116 chips, which make up the X3SR64 headstage, using a single KonteX HDMI cable. The adapter has been meticulously designed and tested to ensure the reliable performance of the X3SR64 Headstage.
-§H4§ SR64 Adapter Overview
-§H3§ Components
-§H3§ Dimension and Weight
-Weight 200g
-unit: mm
+SR64 Adapter Overview Components Dimension and Weight: Weight 200g unit: mm
 §H3§ Getting Started
 1. Connect two HDMI headstage ports from a compatible XDAQ to the input ports of the SR64 Adapter using the included KonteX 80cm HDMI cable. A longer cable, such as the KonteX 3M HDMI cable, can also be used.
 2. Ensure the Power LED is illuminated, which indicates that the XDAQ is providing sufficient power to the adapter.

@@ -2,23 +2,7 @@
 2026-03-23
 §H3§ Overview
 The KonteX Neuropixels cable features an optimized design (~40% lighter than IMEC stock cable) engineered to ensure reliable data transmission while preserving mechanical flexibility and durability. Every cable undergoes rigorous performance and quality testing to meet the highest standards.
-§H3§ Dimension And Weight
-unit: mm
-Weight
-With USB Connector
-Without USB Connector
-1 M
-3 g
-0.5 g
-5 M
-5.5 g
-3 g
-§H3§ Connector
-Headstage Side
-J Model: WL-0601-H-02P
-K Model: Omnetics A79603-001
-System Side
-44.5 g
+Dimension And Weight: unit: mm Weight With USB Connector Without USB Connector 1 M 3 g 0.5 g 5 M 5.5 g 3 g Connector: Headstage Side J Model: WL-0601-H-02P K Model: Omnetics A79603-001 System Side 44.5 g
 §H3§ Part Number
 Cable-NP- [Length] - [Connector]
 Cable-NP

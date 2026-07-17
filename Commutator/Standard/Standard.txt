@@ -7,8 +7,7 @@ This commutator is intended for use in freely moving or rotating experimental se
 The commutator operates as a fully passive device, containing no active electronics or signal conditioning components.
 Signal transmission is maintained through internal rotating contacts, allowing unrestricted rotational motion while preserving channel integrity.
 The passive design ensures zero power consumption and eliminates potential noise sources associated with active circuitry.
-§H3§ Dimension
-unit: mm
+Dimension: unit: mm
 §H3§ Key Features
 Passive Signal Routing
 Fully passive design with no active electronics, ensuring transparent signal transmission without added noise or power requirements.
@@ -37,13 +36,6 @@ NOTE:
 1. Mount the commutator in a vertical orientation to ensure optimal rotational performance.
 2. Avoid excessive axial or lateral forces on the HDMI connectors.
 3. Ensure sufficient cable slack to allow free rotation without tension.
-§H3§ Using the Commutator STD with Intan or Open Ephys Acquisition Systems
-§H4§ Front side
-§H4§ uHDMI to RHD adapter SKU: SAdpt-uHDMI-OM12
-§H4§ uHDMI to RHS Adapter SKU: SAdpt-uHDMI-OM16
-§H4§ Bottom view
-§H4§ XDAQ to RHD headstage adapter SKU: SAdpt-XDAQ-OM12
-§H4§ XDAQ to RHS headstage adapter SKU: SAdpt-XDAQ-OM16
-§H3§ Undermount Cutout Installation Sepcification
-§H4§ Cutout Dimensions Diagram
-unit: mm
+Using the Commutator STD with Intan or Open Ephys Acquisition Systems Front side uHDMI to RHD adapter SKU: SAdpt-uHDMI-OM12
+uHDMI to RHS Adapter SKU: SAdpt-uHDMI-OM16 Bottom view XDAQ to RHD headstage adapter SKU: SAdpt-XDAQ-OM12 XDAQ to RHS headstage adapter SKU: SAdpt-XDAQ-OM16
+Undermount Cutout Installation Sepcification Cutout Dimensions Diagram: unit: mm

@@ -2,16 +2,11 @@
 2026-04-13
 §H3§ Overview
 The X3R64 is a compact and high-performance 64-channel recording headstage designed for precise neural signal acquisition. Built on two RHD2132 amplifier, it delivers a single 64-channel data stream, ensuring high-fidelity recording and seamless integration with compatible acquisition software.
-§H4§ X3R64_HDMI Overview
-§H3§ Dimension and weight
-Weight ~1.1g
-unit: mm
+X3R64_HDMI Overview Dimension and weight: Weight ~1.1g unit: mm
 §H3§ Armor
 Optional protective covers are available for each headstage, offering extra protection and anchoring. These covers, crafted from Polyoxymethylene (POM), are lightweight and resistant to chemicals. There are three standard armor types, with options for customization in shape and material to suit diverse experimental requirements. It's important to note that the size, weight, and shape of these armors will differ across various X-Headstage™ models.
-§H4§ S Armor
-The S armors with ear loops around the side used to anchor headstage to the accessories such as electrode adapters.
-§H4§ M Armor
-The M armors are designed to provide protection while maintaining minimal size.
+S Armor: The S armors with ear loops around the side used to anchor headstage to the accessories such as electrode adapters.
+M Armor: The M armors are designed to provide protection while maintaining minimal size.
 §H4§ IP Armor
 The IP armors are designed to provide the most protection and fully encase the X-Headstage. The X-Headstage™ with the optional parylene coating has been tested to the IP68 standard.
 §H3§ Compatible Acquisition System
@@ -23,19 +18,8 @@ NeuroNexus Smartbox
 §H3§ Motion Tracking
 Each XR headstages is by default configured with an analog 3-axis accelerometer that will be sampled at the same rate as the headstage inputs and the data will be available in the AUX1, AUX2, AUX3 signal in the data package. It is NOT possible to purchase XR headstages without the accelerometer.
 XSR Headstages does not support 3-axis accelerometer.
-§H3§ Key Features
-§H4§ Compact & Lightweight
-Measuring approximately14.58 × 11.3 × 6.7 mm, the X3R32 minimizes weight and strain on subjects.
-§H4§ High-Quality Signal Acquisition
-Utilizes an RHD2132 amplifier for low-noise, high-resolution neural recording.
-§H4§ Data Output
-Generates one 32-channel data stream, fully compatible with supported software.
-§H4§ Connectivity Options
-Available with either a micro-HDMI connector or an optional Omnetics connector for flexible system integration.
-§H4§ Integrated 3-Axis Accelerometer
-Enables real-time motion tracking and activity monitoring.
-§H4§ Optional Protective Cover
-Provides additional protection and anchoring for enhanced durability in experimental setups.
-§H3§ Pin Map
-§H4§ X3R64 HDMI Probe side
-§H4§ X3R64 HDMI System side
+Key Features Compact & Lightweight: Measuring approximately14.58 × 11.3 × 6.7 mm, the X3R32 minimizes weight and strain on subjects.
+High-Quality Signal Acquisition: Utilizes an RHD2132 amplifier for low-noise, high-resolution neural recording. Data Output: Generates one 32-channel data stream, fully compatible with supported software.
+Connectivity Options: Available with either a micro-HDMI connector or an optional Omnetics connector for flexible system integration.
+Integrated 3-Axis Accelerometer: Enables real-time motion tracking and activity monitoring. Optional Protective Cover: Provides additional protection and anchoring for enhanced durability in experimental setups.
+Pin Map X3R64 HDMI Probe side X3R64 HDMI System side

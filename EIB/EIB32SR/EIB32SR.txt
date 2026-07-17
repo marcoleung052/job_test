@@ -2,31 +2,12 @@
 2025-12-29
 §H3§ Overview
 The EIB SR Right 32ch is a 32-channel Electrode Interface Board (EIB) specifically designed for use with the KonteX X3SR stim-record headstage. This model is configured with the extension on the right side of the headstage, providing flexible layout options in constrained or custom implant environments.
-§H3§ EIB32SR Overview
-§H3§ Connector
+EIB32SR Overview Connector
 §H4§ The EIB SR Right 32ch is compatible with the following headstages:
 X3SR32 Headstage
 This EIB is not compatible with XR-series headstages or left-sided SR EIB variants. Always verify the headstage type and channel configuration before installation.
-§H3§ Dimension
-Weight:0.8 g
-unit: mm
-§H3§ Key Features
-§H4§ Channel Capacity
-Supports 32 recording or stimulation channels.
-§H4§ Connector Orientation
-32 independent channels.
-§H4§ Connector Type
-Compatible with X3SR headstage micro-connectors.
-§H4§ Right-Side Extension
-Tailored layout for right-oriented cable management.
-§H4§ Compact and Lightweight
-Minimizes implant footprint.
-§H4§ High Signal Integrity
-Optimized for low-noise stimulation and recording applications.
-§H3§ Compatible Acquisition System
-§H4§ Headstage Compatibility
-Designed for use with the X3SR32 headstage.
-§H4§ Electrode Compatibility
-Supports 32-channel electrode arrays equipped with Omnetics connectors.
-§H3§ Pin Map
-EIB32SR
+Dimension: Weight:0.8 g unit: mm Key Features Channel Capacity: Supports 32 recording or stimulation channels. Connector Orientation: 32 independent channels.
+Connector Type: Compatible with X3SR headstage micro-connectors. Right-Side Extension: Tailored layout for right-oriented cable management.
+Compact and Lightweight: Minimizes implant footprint. High Signal Integrity: Optimized for low-noise stimulation and recording applications.
+Compatible Acquisition System Headstage Compatibility: Designed for use with the X3SR32 headstage. Electrode Compatibility: Supports 32-channel electrode arrays equipped with Omnetics connectors.
+Pin Map: EIB32SR
