@@ -294,12 +294,20 @@ function detectProductFilter(queryWords) {
 // 標題/內文都用完整詞比對 (hasWholeWordMatch)，不是子字串比對，同一個字詞
 // 「同時」在標題跟內文裡都以完整詞出現時，比只出現在其中一邊更可信，
 // 額外加更高的權重。
-function keywordBoost(title, text, queryLower, queryWords, idfWeights) {
+//
+// tags 是 auto_tagger.py 事先用 LLM 針對每個片段生成的中英雙語關鍵字
+// (見 build_client_embeddings.py 的 tags 欄位)，命中時加分權重排在
+// inTitle 之後、inText 之前：比純內文命中更可信 (標籤是特意為這個片段
+// 挑出來的關鍵字，內文命中則可能只是這個字剛好出現在某句話裡，不見得是
+// 片段的重點)，但終究是 LLM 生成、不是原文，可信度比不上真正的標題。
+// 這也讓中文查詢能對到只有英文原文的片段 (標籤裡有中文翻譯)。
+function keywordBoost(title, text, tags, queryLower, queryWords, idfWeights) {
   const titleLower = title.toLowerCase();
   const textLower = text.toLowerCase();
+  const tagsLower = (tags || "").toLowerCase();
   let boost = 0;
   let matched = false;
-  if (queryLower && (titleLower + " " + textLower).includes(queryLower)) {
+  if (queryLower && (titleLower + " " + textLower + " " + tagsLower).includes(queryLower)) {
     boost += 0.15;
     matched = true;
   }
@@ -309,11 +317,15 @@ function keywordBoost(title, text, queryLower, queryWords, idfWeights) {
       const idf = idfWeights[w] || 1;
       const inTitle = hasWholeWordMatch(title, w);
       const inText = hasWholeWordMatch(text, w);
+      const inTags = tags && hasWholeWordMatch(tags, w);
       if (inTitle && inText) {
         boost += 0.09 * idf;
         hitCount++;
       } else if (inTitle) {
         boost += 0.06 * idf;
+        hitCount++;
+      } else if (inTags) {
+        boost += 0.04 * idf;
         hitCount++;
       } else if (inText) {
         boost += 0.015 * idf;
@@ -336,7 +348,11 @@ function computeIdfWeights(queryWords) {
   for (const w of queryWords) {
     let df = 0;
     for (const doc of docs) {
-      if (hasWholeWordMatch(doc.title, w) || hasWholeWordMatch(doc.text, w)) df++;
+      if (
+        hasWholeWordMatch(doc.title, w) ||
+        hasWholeWordMatch(doc.text, w) ||
+        (doc.tags && hasWholeWordMatch(doc.tags, w))
+      ) df++;
     }
     weights[w] = Math.log((n + 1) / (df + 1)) + 0.5;
   }
@@ -410,7 +426,7 @@ async function runSearch(query) {
   const productFilter = queryWords.length ? detectProductFilter(queryWords) : null;
 
   const scored = state.documents.map((doc, i) => {
-    const { boost, matched } = keywordBoost(doc.title, doc.text, queryLower, queryWords, idfWeights);
+    const { boost, matched } = keywordBoost(doc.title, doc.text, doc.tags, queryLower, queryWords, idfWeights);
     return { doc, baseScore: scores[i], adjustedScore: scores[i] + boost, matched };
   });
 
