@@ -2,11 +2,16 @@
 2026-06-26
 §H3§ Overview
 The X3 Headstage 64-Channel Impedance Test Module is designed to evaluate the impedance measurement functionality of X3 headstages. By connecting the module to dummy test loads with resistive and capacitive (R/C) values ranging from kΩ to MΩ, users can verify impedance measurement accuracy without connecting to electrodes or biological tissue.
-Tester-Z-X3 Overview
+§H3§ Tester-Z-X3 Overview
 §H3§ Test Operation
 Due to the keyed orientation of the connector pins, impedance testing must be performed in left and right orientations separately. Users should alternate the connection orientation of the X3 Headstage 64-Channel Impedance Test Module to verify impedance measurements on both sides, ensuring complete and accurate validation.
-Dimension: unit: mm Compatibility: Compatible with X3 64-channel headstages Not compatible with non-64-channel or non-impedance-enabled X3 headstages
-Ground & Reference Configuration PCB-100231 X3-Z-Tester
+§H3§ Dimension
+unit: mm
+§H3§ Compatibility
+Compatible with X3 64-channel headstages
+Not compatible with non-64-channel or non-impedance-enabled X3 headstages
+§H3§ Ground & Reference Configuration
+§H4§ PCB-100231 X3-Z-Tester
 §H3§ Revision Comparison
 Beginning with Tester PCB Revision v1.1, the connector labels have been changed from (1)/(2) to A/B to provide a more intuitive correspondence with the headstage connectors.
 PCB Revision
@@ -19,7 +24,8 @@ NOTE:
 This is a labeling improvement only. All electrical connections, pin mappings, and channel assignments remain unchanged across PCB revisions.
 §H3§ Pin map
 Connector orientation reference for the X3 Headstage Tester. Connector (1) corresponds to Headstage Connector A, and Connector (2) corresponds to Headstage Connector B. Refer to this relationship when using the pin mapping tables below.
-Tester-Z-X3v1 with X3R32 Tester-Z-X3 v1 with X3R64
+§H4§ Tester-Z-X3v1 with X3R32
+§H4§ Tester-Z-X3 v1 with X3R64
 §H5§ PCB Silkscreen Label Correction
 A labeling error exists on the PCB silkscreen of certain X3R64 Headstage Tester revisions. The pin assignments printed on the PCB at the locations listed below are incorrect:
 Incorrect PCB Marking
@@ -29,4 +35,5 @@ Correct Pin Assignment
 02(1)/30(2)
 02(1)/20(2)
 The channel mapping table shown below has been verified and is correct. Always use the channel mapping table as the primary reference when identifying connector pin assignments.
-Tester-Z-X3 v1.1 with X3R32 Tester-Z-X3 v1.1 with X3R64
+§H4§ Tester-Z-X3 v1.1 with X3R32
+§H4§ Tester-Z-X3 v1.1 with X3R64

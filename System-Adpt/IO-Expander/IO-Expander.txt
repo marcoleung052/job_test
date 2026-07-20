@@ -7,7 +7,10 @@ Synchronized IO Processing:
 Operates at the same sampling rate as the X-Headstage.
 Compact and Robust Design:
 Easily integrates with the existing XDAQ system without extensive modifications.
-Components Dimension and Weight: Weight 925g unit: mm
+§H3§ Components
+§H3§ Dimension and Weight
+Weight 925g
+unit: mm
 §H3§ Device Overview
 Expanded Digital I/O
 Adds 24 digital input channels and 24 digital output channels to the XDAQ, enabling flexible control and monitoring of external devices.
@@ -19,4 +22,6 @@ Modular System Expansion
 Seamlessly integrates with the XDAQ platform, allowing scalable I/O expansion without modifying the core acquisition system.
 Versatile Experimental Integration
 Supports a wide range of experimental setups, including behavioral control, stimulation triggering, and external device synchronization.
-Hardware Connection Connect the IO Expander to the XDAQ via the EXP1 and EXP2 ports using the supplied cables. Pin map
+§H3§ Hardware Connection
+§H4§ Connect the IO Expander to the XDAQ via the EXP1 and EXP2 ports using the supplied cables.
+§H3§ Pin map

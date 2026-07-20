@@ -12,14 +12,18 @@ import {
 // 這樣才符合「開啟網頁就自動下載模型」的需求。
 env.allowLocalModels = false;
 
-const MODEL_ID = "SmartComponents/bge-micro-v2"; // 對應 model.txt 選定的輕量模型
+const MODEL_ID = "Xenova/bge-small-en-v1.5"; // 對應 model.txt 選定的模型，MTEB 科學檢索分數高
 const META_URL = "docs-meta.json"; // build_client_embeddings.py 產生
 const EMBEDDINGS_URL = "docs-embeddings.bin"; // 同上，float32 二進位向量
 const DEBOUNCE_MS = 300;
-// bge-micro-v2 的餘弦相似度分佈整體比 MiniLM 高很多、也沒有那麼可靠 (見
-// model.txt：這顆模型只適合關鍵字導向的搜尋)：實測完全無關的查詢 (跟站內
-// 主題八竿子打不著，例如食譜、地理常識) 最高分也常落在 0.47~0.55，真正
-// 相關的查詢多半在 0.75 以上，中間還有一段模糊帶。
+// bge 系列官方建議：查詢字串前面要加這段指令 (query instruction)，索引時
+// 的文件片段不用加，只有查詢端才加。這是 bge-small-en-v1.5 模型卡上寫的
+// 固定字串，不是隨便寫的，跟 build_client_embeddings.py 那邊要對稱
+// (那邊編碼 passage 不加前綴)。
+const QUERY_INSTRUCTION = "Represent this sentence for searching relevant passages: ";
+// bge-small-en-v1.5 的餘弦相似度分佈又跟 bge-micro-v2 不一樣：實測完全
+// 無關的查詢 (跟站內主題八竿子打不著，例如食譜、地理常識) 最高分落在
+// 0.47~0.53，真正相關的查詢多半在 0.70 以上。
 const SIM_THRESHOLD = 0.55;
 // 關鍵字命中 (matched) 不該完全跳過語意門檻——之前的寫法是只要字面對到就
 // 整段保留，語意分數再低、再不相關都算數，等於完全不看語意分數，太依賴
@@ -416,8 +420,10 @@ async function runSearch(query) {
   setMeta("搜尋中…");
   const seq = ++requestSeq;
 
-  // MiniLM 不像 E5 需要 "query: " / "passage: " 前綴，直接編碼原始字句即可。
-  const output = await state.extractor(query, { pooling: "mean", normalize: true });
+  // bge-small-en-v1.5 官方建議查詢字串要加 QUERY_INSTRUCTION 這段固定前綴
+  // (見上面常數定義)，索引時的文件片段不用加；pooling 用 "cls"，不是
+  // "mean" (見 build_client_embeddings.py 開頭的模型說明)。
+  const output = await state.extractor(QUERY_INSTRUCTION + query, { pooling: "cls", normalize: true });
   if (seq !== requestSeq) return; // 有更新的查詢已送出，捨棄過期結果
   const queryVec = output.data;
 

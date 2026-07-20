@@ -2,18 +2,31 @@
 2026-06-29
 §H3§ Overview
 The X3SR64 is a 64-channel stim-record X-Headstage™ developed by KONTEX, designed for simultaneous neural stimulation and recording in electrophysiological research. Based on four RHS2116 chips from Intan Technologies, the X3SR64 delivers reliable bidirectional data acquisition and output performance in a compact and robust form factor.
-X3SR64_HDMI Overview Dimension and weight: Weight 1.5g unit: mm
+§H4§ X3SR64_HDMI Overview
+§H3§ Dimension and weight
+Weight 1.5g
+unit: mm
 §H3§ Armor
 Optional protective covers are available for each headstage, offering extra protection and anchoring. These covers, crafted from Polyoxymethylene (POM), are lightweight and resistant to chemicals. There are three standard armor types, with options for customization in shape and material to suit diverse experimental requirements. It's important to note that the size, weight, and shape of these armors will differ across various X-Headstage™ models.
-S Armor: The S armors with ear loops around the side used to anchor headstage to the accessories such as electrode adapters.
-M Armor: The M armors are designed to provide protection while maintaining minimal size.
+§H4§ S Armor
+The S armors with ear loops around the side used to anchor headstage to the accessories such as electrode adapters.
+§H4§ M Armor
+The M armors are designed to provide protection while maintaining minimal size.
 §H4§ IP Armor
 The IP armors are designed to provide the most protection and fully encase the X-Headstage. The X-Headstage™ with the optional parylene coating has been tested to the IP68 standard.
 §H3§ Compatible Acquisition System
 The X3SR64 X-Headstage™ is designed for optimal performance with a variety of compatible acquisition systems. Signal remap adapters may be needed depending on the system. Known compatible systems include:
 XDAQ ONE+ / XDAQ AIO (Requires SAdpt-SR64 for use)
 Intan Stim-Record Controller (Requires two SAdpt-HDMI-OM16 for use)
-Key Features 64-Channel Stim-Record Capability: Based on four RHS2116 chips, providing reliable and high-quality stimulation and recording performance.
-Compact Design: Engineered for minimal size and weight to reduce implant burden. Micro-HDMI Connector: Standard configuration uses a micro-HDMI connector for compact interfacing.
-Optional Protective Cover: Available for added mechanical protection and anchoring stability during chronic or acute applications.
-Pin Map X3SR64 HDMI Probe side X3SR64 HDMI System side
+§H3§ Key Features
+§H4§ 64-Channel Stim-Record Capability
+Based on four RHS2116 chips, providing reliable and high-quality stimulation and recording performance.
+§H4§ Compact Design
+Engineered for minimal size and weight to reduce implant burden.
+§H4§ Micro-HDMI Connector
+Standard configuration uses a micro-HDMI connector for compact interfacing.
+§H4§ Optional Protective Cover
+Available for added mechanical protection and anchoring stability during chronic or acute applications.
+§H3§ Pin Map
+§H4§ X3SR64 HDMI Probe side
+§H4§ X3SR64 HDMI System side

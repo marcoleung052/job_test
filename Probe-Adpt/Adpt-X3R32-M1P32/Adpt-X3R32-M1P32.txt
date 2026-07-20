@@ -2,10 +2,26 @@
 2026-04-13
 §H3§ Overview
 The X3R32 Adapter to Pin Header 32ch is designed to facilitate connectivity between X3R32 headstages and 32-channel interface boards or custom PCBs equipped with standard 2.54 mm pin headers. This adapter provides direct breakout access to all 32 channels for development, testing, and integration purposes. It is compatible with X3R32 headstages.
-Adpt_X3R32_M1P32 Overview Connector Headstage: Molex PN: 505070-3422 Probe: 1.00mm_Pin Header_34P(2x17) Dimension: unit: mm Key Features
-Universal Compatibility: Supports X3R32 headstage configurations. Pin Header Interface: Connects seamlessly to 32-channel EIBs featuring 1mm socket connectors.
-Compact Design: Maintains a small footprint for space-constrained setups. Versions V1: Identified by PCB marking '100161' or by the blue board color when the marking is absent.: original design
-V1.1: Identified by 100161A on PCB Ground & Reference Configuration
+§H4§ Adpt_X3R32_M1P32 Overview
+§H3§ Connector
+§H4§ Headstage
+Molex PN: 505070-3422
+§H4§ Probe
+1.00mm_Pin Header_34P(2x17)
+§H3§ Dimension
+unit: mm
+§H3§ Key Features
+§H4§ Universal Compatibility
+Supports X3R32 headstage configurations.
+§H4§ Pin Header Interface
+Connects seamlessly to 32-channel EIBs featuring 1mm socket connectors.
+§H4§ Compact Design
+Maintains a small footprint for space-constrained setups.
+§H3§ Versions
+§H4§ V1: Identified by PCB marking '100161' or by the blue board color when the marking is absent.
+original design
+§H4§ V1.1: Identified by 100161A on PCB
+§H3§ Ground & Reference Configuration
 §H4§ Adpt-X3R32-M1P32 v1
 Ground (G) and reference (R) signals are independent by default.
 To short them together at the adapter, solder a short wire between the G and R pads.
@@ -17,5 +33,8 @@ Proper grounding and referencing are essential for high-quality signal acquisiti
 If the jumper pas has a default short configuration, use a scalpel or precision blade to cleanly sever the trace.
 ③ After modification, clean the area thoroughly using isopropyl alcohol or flux remover to eliminate any residual material.
 ④ Always verify connectivity using a multimeter to ensure proper configuration.
-Pin Map V1: Identified by PCB marking '100161' or by the blue board color when the marking is absent.: Adpt-X3R32-M1P32 v1
-V1.1: Identified by 100161A on PCB: Adpt-X3R32-M1P32 v1.1
+§H3§ Pin Map
+§H4§ V1: Identified by PCB marking '100161' or by the blue board color when the marking is absent.
+Adpt-X3R32-M1P32 v1
+§H4§ V1.1: Identified by 100161A on PCB
+Adpt-X3R32-M1P32 v1.1

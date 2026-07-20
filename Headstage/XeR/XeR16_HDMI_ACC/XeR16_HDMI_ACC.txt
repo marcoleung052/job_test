@@ -3,7 +3,11 @@
 §H3§ Overview
 E-series X-Headstage™ is designed to offer the best value while maintaining the flexibility of the X-Headstage™ that can be used with several off-the-shelf probe adapters. The advantage of adapter based approach can increase the utilization and longevity of headstage usage. If the probe facing connector breaks due to daily wear, it can be easily and cheaply replaced.
 E-series X-Headstage™ is denoted by the Xe- followed by R for recording only headstage and SR for switchable stim-record headstage.
-XeR16_HDMI_ACC Overview Components Dimension: Weight 1.5g unit: mm
+§H4§ XeR16_HDMI_ACC Overview
+§H3§ Components
+§H3§ Dimension
+Weight 1.5g
+unit: mm
 §H3§ Compatible Acquisition System
 The X-Headstage™ delivers optimal performance when paired with the XDAQ™ system. It is also adaptable for use with a range of open-source hardware and proprietary systems, although signal remap adapters may sometimes be required. Below is a list of known compatible systems;
 ditional unlisted platforms may also be capable of supporting the XeR:
@@ -14,4 +18,6 @@ NeuroNexus Smartbox
 All XR Headstages are equipped with a built-in analog 3-axis accelerometer as a standard feature. The accelerometer is sampled at the same rate as the headstage input channels, and its data are available through the AUX1, AUX2, and AUX3 channels in the recorded data stream. The analog 3-axis accelerometer is included with all XR Headstages and cannot be omitted.
 For applications requiring active cable rotation compensation, an optional IMU Sensor is available. When used in conjunction with a KonteX Commutator, the IMU Sensor provides real-time rotational motion data that allows the Commutator to automatically rotate according to the animal's movement, minimizing cable twisting during freely moving experiments. The IMU Sensor is intended for Commutator-based motion compensation and is not part of the standard headstage configuration.
 XSR Headstages does not support 3-axis accelerometer.
-Pin Map XeR16 HDMI ACC Probe side XeR16 HDMI ACC System side
+§H3§ Pin Map
+§H4§ XeR16 HDMI ACC Probe side
+§H4§ XeR16 HDMI ACC System side

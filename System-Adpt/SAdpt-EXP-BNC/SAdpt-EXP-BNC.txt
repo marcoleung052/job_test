@@ -4,7 +4,10 @@
 The IO Expander DB25 BNC Breakout Board is designed to simplify access to the I/O signals provided by the XDAQ IO Expander.
 This breakout board converts the DB25 connector signals into individual BNC connectors, enabling convenient connection to laboratory instruments such as oscilloscopes, signal generators, stimulators, and external control hardware.
 The same breakout board can be used interchangeably with both the Digital Input DB25 and Digital Output DB25 connectors on the IO Expander.
-SAdpt-EXP-BNC Overview Dimension: unit: mm Usage Instructions
+§H4§ SAdpt-EXP-BNC Overview
+§H3§ Dimension
+unit: mm
+§H3§ Usage Instructions
 §H4§ Connecting the Breakout Board
 1. Power off the XDAQ system before making any connections.
 2. Connect the DB25 connector on the breakout board to the corresponding Digital Input or Digital Output DB25 port on the IO Expander.
@@ -16,5 +19,13 @@ SAdpt-EXP-BNC Overview Dimension: unit: mm Usage Instructions
 §H4§ System Operation
 Configure digital I/O settings in the XDAQ software as needed.
 Signals routed through the DB25 connector will appear on the corresponding BNC connectors in real time.
-Connector XDAQ IO Expander: Digital Input DB25 connector Digital Output DB25 connector External Equipment: Oscilloscopes Logic analyzers Signal generators Behavioral control hardware
-Pin Map
+§H3§ Connector
+§H4§ XDAQ IO Expander
+Digital Input DB25 connector
+Digital Output DB25 connector
+§H4§ External Equipment
+Oscilloscopes
+Logic analyzers
+Signal generators
+Behavioral control hardware
+§H3§ Pin Map

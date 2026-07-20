@@ -3,7 +3,7 @@
 §H3§ Overview
 The Commutator Pro is a high-performance, motorized commutator designed to prevent tether tangling during neuroscience experiments, ensuring smooth and uninterrupted behavioral recordings. It can operate using external power or its integrated, rechargeable lithium battery, offering flexible deployment options. A built-in microprocessor, working in tandem with a rotary magnetic sensor and/ or an external gyroscopic sensor, actively manages cable orientation by automatically counteracting twists.
 The system is highly configurable, supporting up to four Neuropixels ports alongside a conventional probe driven by either recording or stim-record headstages, and offers up to nine GPIO channels for user-defined applications. Its adaptable mounting and cable management system, complemented by an optional passthrough channel, enables seamless integration across a wide range of experimental setups—providing robust performance and maximum versatility.
-Key Features
+§H3§ Key Features
 §H4§ ① Dual sensor options
 Gyroscopic sensor
 Ideal for seamless behavioral integration, especially in small animal setups. Can be easily adapted.
@@ -12,9 +12,13 @@ Integrated magnetic encoder detects rotation without external sensors. Recommend
 §H4§ ② Neuropixels & passive probe support
 Supports up to 4 Neuropixels headstage ports. Each headstage supports either 1 Neuropixels 1.0 probe or 2 Neuropixels 2.0 probes.
 Supports simultaneous Neuropixels and passive probe (e.g. electrical stimulation) operation.
-③ Integrated sensor cable: Lightweight (< 1g) and highly flexible 34 AWG wire bundle. Compatible with all existing headstage setup.
-④ Optional fluidic/fiber passthrough channel: 5 mm inner diameter channel enables optical fiber or fluidic tubing access during ongoing experiments.
-⑤ Low Operation acoustic noise: 33-35dB. Measured at 30cm away using iPhone 16 Pro (Note: ambient is measured to be 32dB).
+§H4§ ③ Integrated sensor cable
+Lightweight (< 1g) and highly flexible 34 AWG wire bundle.
+Compatible with all existing headstage setup.
+§H4§ ④ Optional fluidic/fiber passthrough channel
+5 mm inner diameter channel enables optical fiber or fluidic tubing access during ongoing experiments.
+§H4§ ⑤ Low Operation acoustic noise
+33-35dB. Measured at 30cm away using iPhone 16 Pro (Note: ambient is measured to be 32dB).
 §H4§ ⑥ GPIO & PC control
 Up to 9 GPIO lines for custom application.
 Up to 9 GPIO lines for custom application.
@@ -22,9 +26,22 @@ Left/right override via PC or hardware panel.
 §H4§ ⑦ Intelligent Battery Management
 System power is supplied through the battery at all times. An onboard controller maintains the battery between 20% and 80% charge to help extend battery lifespan.
 For applications requiring maximum runtime, intelligent battery management can be disabled through the GUI UART Control App, allowing the battery to remain fully charged at 100% capacity.
-Model Number COMP- IH - XH1 - NP1 - PT - B: Not all combination is possible Components: NOTE: See Tested Cable Configuration and Compatible Accessories for additional cable length options.
-Required Customer Provided Parts 1. Compatible power source: USB Power Brick supplying 5V, 1A or AC Power Supply: 20V 1A ; 2.5mm jack (5525)
-2. USB-C charging cable, if applicable Dimension and Weight: Weight ~825g unit: mm Device Overview: Weight ~0.18g unit: mm
+§H3§ Model Number
+§H4§ COMP- IH - XH1 - NP1 - PT - B
+Not all combination is possible
+§H3§ Components
+NOTE:
+See Tested Cable Configuration and Compatible Accessories for additional cable length options.
+§H3§ Required Customer Provided Parts
+§H4§ 1. Compatible power source
+USB Power Brick supplying 5V, 1A or AC Power Supply: 20V 1A ; 2.5mm jack (5525)
+§H4§ 2. USB-C charging cable, if applicable
+§H3§ Dimension and Weight
+Weight ~825g
+unit: mm
+§H3§ Device Overview
+Weight ~0.18g
+unit: mm
 §H3§ LED Indicators
 The KonteX Commutator Pro features several LED indicators designed to provide real-time visual feedback on device power status, connectivity, control mode, and battery level. Understanding these indicators is essential for proper setup and reliable operation in laboratory environments.
 §H4§ ② Power indicator LED (White ring light)
@@ -45,7 +62,7 @@ Off:
 No active USB connection or operating in local manual mode (hardware knob control applies).
 NOTE:
 The battery is a consumable component and is not covered under warranty. When it reaches the end of its lifespan—evidenced by rapid charging and immediate shutdown upon disconnecting external power—the device remains fully functional when powered externally. To replace the battery, please return the unit for servicing.
-Installing the Commutator Pro
+§H3§ Installing the Commutator Pro
 §H4§ Option 1: Undermount
 The Commutator Pro can be securely mounted to a behavior box with 3 set screws that are preattached to the commutator. (See undermount cutout installation sepcification)
 §H4§ Option 2: Camera mount
@@ -54,7 +71,7 @@ The Commutator Pro includes a standard 1/4-inch mounting screw socket that is co
 ⚠
 IMPORTANT:
 Always ensure the Commutator is mounted level. Installing the Commutator Pro at an angle may lead to increased acoustic noise and accelerated mechanical wear.
-Getting Started
+§H3§ Getting Started
 §H3§ Step 1: Powering the commutator
 The Commutator Pro can be powered via either the USB-C port or the DC jack. When using the USB-C port—particularly during remote operation under PC control—ensure a stable 5V, 1A power supply, compliant with USB 3.0 or USB Power Delivery (USB-PD) specifications. Powering the device with only 5V, 0.5A (typical of USB 2.0) may result in unreliable performance, including failure to power on or disruptions in motion tracking.
 §H4§ Battery charging
@@ -110,7 +127,8 @@ This interface allows users to transmit analog or digital signals from external 
 A pre-assembled cable for accessing the rotating-side GPIO is available for purchase from Digi-Key or Mouser. To locate compatible options, search for 'JST SH' connector (10-pin).
 NOTE:
 GPIO signal can be routed through the HDMI port at the expense of reduction of maximum supported number of headstage channels. Contact us for the customization. Such customization should be done at the time of the order.
-Step 7: Connecting to the headstage, setting up IMU sensor and turning on Connect the headstage cable to the headstage
+§H3§ Step 7: Connecting to the headstage, setting up IMU sensor and turning on
+§H4§ Connect the headstage cable to the headstage
 §H4§ Attach IMU sensor to the headstage or cable
 Attach the IMU sensor to the headstage or the headstage cable using adhesive or other suitable methods.
 Ensure the sensor is perpendicular to the moving plane and parallel to the cable; do not rotate its orientation.
@@ -144,12 +162,18 @@ rapid or vigorous animal movements
 For
 delicate behaviors
 (e.g., head-fixed setups or fine-motor experiments), reduce speed for smoother operation.
-Using the Commutator PRO with Intan or Open Ephys Acquisition Systems Perspective uHDMI to RHD adapter SKU: SAdpt-uHDMI-OM12
-uHDMI to RHS Adapter SKU: SAdpt-uHDMI-OM16 Bottom view XDAQ to RHD headstage adapter SKU: SAdpt-XDAQ-OM12 XDAQ to RHS headstage adapter SKU: SAdpt-XDAQ-OM16
+§H3§ Using the Commutator PRO with Intan or Open Ephys Acquisition Systems
+§H4§ Perspective
+§H4§ uHDMI to RHD adapter SKU: SAdpt-uHDMI-OM12
+§H4§ uHDMI to RHS Adapter SKU: SAdpt-uHDMI-OM16
+§H4§ Bottom view
+§H4§ XDAQ to RHD headstage adapter SKU: SAdpt-XDAQ-OM12
+§H4§ XDAQ to RHS headstage adapter SKU: SAdpt-XDAQ-OM16
 §H3§ Left & Right Manual Control
 The Commutator Pro control panel is equipped with left and right rotation buttons, allowing manual adjustment of the commutator’s rotating end.
 These controls allow for accurate repositioning with each button press.
--M or -MI model -I or -IH model
+§H4§ -M or -MI model
+§H4§ -I or -IH model
 §H3§ Modular Cable Fixation and Extension Components
 The Commutator Pro features a modular design for the lower cable fixation and extension components, allowing configuration changes by removing the mounting screws.
 §H4§ This modularity applies differently depending on the commutator model :
@@ -163,7 +187,9 @@ NOTE:
 To ensure optimal data transmission, minimize the total cable length between the DAQ, the commutator, and the animal. For custom cable length configurations, please contact us to discuss available options.
 §H3§ PC Interface
 The USB-C port on the KonteX Commutator Pro serves as a multi-functional interface for both device configuration / control and power supply.
-Configuration and control Feature GUI Controls
+§H4§ Configuration and control
+§H3§ Feature
+§H3§ GUI Controls
 §H3§ Description
 Machine Status
 Status
@@ -191,7 +217,7 @@ Motor Max Slider, Motor Max
 Sets the maximum rotation angle allowed for each motor compensation event to prevent excessive movement.
 The USB-C interface communicates through a dedicated software utility or custom API, enabling integration into automated behavioral or electrophysiological setups.
 Battery charging behavior can also be configured through the GUI UART Control App, allowing users to switch between battery life optimization mode (20–80% charge range) and full-charge mode (100% charge).
-Charging ports
+§H4§ Charging ports
 §H3§ Firmware Interface and IMU Reference
 The Commutator provides real-time device telemetry and configuration control through a USB UART interface. Starting from firmware version 1.2, the system outputs IMU sensor data, motor position information, and system status using a JSON-based communication protocol.，
 This interface allows users to monitor device orientation, acceleration, and motor behavior during operation. It also enables configuration of operational parameters such as the Y-axis tilt threshold and telemetry output rate.
@@ -210,7 +236,8 @@ Default Data Rate
 Command Format
 JSON
 Telemetry data is continuously transmitted through the USB interface while the device is operating.
-Telemetry Data Output: The Commutator continuously outputs IMU and motor status data in JSON format.
+§H4§ Telemetry Data Output
+The Commutator continuously outputs IMU and motor status data in JSON format.
 §H5§ • Example Data Packet
 {
 "v":1.2,
@@ -281,8 +308,12 @@ The X-axis represents rotation along the device width direction.
 The Y-axis represents forward and backward tilt relative to the device.
 The Z-axis represents vertical rotation perpendicular to the device surface.
 These axes define the reference frame used for all IMU measurements.
-Relationship Between IMU Data and Telemetry Parameters: The telemetry parameters correspond directly to the IMU axes described above.
-Orientation: ox — rotation angle around the X-axis oy — rotation angle around the Y-axis oz — rotation angle around the Z-axis
+§H3§ Relationship Between IMU Data and Telemetry Parameters
+The telemetry parameters correspond directly to the IMU axes described above.
+§H4§ Orientation
+ox — rotation angle around the X-axis
+oy — rotation angle around the Y-axis
+oz — rotation angle around the Z-axis
 §H4§ Acceleration
 gx, gy, gz — gravity vector components along X, Y, Z axes
 These values describe the spatial orientation and movement of the commutator during operation.
@@ -293,10 +324,22 @@ This mechanism prevents unstable motor operation when the device is excessively 
 §H4§ Command Interface
 The firmware supports configuration commands sent through the USB UART interface using JSON format.
 Commands are applied immediately after they are received.
-gy_range Configuration: The gy_range parameter defines the allowable tilt range along the Y-axis before motor movement is disabled.
-• Default Value: gy_range = 5 • Range: 0 – 10 A larger value requires the device to remain within a smaller tilt range before the motor is allowed to move.
-• Example command: {"gy_range":6} This parameter is stored in non-volatile memory and remains unchanged after power cycling.
-Data Rate Configuration: The data rate parameter (dr) controls the telemetry output interval. • Default Value: 20 ms • Range: 20 – 5000 ms
+§H4§ gy_range Configuration
+The gy_range parameter defines the allowable tilt range along the Y-axis before motor movement is disabled.
+§H5§ • Default Value
+gy_range = 5
+§H5§ • Range
+0 – 10
+A larger value requires the device to remain within a smaller tilt range before the motor is allowed to move.
+§H5§ • Example command
+{"gy_range":6}
+This parameter is stored in non-volatile memory and remains unchanged after power cycling.
+§H3§ Data Rate Configuration
+The data rate parameter (dr) controls the telemetry output interval.
+§H5§ • Default Value
+20 ms
+§H5§ • Range
+20 – 5000 ms
 §H5§ • Example command
 {"dr":500}
 This command sets the telemetry output interval to 500 ms.
@@ -322,7 +365,8 @@ CoolTerm Configuration:
 2. Click on the Connection menu at the bottom left (as shown in the reference image) or the Options icon in the top toolbar.
 3. Ensure the settings are: Baudrate: 115200, Data Bits: 8, Parity: None, and Stop Bits: 1.
 4. Click Connect.
-3. Interpreting the Startup Sequence: The system performs a self-test upon connection. Use the following logs to verify the status of the IMU sensor.
+§H4§ 3. Interpreting the Startup Sequence
+The system performs a self-test upon connection. Use the following logs to verify the status of the IMU sensor.
 §H4§ A. Normal Operational Status (Success)
 A successful connection is confirmed when the terminal displays the initialization sequence below:
 1. Sensor Detection:
@@ -345,11 +389,15 @@ If a "Disconnected" state is observed, please perform the following diagnostic s
 Ensure the internal sensor or external interface cables are securely connected and haven't been dislodged during setup.
 2. Reset Connection:
 Click Disconnect in CoolTerm and then Connect again to refresh the communication buffer.
-Undermount Cutout Installation Sepcification Cutout dimensions diagram: unit: mm
+§H3§ Undermount Cutout Installation Sepcification
+§H4§ Cutout dimensions diagram
+unit: mm
 §H3§ Pin Map
 # of GPIO available always start from left and count to right.
 Example, if the Commutator has 3 GPIO, then pin 5, 9 and 4 are available.
-Compatible Accessories: SKU Description
+§H3§ Compatible Accessories
+SKU
+Description
 §H4§ Headstage
 HS-NP1
 KonteX Neuropixels 1.0 headstage with JST connector
@@ -390,7 +438,9 @@ Cable-lMU-2.5M
 KonteX Neuropixels 34AWG cable 2.5M with JST connector for KonteX headstages
 Cable-lMU-5M
 KonteX Neuropixels 34AWG cable 5M with JST connector for KonteX headstages
-IMU sensor: HS-IMU Replacement IMU sensor module (included for -I model)
+§H4§ IMU sensor
+HS-IMU
+Replacement IMU sensor module (included for -I model)
 §H4§ Adapter
 Adpt-NP-J2OM
 JST to Omnetics adapter for interfacing IMEC headstages with -J cables
@@ -402,6 +452,7 @@ SAdpt-uHDMI-OM12
 System side commutator adapter for lntan RHD controller
 SAdpt-uHDMI-OM16
 System side commutator adapter for lntan RHS controller
-Model with Passthrough Channel (-PT) Passthrough channel dimensions diagram
+§H3§ Model with Passthrough Channel (-PT)
+§H4§ Passthrough channel dimensions diagram
 §H3§ Mitigating EMI-Induced Errors in GMSL Differential Signal Routing Near Power-Switched Commutators
 The Commutator Pro is designed to provide reliable power switching in high-speed data transmission systems such as NP serial transmit applications. When operating with GMSL differential signals, users must take precautions to avoid electromagnetic interference (EMI) that may lead to errors during PRBS or serial transmission testing.

@@ -2,11 +2,16 @@
 2026-04-28
 §H3§ Overview
 The X3SR32 is a 32-channel stim-record X-Headstage™ developed by KONTEX, designed for simultaneous neural stimulation and recording in electrophysiological research. Based on two RHS2116 chips from Intan Technologies, the X3SR32 delivers reliable bidirectional data acquisition and output performance in a compact and robust form factor.
-X3RS32_OM Overview Dimension and weight: Weight ~1.2g unit: mm
+§H4§ X3RS32_OM Overview
+§H3§ Dimension and weight
+Weight ~1.2g
+unit: mm
 §H3§ Armor
 Optional protective covers are available for each headstage, offering extra protection and anchoring. These covers, crafted from Polyoxymethylene (POM), are lightweight and resistant to chemicals. There are three standard armor types, with options for customization in shape and material to suit diverse experimental requirements. It's important to note that the size, weight, and shape of these armors will differ across various X-Headstage™ models.
-S Armor: The S armors with ear loops around the side used to anchor headstage to the accessories such as electrode adapters.
-M Armor: The M armors are designed to provide protection while maintaining minimal size.
+§H4§ S Armor
+The S armors with ear loops around the side used to anchor headstage to the accessories such as electrode adapters.
+§H4§ M Armor
+The M armors are designed to provide protection while maintaining minimal size.
 §H4§ IP Armor
 The IP armors are designed to provide the most protection and fully encase the X-Headstage. The X-Headstage™ with the optional parylene coating has been tested to the IP68 standard.
 §H3§ Compatible Acquisition System
@@ -15,10 +20,17 @@ Intan Recording Controller (512ch or 1024ch)
 Intan Stim-Record Controller
 Open-Ephys acquisition box
 NeuroNexus Smartbox
-Key Features 32 Channels: Enables concurrent recording and stimulation on up to 32 channels.
+§H3§ Key Features
+§H4§ 32 Channels
+Enables concurrent recording and stimulation on up to 32 channels.
 §H4§ Dual RHS2116 Architecture
 Implements two RHS2116 integrated circuits, each supporting 16 channels, providing flexible and high-fidelity analog front-end performance.
-Compact Design: Engineered for minimal weight and size, optimizing for head-mounted or implant-based setups. Connector: Equipped exclusively with a micro-HDMI connector to interface with the XDAQ™ system.
+§H4§ Compact Design
+Engineered for minimal weight and size, optimizing for head-mounted or implant-based setups.
+§H4§ Connector
+Equipped exclusively with a micro-HDMI connector to interface with the XDAQ™ system.
 §H4§ Protective Cover Option
 Can be optionally configured with a protective cover for enhanced durability and anchoring support during in vivo experiments.
-Pin Map X3SR32 OM Probe side X3SR32 OM Systyem side
+§H3§ Pin Map
+§H4§ X3SR32 OM Probe side
+§H4§ X3SR32 OM Systyem side

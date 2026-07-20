@@ -3,9 +3,27 @@
 §H3§ Overview
 The Adapter X6 to Dual X3 is designed to convert the 128-channel input interface of the X6 headstage into two independent 64-channel X3 input ports. This enables full compatibility with existing X3-series accessories, probes, EIBs, and adapter modules.
 The adapter preserves signal integrity through matched routing, ensuring that recording performance remains consistent with native X3 headstage configurations.
-Adpt- X6 to X3 Overview Dimension and weight: Weight 1.2g unit: mm Connector Headstage: Panasonic PN: AXG244144A Probe: Molex PN: 505066-3422
-Compatibility: X6R128 Headstage All X3-series Accessories Key Features Channel Conversion: Converts a single 128-channel X6 interface into two 64-channel X3 input connectors.
-Accessory Compatibility: Supports X3-series accessories, including Omnetics adapters, EIBs, jumper cables, and 64-channel probes.
-Modular System Integration: Allows researchers to use their existing X3 ecosystem with X6-based high-density recording systems.
-Signal Integrity Preservation: Differential routing and controlled impedance help maintain low-noise and high-fidelity recording performance.
-Pin Map: Headstage side Probe side
+§H4§ Adpt- X6 to X3 Overview
+§H3§ Dimension and weight
+Weight 1.2g
+unit: mm
+§H3§ Connector
+§H4§ Headstage
+Panasonic PN: AXG244144A
+§H4§ Probe
+Molex PN: 505066-3422
+§H4§ Compatibility
+X6R128 Headstage
+All X3-series Accessories
+§H3§ Key Features
+§H4§ Channel Conversion
+Converts a single 128-channel X6 interface into two 64-channel X3 input connectors.
+§H4§ Accessory Compatibility
+Supports X3-series accessories, including Omnetics adapters, EIBs, jumper cables, and 64-channel probes.
+§H4§ Modular System Integration
+Allows researchers to use their existing X3 ecosystem with X6-based high-density recording systems.
+§H4§ Signal Integrity Preservation
+Differential routing and controlled impedance help maintain low-noise and high-fidelity recording performance.
+§H3§ Pin Map
+Headstage side
+Probe side

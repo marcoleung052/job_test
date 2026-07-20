@@ -1,4 +1,12 @@
 §H1§ System Adapter
 System Adapters are designed to enable seamless integration between KONTEX acquisition hardware and external systems, accessories, or signal interfaces. These adapters provide flexible connectivity options, allowing researchers to bridge different connector standards, expand system compatibility, and integrate additional devices into their experimental setups.
 By simplifying signal routing and interface conversion, System Adapters help ensure reliable data transmission while maintaining compatibility across various headstages, probes, and acquisition platforms.
-SyncLink IO Expander SAdpt-EXP-BNC Omnetics Probe Adapters SAdpt-Port-EXP SAdpt-SR64 Smartlink System Adapters SAdpt-XDAQ-BNC Omnetics Interface Adapters
+§H3§ SyncLink
+§H3§ IO Expander
+§H3§ SAdpt-EXP-BNC
+§H3§ Omnetics Probe Adapters
+§H3§ SAdpt-Port-EXP
+§H3§ SAdpt-SR64
+§H3§ Smartlink System Adapters
+§H3§ SAdpt-XDAQ-BNC
+§H3§ Omnetics Interface Adapters

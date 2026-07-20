@@ -13,4 +13,6 @@ NOTE:
 • Ensure the system is powered off before removing the headstage.
 §H3§ Intended Use
 This tool is intended to assist users in detaching X3 or X6 headstages during system reconfiguration, maintenance, or component replacement.
-Compatibility: Compatible with X3 headstages Compatible with X6 headstages
+§H3§ Compatibility
+Compatible with X3 headstages
+Compatible with X6 headstages

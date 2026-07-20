@@ -3,7 +3,8 @@
 §H3§ Overview
 The HDMI A to D Cable (3M) is a high-quality data transmission cable designed to connect devices with a standard HDMI Type-A port to equipment requiring a HDMI Type-D (Micro HDMI) interface. With a 3-meter length, this cable provides flexible routing for experimental setups where distance between devices is required, such as between the XDAQ system and headstage adapters or commutators.
 This cable is optimized for high-speed digital signal integrity and is suitable for use in data acquisition systems, video capture setups, and synchronized multimodal experiments.
-Dimension And Weight HDMI A to D cable 80CM / 3M
+§H3§ Dimension And Weight
+§H4§ HDMI A to D cable 80CM / 3M
 §H4§ HDMI A to D cable without body
 unit: mm
 Cable Length

@@ -2,7 +2,15 @@
 2026-04-10
 §H3§ Overview
 This adapter enables X3R32/X3R64-HDMI X-Headstage with KonteX HDMI cables to connect to the Intan Recording Controller directly or via the SPI cable.
-SAdpt-HDMI-OM12 Overview: SAdpt-HDMI-OM12 Dimension: unit: mm
+§H3§ SAdpt-HDMI-OM12 Overview
+SAdpt-HDMI-OM12
+§H3§ Dimension
+unit: mm
 §H3§ Usage Scenarios
 The RHD connectors are recessed into a slot on the board, enabling direct plug-in to the acquisition box. It can be used to transmit the recording signals from the KonteX's XR headstage to the acquisition system through the HDMI port on the adapter.
-Connector HDMI: HDMI Type A female Intan/Open Ephys: Omnetics Polarized NANO 12-pin Pin Map
+§H3§ Connector
+§H4§ HDMI
+HDMI Type A female
+§H4§ Intan/Open Ephys
+Omnetics Polarized NANO 12-pin
+§H3§ Pin Map

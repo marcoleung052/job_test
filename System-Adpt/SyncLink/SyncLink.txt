@@ -3,7 +3,10 @@
 §H3§ Overview
 The primary purpose of the SyncLink is to enable precise time-step synchronization between multiple XDAQ systems. This is especially critical when performing simultaneous XR and XSR experiments on the same subject, which require the use of separate XDAQ units.
 By synchronizing multiple XDAQs, the SyncLink ensures that data acquired from different headstage types are time-aligned, enabling accurate integration and analysis across systems.
-Components Dimension and Weight: Weight 230g unit: mm
+§H3§ Components
+§H3§ Dimension and Weight
+Weight 230g
+unit: mm
 §H3§ Device Overview
 ① Sync Ports (IN / OUT) :
 Each SyncLink is equipped with Sync IN and Sync OUT ports.

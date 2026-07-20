@@ -2,13 +2,26 @@
 2026-04-09
 §H3§ Overview
 The Adpt-A-series probe adapter enables seamless integration between acute-style neural probes and the X3 X-Headstage™. Designed for versatility, these adapters support 16-, 32-, and 64-channel probes, ensuring broad compatibility with a wide range of neural probes available on the market.
-Adpt-A32 Overview: Adpt-A32 Connector Headstage: Molex PN: 505070-3422 Probe: Samtec PN: FOLC-110-01-S-Q Compatiable NNx probes: A32, MRA32, OA32LP, OA32LP V2, OXA32LP
-Dimension: unit: mm Versions V1: Identified by K22023 on PCB: Original design V1.1: Identified by 100012A on PCB V2: Identified by 100012D on PCB
-Ground & Reference Configuration
+§H3§ Adpt-A32 Overview
+Adpt-A32
+§H3§ Connector
+§H4§ Headstage
+Molex PN: 505070-3422
+§H4§ Probe
+Samtec PN: FOLC-110-01-S-Q
+Compatiable NNx probes: A32, MRA32, OA32LP, OA32LP V2, OXA32LP
+§H3§ Dimension
+unit: mm
+§H3§ Versions
+§H4§ V1: Identified by K22023 on PCB
+Original design
+§H4§ V1.1: Identified by 100012A on PCB
+§H4§ V2: Identified by 100012D on PCB
+§H3§ Ground & Reference Configuration
 §H4§ A32 V1 & 1.1 Adapter (SKU: Adpt-A32v1 & v1.1)
 Ground (G) and reference (R) signals are independent by default.
 To short them together at the adapter, solder a short wire between the G and R pads
-Adpt-A32
+§H4§ Adpt-A32
 §H4§ A32 V2 Adapter (SKU: Adpt-A32v2)
 Proper grounding and referencing are essential for high-quality signal acquisition. Always ensure that both ground and reference signals are securely connected. If either is left floating, significant noise may be introduced into the recordings.
 ER: Solder pad for external reference (wire), this solder pad is connected fo signal R.
@@ -26,4 +39,7 @@ By default, the headstage ground (G) and reference (R) are independent.
 If the jumper pas has a default short configuration, use a scalpel or precision blade to cleanly sever the trace.
 ③ After modification, clean the area thoroughly using isopropyl alcohol or flux remover to eliminate any residual material.
 ④ Always verify connectivity using a multimeter to ensure proper configuration.
-Pin Map V1: Identified by K22023 on PCB V1.1: Identified by 100012A on PCB V2: Identified by 100012D on PCB
+§H3§ Pin Map
+§H4§ V1: Identified by K22023 on PCB
+§H4§ V1.1: Identified by 100012A on PCB
+§H4§ V2: Identified by 100012D on PCB

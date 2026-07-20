@@ -4,7 +4,10 @@
 MEA (Microelectrode Array) is a simplified electrophysiological signal recording system designed to streamline the electrophysiological recording process. Its design allows users to conveniently swap different types of microelectrode array chips based on specific experimental requirements.
 Record electrical signals from multiple sites within the culture.
 Replicate the biophysical microenvironment found in vivo.
-MEA2 Overview: MEA2 exploded view Dimension: unit: mm
+§H3§ MEA2 Overview
+MEA2 exploded view
+§H3§ Dimension
+unit: mm
 §H3§ Device Overview
 In vitro experiments often struggle to replicate the cellular conditions found in living organisms. Primary cells cultured on rigid multi-electrode arrays (MEAs) exhibit significant differences from their in vivo counterparts, limiting the predictive value of such data. MEAs utilize glass multi-electrode arrays to recreate the mechanical and electrical environments of in vivo cells in a controlled setting. They can be paired with various headstages and stimulation array boards for optical imaging and electrical stimulation/recording, effectively bridging the gap between in vitro and in vivo research and enhancing the relevance of experimental findings.
 §H4§ Assembly Process
@@ -32,7 +35,9 @@ Employed in drug testing and research on neurological disorders.
 Immunology:
 Applicable for investigating cellular signaling and interactions.
 The flexibility and efficiency of MEA make it an essential tool in many biomedical research applications.
-MEA Cup: MEA2 supports a range of MEA cup sizes, with a maximum supported size of 59.9 × 59.9 mm. unit: mm
+§H3§ MEA Cup
+MEA2 supports a range of MEA cup sizes, with a maximum supported size of 59.9 × 59.9 mm.
+unit: mm
 §H3§ Ground & Reference Configuration
 Proper grounding and referencing are essential for high-quality signal acquisition. Always ensure that both ground and reference signals are securely connected. If either is left floating, significant noise may be introduced into the recordings.
 By default, the headstage ground (G) and reference (R) are independent.
@@ -45,7 +50,8 @@ By default, the headstage ground (G) and reference (R) are independent.
 If the jumper pas has a default short configuration, use a scalpel or precision blade to cleanly sever the trace.
 ③ After modification, clean the area thoroughly using isopropyl alcohol or flux remover to eliminate any residual material.
 ④ Always verify connectivity using a multimeter to ensure proper configuration.
-Pin Map MEA2 (HSR64-MCS8x8) - Recording only
+§H3§ Pin Map
+§H4§ MEA2 (HSR64-MCS8x8) - Recording only
 §H4§ MEA2 (HSSR64-MCS8x8 (stim-rec)) - Stim-Recordind
 ⚠
 IMPORTANT:

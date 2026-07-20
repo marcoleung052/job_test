@@ -2,12 +2,16 @@
 2026-01-06
 §H3§ Overview
 The Hardware Short Circuit Analyzer is a high-performance device engineered for efficient and precise short circuit testing, supporting up to 256-channel combinations. This analyzer is designed to identify and diagnose short circuits across large-scale circuits and complex electrode configurations, making it ideal for use in electronic design verification, fault troubleshooting, and quality control processes.
-Components Dimension And Weight: Weight 261g unit: mm Short circuit analyzer overview
+§H3§ Components
+§H3§ Dimension And Weight
+Weight 261g
+unit: mm
+§H3§ Short circuit analyzer overview
 §H4§ Status LED Indicators for Testing
 Install the driver before connecting the XDAQ to a PC. XDAQ drivers for Windows and Linux are available on our website: https://developer.kontex.io. For macOS, search for XDAQ in the App Store.
 ① Use the supplied Thunderbolt cable to connect the Computer Port on the XDAQ to a Thunderbolt port on the PC.
 ② The XDAQ can power the connected computer: CORE2 provides up to 15W, while ONE+ and AIO can supply up to 60W.
-Key Features
+§H3§ Key Features
 §H4§ Comprehensive Multi-Channel Testing
 The device supports up to 256 test channels, enabling extensive and customizable testing configurations. It can handle intricate circuit layouts and electrode arrays, making it an excellent tool for complex applications that require high channel count accuracy.
 §H4§ Standalone and Remote Operation
@@ -20,7 +24,9 @@ For specialized testing requirements, custom adapters can be requested to ensure
 The analyzer is built to deliver rapid and accurate short circuit detection, significantly reducing the time and labor typically required for manual inspections. Its advanced circuitry and design allow it to perform reliable diagnostics, minimizing downtime in production and R&D environments.
 §H4§ Scalable and Adaptable Design
 Designed to accommodate both small-scale tests and high-density circuit boards, the analyzer is suitable for use across various stages of electronic development, from prototyping to large-scale manufacturing.
-Product Operation STEP 1. Connect to the Computer: Plug the short-circuit tester's USB-C connector into your computer.
+§H3§ Product Operation
+§H4§ STEP 1. Connect to the Computer
+Plug the short-circuit tester's USB-C connector into your computer.
 §H4§ STEP 2. Launch PUTTY and Connect
 Open the PUTTY interface on your computer. Locate your specific testing device in the list and confirm the connection. Once connected, you will be able to monitor test results through PUTTY.
 §H4§ STEP 3. Prepare for Testing
@@ -36,4 +42,7 @@ If the LED turns red, a short circuit is detected. Details about the specific pi
 The Short Analyzer uses serial communication to perform tests and receive results. Use any serial communication software with a baud rate of 115200 to connect to the device. (We recommend PuTTY on Windows; ‘screen‘ or ‘minicom‘ for macOS and Linux.)
 §H4§ 1. Communication Protocol
 To perform a short test, simply transmit the command "sct=1,test\n" and the test results will be received in the following format:
-2. Example Report Without Any Shorts 3. Example Report with Two Groups of Shorted Pins {(1,2,3), (7,8)} Pin Map Adapter & Custom Design
+§H4§ 2. Example Report Without Any Shorts
+§H4§ 3. Example Report with Two Groups of Shorted Pins {(1,2,3), (7,8)}
+§H3§ Pin Map
+§H3§ Adapter & Custom Design
