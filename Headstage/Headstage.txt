@@ -1,3 +1,14 @@
+[Search Tags: 1. Headstage (頭蓋板), Neural Recording Interface (神經記錄接口)
+2. Electrophysiology Research (電生理學研究), 醫學物理學研究
+3. Probe Technologies (探針技術), 探針技術
+4. XDAQ Acquisition Platform (XDAQ 取樣平台), XDAQ 取樣平台
+5. High-Performance Neural Recording (高性能神經記錄), 高性能神經記錄功能
+6. Low-Noise Signal Acquisition (低雜訊信號取樣), 低雜訊訊號擷取/採集
+7. Freely Moving Animal Studies (自由運動動物研究), 自由運動動物實驗
+8. Head-Fixed Animal Studies (固定頭動物研究), 頭部固定動物研究
+9. Scalable Channel Configurations (可擴展的通道配置), 可擴展性通道設定
+10. Neural Signal Processing (神經訊號處理), 神經訊號處理]
+
 §H1§ Headstage
 The KonteX X-Headstage™ series is a family of high-performance neural recording interfaces designed to provide stable, low-noise signal acquisition across a wide range of experimental configurations.
 Engineered for both head-fixed and freely moving animal studies, X-Headstages combine compact mechanical design, flexible connectivity, and scalable channel configurations to support modern electrophysiology research.

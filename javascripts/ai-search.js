@@ -8,11 +8,15 @@ import {
   env,
 } from "https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.0.2";
 
-// 不要嘗試去讀取本機檔案系統上的模型，一律從 Hugging Face Hub 的 CDN 下載，
-// 這樣才符合「開啟網頁就自動下載模型」的需求。
-env.allowLocalModels = false;
+// v3 是站內自己微調過的模型，HF Hub 上沒有對應 repo，改成跟 docs-meta.json/
+// docs-embeddings.bin 一樣，直接當成靜態檔案跟著網站一起發布，瀏覽器用相對
+//路徑抓，不需要另外申請 HuggingFace 帳號/repo。
+env.allowLocalModels = true;
+env.localModelPath = "models/";
+// 保險起見一樣允許遠端 fallback (理論上用不到，因為 MODEL_ID 現在是本地路徑)
+env.allowRemoteModels = true;
 
-const MODEL_ID = "Xenova/bge-small-en-v1.5"; // 對應 model.txt 選定的模型，MTEB 科學檢索分數高
+const MODEL_ID = "bge-small-v3"; // web/models/bge-small-v3/ 底下的量化 ONNX 模型
 const META_URL = "docs-meta.json"; // build_client_embeddings.py 產生
 const EMBEDDINGS_URL = "docs-embeddings.bin"; // 同上，float32 二進位向量
 const DEBOUNCE_MS = 300;
@@ -21,29 +25,12 @@ const DEBOUNCE_MS = 300;
 // 固定字串，不是隨便寫的，跟 build_client_embeddings.py 那邊要對稱
 // (那邊編碼 passage 不加前綴)。
 const QUERY_INSTRUCTION = "Represent this sentence for searching relevant passages: ";
-// bge-small-en-v1.5 的餘弦相似度分佈又跟 bge-micro-v2 不一樣：實測完全
-// 無關的查詢 (跟站內主題八竿子打不著，例如食譜、地理常識) 最高分落在
-// 0.47~0.53，真正相關的查詢多半在 0.70 以上。
+// v3 模型實測：完全無關的查詢 (跟站內主題八竿子打不著，例如食譜、地理
+// 常識、天氣) 最高分落在 0.37~0.53 之間，真正相關的查詢通常在 0.56 以上。
+// 門檻抓在這個觀察到的天花板之上，留一點緩衝空間。
 const SIM_THRESHOLD = 0.55;
-// 關鍵字命中 (matched) 不該完全跳過語意門檻——之前的寫法是只要字面對到就
-// 整段保留，語意分數再低、再不相關都算數，等於完全不看語意分數，太依賴
-// 字面命中。改成「降低門檻」而不是「跳過門檻」：命中關鍵字的片段門檻打
-// 對折，比沒命中的寬鬆，但還是要有基本的語意相關性，不能靠一個巧合命中
-// 的字就把完全不相關的內容也拉進來。
-const MATCHED_SIM_FLOOR = SIM_THRESHOLD * 0.5;
-// 不要固定只顯示前 5 筆：片段現在切得很細 (一個項目/一段話就是一筆)，
-// 有時候真正相關的結果只有 1、2 筆，硬湊滿 5 筆會塞進不太相關的內容；
-// 有時候同一個章節底下有 8、9 個子項目都跟查詢同樣相關，硬砍成 5 筆
-// 又會漏掉本來該顯示的結果。改成看分數：只要分數達到最高分的這個比例
-// 以上，就一起顯示，讓筆數自然跟著「這次查詢到底有多少相關結果」走。
-const RESULT_RELATIVE_CUTOFF = 0.8;
 // 極端情況 (例如查詢字詞多、命中太多片段) 的保底上限，避免整頁被灌爆。
 const RESULT_MAX_COUNT = 15;
-// 鎖定商品 (見 detectProductFilter) 之外、但字面上真的有命中查詢字詞的
-// 片段，排在鎖定商品的結果後面最多顯示幾筆。例如查 "core"：CORE2 自己的
-// 內容排最前面，但 "6-core CPU"、"XDAQ CORE models do not support..."
-// 這種其他商品頁面裡真的有出現這個字的內容，還是要看得到，只是排後面。
-const OTHER_PRODUCT_MAX_COUNT = 5;
 
 const state = {
   extractor: null, // transformers.js 的 feature-extraction pipeline
@@ -411,6 +398,14 @@ function renderResults(results, queryWords) {
   setList(html);
 }
 
+// 2026-07 起改成純 embedding 排序：實測 v3 模型下，keywordBoost/
+// detectProductFilter 這整套字面關鍵字加權+商品鎖定邏輯，在每一份測試集
+// 上都是淨拖累 (見 test/eval_results/full_comparison_matrix.md 的完整
+// 對照)——純語意相似度排名的 MRR/Hit/NDCG 全面優於加了關鍵字邏輯的版本。
+// keywordBoost/detectProductFilter/computeIdfWeights/productNameOf/
+// productTokens/hasWholeWordMatch 這些函式保留在檔案裡但不再呼叫，
+// 只是為了保留未來想重新比較 hybrid 模式的可能性，目前排序邏輯完全不
+// 依賴它們。
 async function runSearch(query) {
   if (!state.ready) {
     showLoadingStatus();
@@ -430,65 +425,16 @@ async function runSearch(query) {
   const scores = cosineSimilarityAll(queryVec);
 
   const queryLower = query.trim().toLowerCase();
-  const queryWords = filterStopwords(queryLower.split(/\s+/).filter(Boolean));
-  const idfWeights = queryWords.length > 1 ? computeIdfWeights(queryWords) : {};
-  // 查詢字詞裡如果有指定到特定商品 (見 detectProductFilter)，那個商品的
-  // 結果排最前面；其他商品不是直接排除，而是分開處理，只要片段字面上
-  // 真的有命中查詢字詞，還是會顯示在鎖定商品的結果後面 (見下面
-  // OTHER_PRODUCT_MAX_COUNT)。像查 "core"：CORE2 自己的內容排最前面，
-  // 但其他頁面裡提到 "6-core CPU"、"XDAQ CORE models" 這種真的有這個字
-  // 的內容，不該完全被藏起來看不到。
-  const productFilter = queryWords.length ? detectProductFilter(queryWords) : null;
+  // 這裡分詞只用來給 highlightSnippet() 標記結果片段裡對到的字，不再
+  // 用於排序 (排序純看 embedding cosine similarity)。
+  const queryWords = filterStopwords(queryLower.match(/[a-z0-9']+/g) || []);
 
-  const scored = state.documents.map((doc, i) => {
-    const { boost, matched } = keywordBoost(doc.title, doc.text, doc.tags, queryLower, queryWords, idfWeights);
-    return { doc, baseScore: scores[i], adjustedScore: scores[i] + boost, matched };
-  });
-
-  scored.sort((a, b) => b.adjustedScore - a.adjustedScore);
-
-  const passing = scored
-    // 關鍵字完全命中的片段門檻打對折 (MATCHED_SIM_FLOOR)，比沒命中的寬鬆，
-    // 但不是完全跳過語意門檻——語意分數還是要顧到基本的相關性下限，不能
-    // 只靠字面命中就把語意上完全不相關的內容也算進結果。
-    .filter((s) => s.baseScore >= (s.matched ? MATCHED_SIM_FLOOR : SIM_THRESHOLD));
-
-  const toResult = (s) => ({
-    title: s.doc.title,
-    url: s.doc.url,
-    text: s.doc.text,
-    score: s.adjustedScore,
-  });
-
-  let results;
-  if (productFilter) {
-    const inProduct = passing.filter((s) => productFilter.has(productNameOf(s.doc.title)));
-    const outProduct = passing.filter((s) => s.matched && !productFilter.has(productNameOf(s.doc.title)));
-
-    const topScore = inProduct.length ? inProduct[0].adjustedScore : (passing.length ? passing[0].adjustedScore : 0);
-    const scoreFloor = topScore * RESULT_RELATIVE_CUTOFF;
-
-    const inProductResults = inProduct
-      // 關鍵字完全命中的片段不受這個百分比門檻限制：一個字面上真的有搜尋
-      // 字詞的片段，語意分數不管高低都是有效結果，不該因為語意分數比
-      // 最高分低太多就被濾掉 (例如搜 "animal" 有 25 個片段字面上真的有
-      // 這個字，只因為語意分數分佈得比較開，硬套百分比門檻會只剩 3 筆)。
-      .filter((s) => s.matched || s.adjustedScore >= scoreFloor)
-      .slice(0, RESULT_MAX_COUNT)
-      .map(toResult);
-
-    const outProductResults = outProduct.slice(0, OTHER_PRODUCT_MAX_COUNT).map(toResult);
-
-    results = inProductResults.concat(outProductResults);
-  } else {
-    const topScore = passing.length ? passing[0].adjustedScore : 0;
-    const scoreFloor = topScore * RESULT_RELATIVE_CUTOFF;
-
-    results = passing
-      .filter((s) => s.matched || s.adjustedScore >= scoreFloor)
-      .slice(0, RESULT_MAX_COUNT)
-      .map(toResult);
-  }
+  const results = state.documents
+    .map((doc, i) => ({ doc, score: scores[i] }))
+    .filter((s) => s.score >= SIM_THRESHOLD)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, RESULT_MAX_COUNT)
+    .map((s) => ({ title: s.doc.title, url: s.doc.url, text: s.doc.text, score: s.score }));
 
   renderResults(results, queryWords);
 }
