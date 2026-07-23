@@ -16,7 +16,7 @@ env.localModelPath = "models/";
 // 保險起見一樣允許遠端 fallback (理論上用不到，因為 MODEL_ID 現在是本地路徑)
 env.allowRemoteModels = true;
 
-const MODEL_ID = "bge-small-v3"; // web/models/bge-small-v3/ 底下的量化 ONNX 模型
+const MODEL_ID = "bge-small-v4"; // web/models/bge-small-v4/ 底下的量化 ONNX 模型
 const META_URL = "docs-meta.json"; // build_client_embeddings.py 產生
 const EMBEDDINGS_URL = "docs-embeddings.bin"; // 同上，float32 二進位向量
 const DEBOUNCE_MS = 300;
