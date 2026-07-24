@@ -16,19 +16,20 @@ env.localModelPath = "models/";
 // 保險起見一樣允許遠端 fallback (理論上用不到，因為 MODEL_ID 現在是本地路徑)
 env.allowRemoteModels = true;
 
-const MODEL_ID = "bge-small-v4"; // web/models/bge-small-v4/ 底下的量化 ONNX 模型
+const MODEL_ID = "gte-small"; // web/models/gte-small/ 底下的量化 ONNX 模型 (thenlper/gte-small，零微調)
 const META_URL = "docs-meta.json"; // build_client_embeddings.py 產生
 const EMBEDDINGS_URL = "docs-embeddings.bin"; // 同上，float32 二進位向量
 const DEBOUNCE_MS = 300;
-// bge 系列官方建議：查詢字串前面要加這段指令 (query instruction)，索引時
-// 的文件片段不用加，只有查詢端才加。這是 bge-small-en-v1.5 模型卡上寫的
-// 固定字串，不是隨便寫的，跟 build_client_embeddings.py 那邊要對稱
-// (那邊編碼 passage 不加前綴)。
-const QUERY_INSTRUCTION = "Represent this sentence for searching relevant passages: ";
-// v3 模型實測：完全無關的查詢 (跟站內主題八竿子打不著，例如食譜、地理
-// 常識、天氣) 最高分落在 0.37~0.53 之間，真正相關的查詢通常在 0.56 以上。
-// 門檻抓在這個觀察到的天花板之上，留一點緩衝空間。
-const SIM_THRESHOLD = 0.55;
+// gte-small 原生預訓練沒有 instruction prefix 的慣例(跟 bge 系列不同)，
+// 查詢端不用加任何固定前綴，維持跟建語料庫索引時 (build_client_embeddings.py)
+// 一致的零前綴用法。
+const QUERY_INSTRUCTION = "";
+// gte-small 的原始 cosine similarity 分數分佈整體比 bge 系列高很多
+// (mean pooling、沒有 instruction-tuned 過的模型常見現象，向量之間
+// 普遍比較「像」，不能沿用 bge 系列校準的門檻，否則離題查詢會全部
+// 通過)。實測：完全離題查詢最高分落在 0.74~0.80，站內真正相關查詢
+// 最低分是 0.82，門檻抓在這個觀察到的縫隙中間。
+const SIM_THRESHOLD = 0.81;
 // 極端情況 (例如查詢字詞多、命中太多片段) 的保底上限，避免整頁被灌爆。
 const RESULT_MAX_COUNT = 15;
 
@@ -415,10 +416,9 @@ async function runSearch(query) {
   setMeta("搜尋中…");
   const seq = ++requestSeq;
 
-  // bge-small-en-v1.5 官方建議查詢字串要加 QUERY_INSTRUCTION 這段固定前綴
-  // (見上面常數定義)，索引時的文件片段不用加；pooling 用 "cls"，不是
-  // "mean" (見 build_client_embeddings.py 開頭的模型說明)。
-  const output = await state.extractor(QUERY_INSTRUCTION + query, { pooling: "cls", normalize: true });
+  // gte-small 用原生的 "mean" pooling，不是 bge 系列的 "cls"
+  // (見 build_client_embeddings.py 開頭的模型說明)。
+  const output = await state.extractor(QUERY_INSTRUCTION + query, { pooling: "mean", normalize: true });
   if (seq !== requestSeq) return; // 有更新的查詢已送出，捨棄過期結果
   const queryVec = output.data;
 
