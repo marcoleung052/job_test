@@ -19,25 +19,46 @@ env.allowRemoteModels = true;
 const MODEL_ID = "gte-small"; // web/models/gte-small/ 底下的量化 ONNX 模型 (thenlper/gte-small，零微調)
 const META_URL = "docs-meta.json"; // build_client_embeddings.py 產生
 const EMBEDDINGS_URL = "docs-embeddings.bin"; // 同上，float32 二進位向量
+const BM25_INDEX_URL = "bm25-index.json"; // build_bm25_index.py 產生的反向索引(跟編碼模型無關，不用因為換模型重建)
 const DEBOUNCE_MS = 300;
 // gte-small 原生預訓練沒有 instruction prefix 的慣例(跟 bge 系列不同)，
-// 查詢端不用加任何固定前綴，維持跟建語料庫索引時 (build_client_embeddings.py)
-// 一致的零前綴用法。
+// 查詢端不用加任何固定前綴，維持跟建語料庫索引時一致的零前綴用法。
 const QUERY_INSTRUCTION = "";
-// gte-small 的原始 cosine similarity 分數分佈整體比 bge 系列高很多
-// (mean pooling、沒有 instruction-tuned 過的模型常見現象，向量之間
-// 普遍比較「像」，不能沿用 bge 系列校準的門檻，否則離題查詢會全部
-// 通過)。實測：完全離題查詢最高分落在 0.74~0.80，站內真正相關查詢
-// 最低分是 0.82，門檻抓在這個觀察到的縫隙中間。
+// gte-small 的原始 cosine similarity 分數分佈整體比 bge 系列高很多，不能
+// 沿用 bge 系列校準的門檻。實測：完全離題查詢最高分落在 0.74~0.80，
+// 站內真正相關查詢最低分是 0.82，門檻抓在這個觀察到的縫隙中間。這個門檻
+// 只用來判斷「查詢是不是完全離題」，用原始 cosine similarity 分數把關；
+// RRF 融合後的排序分數不適合拿來當離題判斷的門檻。
 const SIM_THRESHOLD = 0.81;
-// 極端情況 (例如查詢字詞多、命中太多片段) 的保底上限，避免整頁被灌爆。
+// 最終顯示的「結果卡片」數上限——現在每張卡片可能是「同一頁合併後」的結果
+// (見下方 CANDIDATE_POOL 説明)，不是每張卡片對應一個獨立片段。
 const RESULT_MAX_COUNT = 15;
+// RRF (Reciprocal Rank Fusion) 標準慣用常數，融合 BM25 關鍵字排名
+// 跟向量語意排名的名次(不是分數本身)，避免兩種分數尺度不同沒辦法直接相加
+// 的問題。
+const RRF_K = 60;
+// 實測(test/eval_results/full_comparison_matrix.md「Parent-Child Chunking /
+// Auto-Merging Context」一節)：只看 BM25+RRF 排序的前15個「獨立片段」，
+// 完全零命中率偏高；但如果先看前60名候選、把「同一頁面(同一個 url)」的
+// 片段合併成一組再取代表分數排序，完全零命中大幅下降。實測同時也用一個
+// 對照組拆解過：這個改善主要來自「候選池從15擴大到60」本身，不是「合併」
+// 這個機制單獨的功勞(合併甚至比純粹放寬候選數的理論上限還略差一點)。
+// 也就是說，這不是免費的排序演算法升級，是真正不同的產品設計取捨——
+// 使用者現在看到的是最多15張「頁面卡片」，每張卡片可能包含好幾個同頁的
+// 片段內容(比過去單一片段的呈現方式資訊量更多、但卡片也可能更長)。
+const CANDIDATE_POOL = 60;
+// 同一頁合併後，卡片裡最多顯示幾個片段——有些熱門頁面(例如 XDAQ CORE2)
+// 在前60名候選裡本來就會出現十幾次，全部塞進同一張卡片會變成一大段文字
+// 牆，反而讓使用者更難找到重點。只顯示分數最高的幾段，組的排名(該顯示在
+// 第幾張卡片)不受影響，只影響單一卡片裡顯示的片段數。
+const MAX_PARTS_PER_CARD = 4;
 
 const state = {
   extractor: null, // transformers.js 的 feature-extraction pipeline
   documents: null, // [{title, url, text}, ...]
   embeddings: null, // Float32Array，row-major，每列 dim 長
   dim: 0,
+  bm25: null, // { k1, b, N, avgdl, docLen, idf, postings } (build_bm25_index.py 產生)
   ready: false,
   modelProgress: 0,
   dataProgress: 0,
@@ -101,22 +122,28 @@ async function loadModel() {
 // 下載預先算好的文件向量資料庫 (docs-meta.json + docs-embeddings.bin)，
 // 這兩個檔案由 build_client_embeddings.py 離線產生，跟這個網站一起發布，
 // 瀏覽器只需要 fetch 下來，不用自己重新對整份文件庫做 embedding。
+// bm25-index.json 是 build_bm25_index.py 產生的反向索引 (詞彙 -> 出現過的
+// 文件 id + 詞頻)，用來在瀏覽器端即時算 BM25 分數，不用另外下載/處理原始
+// 文字語料庫。
 async function loadDocsDatabase() {
-  const [metaRes, binRes] = await Promise.all([
+  const [metaRes, binRes, bm25Res] = await Promise.all([
     fetch(META_URL),
     fetch(EMBEDDINGS_URL),
+    fetch(BM25_INDEX_URL),
   ]);
 
-  if (!metaRes.ok || !binRes.ok) {
+  if (!metaRes.ok || !binRes.ok || !bm25Res.ok) {
     throw new Error("無法下載向量資料庫檔案");
   }
 
   const meta = await metaRes.json();
   const buffer = await binRes.arrayBuffer();
+  const bm25 = await bm25Res.json();
 
   state.documents = meta.documents;
   state.dim = meta.dim;
   state.embeddings = new Float32Array(buffer);
+  state.bm25 = bm25;
   state.dataProgress = 1;
 }
 
@@ -136,6 +163,33 @@ function cosineSimilarityAll(queryVec) {
       dot += embeddings[offset + d] * queryVec[d];
     }
     scores[i] = dot;
+  }
+
+  return scores;
+}
+
+// BM25 分數計算，公式/常數跟 rank_bm25 套件的 BM25Okapi 完全一致
+// (ATIRE idf 公式，含 epsilon 下限)，已經用 test/v3/scripts/build_bm25_index.py
+// 驗證跟 Python 版逐字比對誤差為 0，確保瀏覽器端跟離線測試時的排序邏輯
+// 完全相同。idf/postings 都是 build_bm25_index.py 離線算好存在
+// bm25-index.json 裡，這裡只需要查表加總，不用重新掃過整個語料庫。
+function bm25ScoresAll(queryWords) {
+  const { bm25, documents } = state;
+  const n = documents.length;
+  const scores = new Float32Array(n);
+  if (!bm25) return scores;
+
+  const { k1, b, avgdl, docLen, idf, postings } = bm25;
+  for (const term of queryWords) {
+    const termIdf = idf[term];
+    if (termIdf === undefined) continue;
+    const termPostings = postings[term];
+    if (!termPostings) continue;
+    for (const [docId, tf] of termPostings) {
+      const dl = docLen[docId];
+      const denom = tf + k1 * (1 - b + (b * dl) / avgdl);
+      scores[docId] += (termIdf * (tf * (k1 + 1))) / denom;
+    }
   }
 
   return scores;
@@ -376,6 +430,10 @@ function highlightSnippet(text, queryWords) {
   });
 }
 
+// 每個結果卡片現在可能是「同一頁合併後」的結果，r.parts 是這頁裡被選進來
+// 的每個片段(依相關性排序)，每個 part 如果有章節標題就顯示出來，讓使用者
+// 看得出這段內容來自頁面的哪個章節；只有一個 part 且沒有章節標題時，
+// 呈現方式跟合併前完全一樣。
 function renderResults(results, queryWords) {
   if (!results.length) {
     setMeta("沒有找到符合的文件");
@@ -384,29 +442,39 @@ function renderResults(results, queryWords) {
   }
   setMeta(results.length + " 筆結果");
   const html = results
-    .map(
-      (r) =>
+    .map((r) => {
+      const partsHtml = r.parts
+        .map((p) => {
+          const label = p.sectionLabel
+            ? "<strong>" + highlightSnippet(p.sectionLabel, queryWords) + "</strong>：" : "";
+          return "<p>" + label + highlightSnippet(p.text, queryWords) + "</p>";
+        })
+        .join("");
+      return (
         '<li class="md-search-result__item">' +
         '<a href="' + escapeHtml(r.url) + '" class="md-search-result__link">' +
         '<article class="md-search-result__article md-search-result__article--document">' +
         "<h1>" + highlightSnippet(r.title, queryWords) + "</h1>" +
-        "<p>" + highlightSnippet(r.text, queryWords) + "</p>" +
+        partsHtml +
         "</article>" +
         "</a>" +
         "</li>"
-    )
+      );
+    })
     .join("");
   setList(html);
 }
 
-// 2026-07 起改成純 embedding 排序：實測 v3 模型下，keywordBoost/
-// detectProductFilter 這整套字面關鍵字加權+商品鎖定邏輯，在每一份測試集
-// 上都是淨拖累 (見 test/eval_results/full_comparison_matrix.md 的完整
-// 對照)——純語意相似度排名的 MRR/Hit/NDCG 全面優於加了關鍵字邏輯的版本。
-// keywordBoost/detectProductFilter/computeIdfWeights/productNameOf/
-// productTokens/hasWholeWordMatch 這些函式保留在檔案裡但不再呼叫，
-// 只是為了保留未來想重新比較 hybrid 模式的可能性，目前排序邏輯完全不
-// 依賴它們。
+// 2026-07 起改成純 embedding 排序，keywordBoost/detectProductFilter 這整套
+// 字面關鍵字加權+商品鎖定邏輯測出來是淨拖累，停用但保留函式(見上面舊註解)。
+// 2026-07 後期再實測 BM25+RRF(排名式融合，不是加法式加權)：跟純向量排序比，
+// v4 model 搭配 BM25 RRF 融合 MRR 進步約 6.5%、完全零命中也變好，是目前
+// 測過最好的組合 (見 test/eval_results/full_comparison_matrix.md「BM25 +
+// RRF」一節)，因此排序邏輯改成 RRF 融合。
+//
+// 離題判斷 (SIM_THRESHOLD) 仍然只看向量的原始 cosine similarity 分數，
+// 不能用 RRF 融合後的分數判斷——RRF 分數的尺度是名次的倒數和，跟「語意
+// 到底相不相關」沒有直接對應關係，只有排序意義、沒有絕對意義。
 async function runSearch(query) {
   if (!state.ready) {
     showLoadingStatus();
@@ -416,25 +484,79 @@ async function runSearch(query) {
   setMeta("搜尋中…");
   const seq = ++requestSeq;
 
-  // gte-small 用原生的 "mean" pooling，不是 bge 系列的 "cls"
-  // (見 build_client_embeddings.py 開頭的模型說明)。
   const output = await state.extractor(QUERY_INSTRUCTION + query, { pooling: "mean", normalize: true });
   if (seq !== requestSeq) return; // 有更新的查詢已送出，捨棄過期結果
   const queryVec = output.data;
 
-  const scores = cosineSimilarityAll(queryVec);
+  const vecScores = cosineSimilarityAll(queryVec);
 
   const queryLower = query.trim().toLowerCase();
-  // 這裡分詞只用來給 highlightSnippet() 標記結果片段裡對到的字，不再
-  // 用於排序 (排序純看 embedding cosine similarity)。
-  const queryWords = filterStopwords(queryLower.match(/[a-z0-9']+/g) || []);
+  const rawQueryWords = queryLower.match(/[a-z0-9']+/g) || [];
+  // 這裡分詞只用來給 highlightSnippet() 標記結果片段裡對到的字。
+  const queryWords = filterStopwords(rawQueryWords);
 
-  const results = state.documents
-    .map((doc, i) => ({ doc, score: scores[i] }))
-    .filter((s) => s.score >= SIM_THRESHOLD)
-    .sort((a, b) => b.score - a.score)
-    .slice(0, RESULT_MAX_COUNT)
-    .map((s) => ({ title: s.doc.title, url: s.doc.url, text: s.doc.text, score: s.score }));
+  let maxVecScore = -Infinity;
+  for (let i = 0; i < vecScores.length; i++) {
+    if (vecScores[i] > maxVecScore) maxVecScore = vecScores[i];
+  }
+  if (maxVecScore < SIM_THRESHOLD) {
+    renderResults([], queryWords);
+    return;
+  }
+
+  // BM25 分詞跟 build_bm25_index.py 一致 (不濾 stopword，讓詞頻/IDF計算
+  // 跟離線驗證時完全一樣)。
+  const bm25Scores = bm25ScoresAll(rawQueryWords);
+
+  const n = state.documents.length;
+  const vecOrder = Array.from({ length: n }, (_, i) => i).sort((a, b) => vecScores[b] - vecScores[a]);
+  const bm25Order = Array.from({ length: n }, (_, i) => i).sort((a, b) => bm25Scores[b] - bm25Scores[a]);
+
+  const vecRank = new Float64Array(n);
+  vecOrder.forEach((docId, rank) => { vecRank[docId] = rank; });
+  const bm25Rank = new Float64Array(n);
+  bm25Order.forEach((docId, rank) => { bm25Rank[docId] = rank; });
+
+  const rrfScores = new Float64Array(n);
+  for (let i = 0; i < n; i++) {
+    rrfScores[i] = 1 / (RRF_K + vecRank[i] + 1) + 1 / (RRF_K + bm25Rank[i] + 1);
+  }
+
+  // 先取前 CANDIDATE_POOL 名候選(不是直接取前 RESULT_MAX_COUNT 名)，
+  // 同一頁(同一個 url)的片段合併成一組，組的代表分數 = 組內最高 RRF 分數，
+  // 取代表分數前 RESULT_MAX_COUNT 名的組別顯示 (見上面 CANDIDATE_POOL 註解)。
+  const candidateIdx = Array.from({ length: n }, (_, i) => i)
+    .sort((a, b) => rrfScores[b] - rrfScores[a])
+    .slice(0, CANDIDATE_POOL);
+
+  const groupBestScore = new Map(); // url -> 組內最高 rrf 分數
+  const groupMembers = new Map(); // url -> [docId, ...]，依候選順序(已經是分數由高到低)
+  for (const idx of candidateIdx) {
+    const url = state.documents[idx].url;
+    if (!groupMembers.has(url)) groupMembers.set(url, []);
+    groupMembers.get(url).push(idx);
+    const prevBest = groupBestScore.get(url);
+    if (prevBest === undefined || rrfScores[idx] > prevBest) {
+      groupBestScore.set(url, rrfScores[idx]);
+    }
+  }
+
+  const orderedUrls = Array.from(groupBestScore.keys())
+    .sort((a, b) => groupBestScore.get(b) - groupBestScore.get(a))
+    .slice(0, RESULT_MAX_COUNT);
+
+  const results = orderedUrls.map((url) => {
+    const memberIdx = groupMembers.get(url).slice(0, MAX_PARTS_PER_CARD); // 已依 rrf 分數由高到低排序
+    const topDoc = state.documents[memberIdx[0]];
+    const pageTitle = productNameOf(topDoc.title);
+    const parts = memberIdx.map((idx) => {
+      const doc = state.documents[idx];
+      const commaIdx = doc.title.indexOf(",");
+      const sectionLabel = commaIdx === -1 ? "" : doc.title.slice(commaIdx + 1).trim();
+      return { sectionLabel, text: doc.text };
+    });
+    return { title: pageTitle, url, parts, score: vecScores[memberIdx[0]] };
+  });
 
   renderResults(results, queryWords);
 }
